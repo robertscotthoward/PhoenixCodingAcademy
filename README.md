@@ -2,8 +2,17 @@
 
 [Phoenix Coding Academy](https://www.pxu.org/coding) (PCA) has an after-hours Computer Science Club that meets Friday after class. Members will learn modern tools for engineering and university academics. The course is designed for self-driven learners who attend PCA, but anyone is welcome. Attendance can be remote and asynchronous.
 
+# Summary Goals
+* Learn by teaching. Help create class content and tests.
+* Learn collaborative application development through Git.
+* Broad overview of many subjects.
+* Prove you know your stuff.
+* Think big! Scale out to other schools - perhaps nation-wide.
+
+
+
 # Goals
-* Primarily learn **what** subjects are important, why knowledge of them will give you a head start at the university or workplace, and increase your value to the world. Quickly know where to find the best online guides and tutorials, are and how to get started quickly. Then, if any subject really grabs your interest, you can go further into the subject by following the online tutorials to learn **how** to solve problems. You can become the Subject Matter Expert (SME) for any number of courses in the club to provide new learners a person to get help. Interested in a subject that is not in "this list"? Create it!
+* Primarily learn **what** subjects are important, why knowledge of them will give you a head start at the university or workplace, and increase your value to the world. Quickly know where to find the best online guides and tutorials, are and how to get started quickly. Then, if any subject really grabs your interest, you can go further into the subject by following the online tutorials to learn **how** to solve problems. You can become the Subject Matter Expert (SME) for any number of courses in the club to provide new learners a person from which get help. Interested in a subject that is not in "this list"? Create it!
 * Pad your resume very quickly with lots of techniques where you can talk for 5 minutes on any subject.
 * Learn why these subjects are important in the professional and academic fields and how.
 * Help create this class by creating subject content as a team.
@@ -16,7 +25,7 @@ As a participant, you will be any or all of these roles:
 * **Author**, where you create courses, assignments, test questions, and other curriculum components.
 What you choose to do at any time is what you are.
 
-The content in this course will be created by any participant (author). [Git Workflow](./pages/GitWorkflow.md) is just one of the modern techniques for a community of creators (e.g. developers, teachers, authors) to work together to create a product. This course is the product, and so Git Workflow will be taught to all learners and used by all authors.
+Any participant (author) will create the content in this school. [Git Workflow](./pages/GitWorkflow.md) is just one of the modern techniques for a community of creators (e.g. developers, teachers, authors) to work together to create a product in a well-managed manner. This course is the product, and so Git Workflow will be taught to all learners and used by all authors.
 
 > *Always strive to be the teacher because no-one learns more than the teacher.*
 
