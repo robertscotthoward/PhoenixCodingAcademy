@@ -1,7 +1,26 @@
-
 subjects:
+- id: Git
+  title: Git Version Control
+  courses:
+  - id: Git_CreateAccount
+    title: Create your GitHub Account
+    description: |
+      You will need an GitHub account to help create content in this course.
+      This is also how pull requests will be made, your authentication to
+      use the web site and take exams, to report bugs, and communicate
+      with other team members.
+    assignments:
+    - id: Git_CreateAccount_1
+      title: Create your GitHub account
+      description: |
+        If you already have an account in https://github.com, then you're done.
+        Else follow these instructions:
+      acceptance: |
+
 - id: programming
   title: Programming Languages
+
+- id: wsl2
 
 - id: python
   title: Python Programming Language
@@ -84,8 +103,7 @@ subjects:
 
     - id: InstallLibraries
       title: Install Python Libraries
-      prerequisites:
-      - InstallPython
+      prerequisites: InstallPython
       description: |
         Python is great because there are 400,000 libraries out there that do just about everything you could want to do in Python.
         It is easy to create a new library for others to use.
@@ -115,18 +133,17 @@ subjects:
 - id: jupyter
   title: Juptyer Notebooks
   description: Fundamentals of reproducible research and data science.
-  prerequisites: [InstallPython]
+  prerequisites: InstallPython
 
 - id: pandas
-  prerequisites: [InstallPython]
+  prerequisites: InstallPython
 
 - id: matplotlib
-  prerequisites: [InstallPython]
+  prerequisites: InstallPython
   courses:
 
 - id: flask
-  prerequisites: [InstallPython]
+  prerequisites: InstallPython
 
 - id: linux
 
-- id: wsl2

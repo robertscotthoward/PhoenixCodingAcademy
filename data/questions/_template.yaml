@@ -1,0 +1,32 @@
+questions:
+- question: Which of the following are nice letters?
+  right:
+  - answer: A
+    explanation: |
+      Because I like A.
+    links:
+    - https://en.wikipedia.org/wiki/A
+  - answer: B
+    explanation: |
+      Because I like B.
+  - answer: C
+    explanation: |
+      Because I like C.
+  - answer: D
+    explanation: |
+      Because I like D.
+  - answer: E
+    explanation: |
+      Because I like E.
+  wrong:
+  - answer: F
+    explanation: Because I don't like F.
+  - answer: G
+    explanation: Because I don't like G.
+  - answer: H, I and J
+    explanation: Because I don't like those letters either.
+    links:
+    - https://en.wikipedia.org/wiki/H
+    - https://en.wikipedia.org/wiki/I
+    - https://en.wikipedia.org/wiki/J
+
