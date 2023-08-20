@@ -65,3 +65,6 @@ The learner chooses:
 The test engine randomizes all questions and picks the first N of them. For each question, the engine randomizes all the answers (right and wrong ones) and then presents all answers (maximum five) as checkboxes. This implies that 5 checkboxes have only 1 in 32 ways to be correct. Each question will have a scoring method, which might (for example) be +1 for each correct answer, -1 for each incorrect one.
 
 In `Learn` mode, the learner answers a question, and then the answers and explanations are shown; correct answers in GREEN, incorrect ones in RED. In `Test` mode, the learner answers all questions first, a score is recorded, and then the learner has the option to review each question just like in `Learn` mode.
+
+# Links
+*
