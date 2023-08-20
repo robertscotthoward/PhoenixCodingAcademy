@@ -22,12 +22,17 @@ class School:
   def __init__(self, path):
     self.yo = tools.ReadYaml(os.path.abspath(path))
     ya = self.yo.get('subjects')
+    self.items = {}
     self.subjects = Items(self, ya, Subject)
 
   def __str__(self):
     return f"School[{len(self.subjects)}]"
+
   def __repr__(self):
     return f"School[{len(self.subjects)}]"
+
+  def __getitem__(self, id):
+    return self.items[id]
 
 
 class Item:
@@ -37,6 +42,7 @@ class Item:
     self.id = yo.get('id', None)
     self.title = yo.get('title', None)
     self.description = yo.get('description', None)
+
 
 class Items:
   '''A list of items that do not have duplicate id's.'''
@@ -53,6 +59,9 @@ class Items:
       if item in self:
         raise Exception(f"Duplicate id '{item.id}' found for Items of '{cls}'")
       self.list.append(item)
+      if item.id in self.school.items:
+        raise Exception(f"Duplicate id '{item.id}' found for Items of '{cls}'. Ids must be globally unique.")
+      self.school.items[item.id] = item
 
   def __contains__(self, item):
     for x in self.list:
@@ -102,11 +111,15 @@ class Assignment(Item):
 
 
 def tests():
-  fp = tools.GetAncestorPath("data/subjects.yaml")
+  fp = tools.GetAncestorPath("data/school.yaml")
   assert(fp)
   school = School(fp)
   for subject in school.subjects:
-    print(subject.id)
+    print("SUBJECT", subject.id)
+    for course in subject.courses:
+      print("  COURSE", course.id)
+      for assignment in course.assignments:
+        print("    ASSIGNMENT", assignment.id)
 
 
 if __name__ == "__main__":

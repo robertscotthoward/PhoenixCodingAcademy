@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>COURSE: {{ course.name }}!</h1>
+
+
+<pre>
+  ID: {{course.id}}
+  TITLE: {{course.title}}
+  DESCRIPTION: {{course.description}}
+</pre>
+
+<h2>Assignments</h2>
+<ul>
+{% for assignment in course.assignments: %}
+  <li><a href="{{ url_for('_assignment', id=assignment.id) }}">{{assignment.title}}</a></li>
+{% endfor %}
+</ul>
+
+{% endblock %}

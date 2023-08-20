@@ -1,6 +1,6 @@
 # Overview
 
-The `subjects.yaml` file contains all the subject, courses, assignments, and questions.
+The `school.yaml` file contains all the subject, courses, assignments, and questions.
 
 * **Subjects** are broad categories of things, like "Programming Languages", "Data Science", "Mathematics", and "Python". Subjects can form a [DAG](https://en.wikipedia.org/wiki/Directed_acyclic_graph); that is, subjects can contain multiple parents and multiple children to for a type of taxonomy. A subject can contain zero or more courses.
 

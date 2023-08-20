@@ -8,12 +8,12 @@ root = os.path.abspath(os.path.join(thisPath, os.path.relpath('../..')))
 sys.path.append(root)
 
 import libs.tools as tools
-import libs.subjects as subjects
+from libs.school import School
 
 def test1():
-  subs = subjects.Subjects()
-  fp = tools.GetAncestorPath("data/subjects.yaml")
-  subs.parseFile(fp)
-  print(tools.PrettifyYaml(subs.data))
+  path = tools.GetAncestorPath("data/school.yaml")
+  assert(path)
+  school = School(path)
+  print(school)
 
 test1()
