@@ -2,6 +2,7 @@
 subjects:
 - id: programming
   title: Programming Languages
+
 - id: python
   title: Python Programming Language
   parent: [programming]
@@ -19,7 +20,7 @@ subjects:
       acceptance:
     - id: InstallPythonForLinux
       title: For Linux (WSL2, Ubuntu)
-      prerequisites: WSL2
+      prerequisites: wsl2
       description:
       steps: |
         Assuming you are at a Linux terminal, run:
@@ -110,16 +111,22 @@ subjects:
           get:
         references:
         - url: https://pip.pypa.io/en/stable/getting-started/
+
 - id: jupyter
   title: Juptyer Notebooks
   description: Fundamentals of reproducible research and data science.
   prerequisites: [InstallPython]
+
 - id: pandas
   prerequisites: [InstallPython]
+
 - id: matplotlib
   prerequisites: [InstallPython]
   courses:
+
 - id: flask
   prerequisites: [InstallPython]
+
 - id: linux
+
 - id: wsl2

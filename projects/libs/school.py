@@ -32,6 +32,8 @@ class School:
     return f"School[{len(self.subjects)}]"
 
   def __getitem__(self, id):
+    if not id in self.items:
+      return None
     return self.items[id]
 
 
@@ -42,6 +44,18 @@ class Item:
     self.id = yo.get('id', None)
     self.title = yo.get('title', None)
     self.description = yo.get('description', None)
+    prerequisites = yo.get('prerequisites', None)
+    if prerequisites:
+      self.prerequisites = set()
+      for id in prerequisites.split(' '):
+        id = id.strip()
+        item = self.school[id]
+        if not item:
+          s = f"Cannot find prerequisite '{id}' in item '{self.id}'"
+          print('ERROR', s)
+          raise(s)
+        self.prerequisites.add(item)
+
 
 
 class Items:

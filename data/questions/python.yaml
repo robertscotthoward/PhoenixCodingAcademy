@@ -1,5 +1,3 @@
-course:
-  title: python
 questions:
 - question: What are examples of declarative programming in Python?
   right:
