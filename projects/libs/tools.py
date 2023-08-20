@@ -1,6 +1,20 @@
 import os
 import yaml
 
+def GetAncestorPath(relBasePath):
+  p = os.path.curdir
+  lp = None
+  while True:
+    fp = os.path.abspath(os.path.join(p, relBasePath))
+    print(fp)
+    if os.path.exists(fp):
+      return fp
+    p = os.path.abspath(os.path.join(p, '..'))
+    if p == lp:
+      return None
+    lp = p
+
+
 def GetDataPath(fn):
   '''
   @fn is a relative path; e.g. "x.txt" or "mystuff/x.txt"
@@ -51,6 +65,10 @@ def readFile(fn):
   with open(dn) as f:
     return f.read()
 
+def writeFile(fn, data):
+  with open(fn, 'w') as f:
+    f.write(data)
+
 
 def ReadYaml(fn):
   '''
@@ -72,10 +90,24 @@ def WriteYaml(fn, obj):
   dn = GetDataPath(fn)
   dir = os.path.dirname(os.path.abspath(dn))
   os.makedirs(dir, exist_ok=True)
-  with open(dn, 'w') as f:
-    yaml.dump(obj, f)
+  writeFile(dn, PrettifyYaml(obj))
+
+def PrettifyYaml(obj):
+  return yaml.dump(obj)
 
 
 def md5(s):
-  import crypt
-  return  crypt.crypt(s, crypt.METHOD_MD5)
+  import hashlib
+  hash = hashlib.md5()
+  if type(s) == str:
+    s = str.encode(s)
+  hash.update(s)
+  return  hash.hexdigest()
+
+
+def tests():
+  h = md5("The quick brown fox jumps over the lazy dog")
+  assert(h == "9e107d9d372bb6826bd81d3542a419d6")
+
+if __name__ == "__main__":
+  tests()

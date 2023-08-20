@@ -1,8 +1,16 @@
-import os
-import time
 import sys
-#sys.path.append(os.path.abspath('../libs'))
-from .lib import *
+import os
+
+# Get this file's path so we can find the libs/
+thisFile = os.path.abspath(sys.argv[0])
+thisPath = os.path.dirname(thisFile)
+root = os.path.abspath(os.path.join(thisPath, os.path.relpath('../projects')))
+sys.path.append(root)
+
+import libs.tools as tools
+import libs.subjects as subjects
+import time
+
 from watchdog.observers import Observer
 from watchdog.events import FileSystemEventHandler
 
@@ -31,19 +39,21 @@ class MyHandler(FileSystemEventHandler):
         self.files = {}
 
     def on_any_event(self, event):
-        path = event.src_path
-
-        if path in self.files:
-            if self.files[path] == os.path.getmtime(path):
-                return
-        self.files[path] = os.path.getmtime(path)
-
+        path = os.path.abspath(event.src_path)
         print(path)
+        data = tools.readFile(path)
+        hash = tools.md5(data)
+        if path in self.files:
+            if self.files[path] == hash:
+                return
+        self.files[path] = hash
+        compile(path)
+
 
 def compile(path):
-    print(path)
-    data = readFile(path)
-    print(md5(data))
+    subs = subjects.Subjects(path)
+    subs.writeHtml("subjects.html")
+
 
 if __name__=="__main__":
     w = Watcher(".", MyHandler())
