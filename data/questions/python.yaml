@@ -1,0 +1,36 @@
+questions:
+- question: What are examples of declarative programming in Python?
+  right:
+  - answer: numpy
+    explanation: |
+      With the numpy library, you can declare an array of objects, like integers, reals, or complex numbers.
+      From multiple arrays, you can "multiply" them together by just using the "*" operator.
+      You don't care how numpy performs the multiplication behind the scene; only that it returns the correct answer.
+  - answer: sympy
+    explanation: |
+      SymPy is a Python library for symbolic mathematics that can be used in a declarative style.
+      SymPy allows you to specify mathematical expressions and equations using a natural, human-readable syntax,
+      and then it automatically performs the necessary computations to solve or simplify the expressions.
+
+      You can use SymPy to solve algebraic equations, compute derivatives and integrals, and perform matrix operations, all using a declarative syntax.
+      This allows you to focus on describing the problem you want to solve, rather than worrying about the details of how to perform the computations.
+      In summary, SymPy is a powerful tool for declarative programming in Python, allowing you to perform complex mathematical computations using a simple, readable syntax. Is there anything else you would like to know?
+      With the sympy library, you can declare an array of objects, like integers, reals, or complex numbers.
+      From multiple arrays, you can "multiply" them together by just using the "*" operator.
+  wrong:
+  - answer: SQL
+    explanation: |
+      SQL (Structured Query Language) is a declarative language used for managing and querying relational databases.
+      It is not specific to Python, but it can be used in conjunction with Python through libraries such as sqlite3, psycopg2, or MySQLdb to interact with databases.
+
+      In SQL, you write statements that describe the data you want to retrieve or manipulate, and the database management system figures out the best way to execute your query.
+      For example, you can use a SELECT statement to specify the columns and rows you want to retrieve from a table, and the database management system will determine the most efficient way to access the data.
+  - answer: Functions
+    explanation: Functions are imperative where you explicitly tell the machine how to solve a problem.
+  - answer: Creating classes, constructors, and method
+    explanation: These are examples of the object-oriented programming paradigm, not the declarative programming paradigm.
+    links:
+    - https://en.wikipedia.org/wiki/Object-oriented_programming
+    - https://www.educative.io/blog/declarative-vs-imperative-programming
+    - https://www.tutorialspoint.com/object_oriented_analysis_design/ooad_object_oriented_paradigm.htm
+

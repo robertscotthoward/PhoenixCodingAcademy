@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>SUBJECT: {{ subject.title }}</h1>
+
+<pre>
+  ID: {{subject.id}}
+  TITLE: {{subject.title}}
+  DESCRIPTION: {{subject.description}}
+</pre>
+
+<h2>Courses</h2>
+<ul>
+{% for course in subject.courses: %}
+<li>
+  <a href="{{ url_for('_course', id=course.id) }}">{{course.id}}</a>
+</li>
+{% endfor %}
+</ul>
+
+{% endblock %}
