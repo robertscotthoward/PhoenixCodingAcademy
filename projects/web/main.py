@@ -36,7 +36,7 @@ def getSchool():
 @app.route('/')
 def hello():
   school = getSchool()
-  return render_template('main.html', school=school)
+  return render_template('main.html', school=school, FileMarkdown=FileMarkdown)
 
 
 @app.route('/info')
