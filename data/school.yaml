@@ -22,9 +22,32 @@ subjects:
   title: Programming Languages
   short: There are over 1000 programming language in use today and you can use most of them for free.
 
-- id: wsl2
+- id: web
+  title: Web Development
+  short: All things HTML, CSS, and JavaScript; plus dynamic site generation and hosting.
+
+- id: datascience
+  title: Data Science
+  short: |
+    All science degrees at the university will require basic fluency in data acquisition and generating charts.
+    Excel was a popular tool of the past, but Jupyter Notebooks are the current hot thing.
+    Basic understanding of statistics and proving one's hypothesis is paramount.
+
+- id: wsl
   title: Windows Subsystem for Linux
-  short: If you have a machine with Windows on it, this is the fastest way to get up an running with Linux/
+  short: If you have a machine with Windows on it, this is the fastest way to get up an running with Linux
+  courses:
+  - id: wsl_install
+    title: How to install WSL2 on your laptop.
+    links:
+    - https://learn.microsoft.com/en-us/windows/wsl/install
+    - url: https://ubuntu.com/wsl
+      text: The Ubuntu version of WSL
+    - url: https://www.howtogeek.com/744328/how-to-install-the-windows-subsystem-for-linux-on-windows-11/
+      text: How to Install the Windows Subsystem for Linux on Windows 11
+  links:
+  - url: https://learn.microsoft.com/en-us/windows/wsl/
+    text: Windows Subsystem for Linux Documentation
 
 - id: python
   title: Python Programming Language
@@ -46,8 +69,8 @@ subjects:
       steps:
       acceptance:
     - id: InstallPythonForLinux
-      title: For Linux (WSL2, Ubuntu)
-      prerequisites: wsl2
+      title: For Linux (wsl, Ubuntu)
+      prerequisites: wsl
       description:
       steps: |
         Assuming you are at a Linux terminal, run:
@@ -141,21 +164,25 @@ subjects:
 - id: jupyter
   title: Juptyer Notebooks
   short: Fundamentals of reproducible research and data science. Jupyter is a free substitute for R, Knitr, PDF generation, and Mathematica.
+  parents: datascience
   description:
   prerequisites: InstallPython
 
 - id: pandas
   short: Pandas is the Python version of R language, and used by most Data Scientists today.
+  parents: datascience
   prerequisites: InstallPython
 
 - id: matplotlib
   short: This library is the Python version of R's GGPlot library.
+  parents: datascience
   prerequisites: InstallPython
   courses:
 
 - id: flask
   title: Flask
   short: This python web engine/framework is what this site is running on. Build dynamic web sites quickly with Flask.
+  parents: web
   prerequisites: InstallPython
 
 - id: linux

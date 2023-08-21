@@ -48,6 +48,17 @@ PATH: {os.path.abspath('.')}
 '''
 
 
+@app.route('/yaml')
+def _yaml():
+  school = getSchool()
+  return render_template('yaml.html', school=school)
+  return f'''
+<pre>
+PATH: {os.path.abspath('.')}
+</pre>
+'''
+
+
 @app.route('/subjects')
 def _subjects():
   school = getSchool()
@@ -57,7 +68,7 @@ def _subjects():
 @app.route('/subjects/<id>')
 def _subject(id):
   school = getSchool()
-  subject = school()[id]
+  subject = school[id]
   if not subject:
     return render_template('error.html', message=f"Item '{id}' not found.")
   if not isinstance(subject, Subject):
@@ -68,7 +79,7 @@ def _subject(id):
 @app.route('/course/<id>')
 def _course(id):
   school = getSchool()
-  course = school()[id]
+  course = school[id]
   if not course:
     return render_template('error.html', message=f"Item '{id}' not found.")
   if not isinstance(course, Course):

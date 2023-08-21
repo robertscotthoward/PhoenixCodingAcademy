@@ -21,6 +21,7 @@ A 'ya' is a YAML list; i.e. a list of items.
 
 class School:
   def __init__(self, path):
+    self.yaml = tools.readFile(os.path.abspath(path))
     self.yo = tools.ReadYaml(os.path.abspath(path))
     ya = self.yo.get('subjects')
     self.items = {}
@@ -52,7 +53,17 @@ class School:
     return html
 
 
-
+class Link:
+  '''Represents a link to some site.'''
+  def __init__(self, yo):
+    if isinstance(yo, str):
+      self.url = yo
+      self.text = yo
+    else:
+      self.url = yo.get('url', None)
+      if not self.url:
+        raise(f"Missing 'url' property for ")
+      self.text = yo.get('text', self.url)
 
 class Item:
   '''Base class of many objects, such as Subject, Course, Assignment'''
@@ -62,6 +73,24 @@ class Item:
     self.title = yo.get('title', None) or self.id
     self.description = yo.get('description', None)
     self.short = yo.get('short', '')
+
+    links = yo.get('links', [])
+    self.links = []
+    for link in links:
+      self.links.append(Link(link))
+
+    parents = yo.get('parents', None)
+    if parents:
+      self.parents = set()
+      for id in parents.split(' '):
+        id = id.strip()
+        item = self.school[id]
+        if not item:
+          s = f"Cannot find parent '{id}' in item '{self.id}'"
+          print('ERROR', s)
+          raise(s)
+        self.parents.add(item)
+
     prerequisites = yo.get('prerequisites', None)
     if prerequisites:
       self.prerequisites = set()
