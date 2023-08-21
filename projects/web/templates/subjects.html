@@ -2,10 +2,6 @@
 {% block content %}
 <h1>Subjects</h1>
 
-<ul>
-{% for subject in school.subjects: %}
-  <li><a href="{{ url_for('_subject', id=subject.id) }}">{{subject.title}}</a> <i>{{subject.short}}</i></li>
-{% endfor %}
-</ul>
+{{ school.subjects.Dag() | safe }}
 
 {% endblock %}

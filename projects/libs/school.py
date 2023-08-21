@@ -5,8 +5,9 @@ thisPath = os.path.dirname(thisFile)
 root = os.path.abspath(os.path.join(thisPath, os.path.relpath('..')))
 sys.path.append(root)
 
-import  markdown
+import markdown
 import yaml
+from io import StringIO
 import libs.tools as tools
 
 
@@ -79,9 +80,9 @@ class Item:
     for link in links:
       self.links.append(Link(link))
 
+    self.parents = set()
     parents = yo.get('parents', None)
     if parents:
-      self.parents = set()
       for id in parents.split(' '):
         id = id.strip()
         item = self.school[id]
@@ -91,9 +92,9 @@ class Item:
           raise(s)
         self.parents.add(item)
 
+    self.prerequisites = set()
     prerequisites = yo.get('prerequisites', None)
     if prerequisites:
-      self.prerequisites = set()
       for id in prerequisites.split(' '):
         id = id.strip()
         item = self.school[id]
@@ -102,6 +103,7 @@ class Item:
           print('ERROR', s)
           raise(s)
         self.prerequisites.add(item)
+
 
 
 
@@ -128,11 +130,42 @@ class Items:
     for x in self.list:
       if x.id == item.id: return True
     return False
-
   def __iter__(self):
     return iter(self.list)
   def __len__(self):
     return len(self.list)
+
+  def Dag(self):
+    html = StringIO()
+    self._Dag1(html)
+    html.seek(0)
+    return html.read()
+
+  def _Dag1(self, html, parent=None):
+    if not self.list:
+      return ''
+
+    first = self.list[0]
+    type = ''
+    if isinstance(first, Subject):
+      type = 'subject'
+    elif isinstance(first, Course):
+      type = 'course'
+    elif isinstance(first, Assignment):
+      type = 'assignment'
+    else:
+      raise(f"Unrecognized type '{type(first)}'")
+
+
+    html.write('<ul>')
+    children = [x for x in self if parent in x.parents or (not parent and not x.parents)]
+    for item in children:
+      html.write('<li>')
+      html.write(f'''<a href="{type}/{item.id}">{item.title}</a> <i>{item.short}</i>''')
+      self._Dag1(html, item)
+      html.write('</li>')
+
+    html.write('</ul>')
 
 
 
