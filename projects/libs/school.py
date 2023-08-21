@@ -5,7 +5,9 @@ thisPath = os.path.dirname(thisFile)
 root = os.path.abspath(os.path.join(thisPath, os.path.relpath('..')))
 sys.path.append(root)
 
+import markdown
 import yaml
+from io import StringIO
 import libs.tools as tools
 
 
@@ -18,8 +20,32 @@ A 'ya' is a YAML list; i.e. a list of items.
 '''
 
 
+
+def Markdown(md):
+  '''
+  Return the HTML of a markdown string.
+  '''
+  if not md: return ''
+  html = markdown.markdown(md, extensions=['fenced_code'])
+  return html
+
+def FileMarkdown(relPath):
+  '''
+  Find a *.md file and return the HTML of it.
+  '''
+  path = tools.GetAncestorPath(relPath)
+  if not path:
+    return f"Cannot find path '{relPath}'."
+  path = os.path.abspath(path)
+  if not os.path.exists(path):
+    return f"File '{path}' not found."
+  md = tools.readFile(path)
+  return Markdown(md)
+
+
 class School:
   def __init__(self, path):
+    self.yaml = tools.readFile(os.path.abspath(path))
     self.yo = tools.ReadYaml(os.path.abspath(path))
     ya = self.yo.get('subjects')
     self.items = {}
@@ -37,16 +63,47 @@ class School:
     return self.items[id]
 
 
+class Link:
+  '''Represents a link to some site.'''
+  def __init__(self, yo):
+    if isinstance(yo, str):
+      self.url = yo
+      self.text = yo
+    else:
+      self.url = yo.get('url', None)
+      if not self.url:
+        raise(f"Missing 'url' property for ")
+      self.text = yo.get('text', self.url)
+
 class Item:
   '''Base class of many objects, such as Subject, Course, Assignment'''
   def __init__(self, school, yo):
     self.school = school
     self.id = yo.get('id', None)
-    self.title = yo.get('title', None)
+    self.title = yo.get('title', None) or self.id
     self.description = yo.get('description', None)
+    self.short = yo.get('short', '')
+
+    links = yo.get('links', [])
+    self.links = []
+    for link in links:
+      self.links.append(Link(link))
+
+    self.parents = set()
+    parents = yo.get('parents', None)
+    if parents:
+      for id in parents.split(' '):
+        id = id.strip()
+        item = self.school[id]
+        if not item:
+          s = f"Cannot find parent '{id}' in item '{self.id}'"
+          print('ERROR', s)
+          raise(s)
+        self.parents.add(item)
+
+    self.prerequisites = set()
     prerequisites = yo.get('prerequisites', None)
     if prerequisites:
-      self.prerequisites = set()
       for id in prerequisites.split(' '):
         id = id.strip()
         item = self.school[id]
@@ -55,6 +112,7 @@ class Item:
           print('ERROR', s)
           raise(s)
         self.prerequisites.add(item)
+
 
 
 
@@ -81,11 +139,48 @@ class Items:
     for x in self.list:
       if x.id == item.id: return True
     return False
-
   def __iter__(self):
     return iter(self.list)
   def __len__(self):
     return len(self.list)
+
+  def Dag(self):
+    html = StringIO()
+    self._Dag1(html)
+    html.seek(0)
+    return html.read()
+
+  def _Dag1(self, html, parent=None):
+    if not self.list:
+      return ''
+
+    first = self.list[0]
+
+
+    html.write('<ul>')
+    children = [x for x in self if parent in x.parents or (not parent and not x.parents)]
+    for item in children:
+      html.write('<li>')
+      type = ''
+      if isinstance(first, Subject):
+        type = 'subjects'
+        if item.courses:
+          html.write(f'''<a href="/{type}/{item.id}">{item.title}</a> (<span title="Number of courses">{len(item.courses)}</span>) <i>{item.short}</i>''')
+        else:
+          html.write(f'''<a href="/{type}/{item.id}">{item.title}</a> <i>{item.short}</i>''')
+      elif isinstance(first, Course):
+        type = 'courses'
+        html.write(f'''<a href="/{type}/{item.id}">{item.title}</a> <i>{item.short}</i>''')
+      elif isinstance(first, Assignment):
+        type = 'assignments'
+        html.write(f'''<a href="/{type}/{item.id}">{item.title}</a> <i>{item.short}</i>''')
+      else:
+        raise(f"Unrecognized type '{type(first)}'")
+
+      self._Dag1(html, item)
+      html.write('</li>')
+
+    html.write('</ul>')
 
 
 
@@ -96,7 +191,7 @@ class Subject(Item):
     ya = yo.get('courses')
     self.courses = Items(school, ya, Course)
 
-  def toMarkdown(self):
+  def toFileMarkdown(self):
     md = f'''
     #{self.id}
 
@@ -118,6 +213,8 @@ class Course(Item):
 class Assignment(Item):
   def __init__(self, school, yo):
     Item.__init__(self, school, yo)
+    self.steps = yo.get('steps', '')
+    self.acceptance = yo.get('acceptance', '')
 
 
 

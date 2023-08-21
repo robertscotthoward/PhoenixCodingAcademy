@@ -1,15 +1,28 @@
 {% extends 'base.html' %}
 {% block content %}
-<h1>{{ assignment.name }}!</h1>
+<h1>{{ assignment.title }}!</h1>
 
 
-<pre>
-  ID: {{assignment.id}}
-  TITLE: {{assignment.title}}
-  DESCRIPTION: {{assignment.description}}
-</pre>
+<h2>Description</h2>
+
+{{ Markdown(assignment.description) | safe }}
+
+<h2>Steps</h2>
+
+{{ Markdown(assignment.steps) | safe }}
+
+<h2>Acceptance Criteria</h2>
+
+{{ Markdown(assignment.acceptance) | safe }}
+
+
+<h2>Links</h2>
 <ul>
-
+{% for link in assignment.links: %}
+<li>
+  <a href="{{link.url}}">{{link.text}}</a>
+</li>
+{% endfor %}
 </ul>
 
 {% endblock %}

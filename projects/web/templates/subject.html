@@ -1,6 +1,9 @@
 {% extends 'base.html' %}
 {% block content %}
+
+
 <h1>SUBJECT: {{ subject.title }}</h1>
+
 
 <pre>
   ID: {{subject.id}}
@@ -8,13 +11,18 @@
   DESCRIPTION: {{subject.description}}
 </pre>
 
+
 <h2>Courses</h2>
+{{ subject.courses.Dag() | safe }}
+
+<h2>Links</h2>
 <ul>
-{% for course in subject.courses: %}
+{% for link in subject.links: %}
 <li>
-  <a href="{{ url_for('_course', id=course.id) }}">{{course.id}}</a>
+  <a href="{{link.url}}">{{link.text}}</a>
 </li>
 {% endfor %}
 </ul>
+
 
 {% endblock %}

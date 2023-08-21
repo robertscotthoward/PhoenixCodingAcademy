@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block content %}
+
+
+<h1>YAML</h1>
+
+This web site is data-driven by a set of <a href="https://en.wikipedia.org/wiki/YAML">YAML</a> files.
+YAML is like JSON, but easier to read and write. Change this single file to add content to this site.
+You don't need to know how the data is converted into HTML. The web application does all that for you.
+
+
+<h2>The Yaml File</h2>
+<pre>
+{{school.yaml}}
+</pre>
+
+
+{% endblock %}

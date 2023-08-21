@@ -8,25 +8,35 @@ import sys
 thisFile = os.path.abspath(sys.argv[0])
 thisPath = os.path.dirname(thisFile)
 root = os.path.abspath(os.path.join(thisPath, os.path.relpath('..')))
+
+os.chdir
 sys.path.append(root)
 
 import yaml
 import libs.tools as tools
-from libs.school import School, Subject, Course, Assignment
-
-path = tools.GetAncestorPath("data/school.yaml")
-assert(path)
-school = School(path)
-
+from libs.school import *
 from flask import Flask, Blueprint, render_template, request
 
 site = Blueprint('PCA', __name__, template_folder='templates')
 app = Flask(__name__)
 
+lastSchoolUpdated = None
+school = None
+def getSchool():
+  global school, lastSchoolUpdated
+  path = tools.GetAncestorPath("data/school.yaml")
+  last = os.path.getmtime(path)
+  if not lastSchoolUpdated or lastSchoolUpdated != last:
+    school = School(path)
+    lastSchoolUpdated = last
+  return school
+
+
 
 @app.route('/')
 def hello():
-  return render_template('main.html', user="Fred")
+  school = getSchool()
+  return render_template('main.html', school=school)
 
 
 @app.route('/info')
@@ -38,13 +48,26 @@ PATH: {os.path.abspath('.')}
 '''
 
 
-@app.route('/school')
-def _school():
-  return render_template('school.html', school=school)
+@app.route('/yaml')
+def _yaml():
+  school = getSchool()
+  return render_template('yaml.html', school=school)
+  return f'''
+<pre>
+PATH: {os.path.abspath('.')}
+</pre>
+'''
 
 
-@app.route('/subject/<id>')
+@app.route('/subjects')
+def _subjects():
+  school = getSchool()
+  return render_template('subjects.html', school=school)
+
+
+@app.route('/subjects/<id>')
 def _subject(id):
+  school = getSchool()
   subject = school[id]
   if not subject:
     return render_template('error.html', message=f"Item '{id}' not found.")
@@ -53,8 +76,9 @@ def _subject(id):
   return render_template('subject.html', subject=subject)
 
 
-@app.route('/course/<id>')
+@app.route('/courses/<id>')
 def _course(id):
+  school = getSchool()
   course = school[id]
   if not course:
     return render_template('error.html', message=f"Item '{id}' not found.")
@@ -63,14 +87,15 @@ def _course(id):
   return render_template('course.html', course=course)
 
 
-@app.route('/assignment/<id>')
+@app.route('/assignments/<id>')
 def _assignment(id):
+  school = getSchool()
   assignment = school[id]
   if not assignment:
     return render_template('error.html', message=f"Item '{id}' not found.")
   if not isinstance(assignment, Assignment):
     return render_template('error.html', message=f"Item '{id}' is not a Assignment, but rather a '{type(assignment)}'.")
-  return render_template('assignment.html', assignment=assignment)
+  return render_template('assignment.html', assignment=assignment, Markdown=Markdown)
 
 
 if __name__ == "__main__":
