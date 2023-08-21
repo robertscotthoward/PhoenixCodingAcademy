@@ -1,6 +1,7 @@
 subjects:
 - id: Git
   title: Git Version Control
+  short: Use Git to help contribute to the club, and build collaborative project.
   courses:
   - id: Git_CreateAccount
     title: Create your GitHub Account
@@ -19,14 +20,21 @@ subjects:
 
 - id: programming
   title: Programming Languages
+  short: There are over 1000 programming language in use today and you can use most of them for free.
 
 - id: wsl2
+  title: Windows Subsystem for Linux
+  short: If you have a machine with Windows on it, this is the fastest way to get up an running with Linux/
 
 - id: python
   title: Python Programming Language
+  short: Python is perhaps the most taught language in school these days. This site is built with it. There is very little you cannot do with Python.
   parent: [programming]
   courses:
   - id: PythonBasics
+    title: Python Basics
+    description: |
+      Ok
     assignments:
     - id: InstallPython
       title: Install Python3
@@ -132,18 +140,25 @@ subjects:
 
 - id: jupyter
   title: Juptyer Notebooks
-  description: Fundamentals of reproducible research and data science.
+  short: Fundamentals of reproducible research and data science. Jupyter is a free substitute for R, Knitr, PDF generation, and Mathematica.
+  description:
   prerequisites: InstallPython
 
 - id: pandas
+  short: Pandas is the Python version of R language, and used by most Data Scientists today.
   prerequisites: InstallPython
 
 - id: matplotlib
+  short: This library is the Python version of R's GGPlot library.
   prerequisites: InstallPython
   courses:
 
 - id: flask
+  title: Flask
+  short: This python web engine/framework is what this site is running on. Build dynamic web sites quickly with Flask.
   prerequisites: InstallPython
 
 - id: linux
+  title: Linux
+  short: Linux is a free version competitor of Microsoft Windows and Apple iOS. Most web sites run on Linux today.
 

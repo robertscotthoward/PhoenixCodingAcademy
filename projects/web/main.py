@@ -8,25 +8,35 @@ import sys
 thisFile = os.path.abspath(sys.argv[0])
 thisPath = os.path.dirname(thisFile)
 root = os.path.abspath(os.path.join(thisPath, os.path.relpath('..')))
+
+os.chdir
 sys.path.append(root)
 
 import yaml
 import libs.tools as tools
 from libs.school import School, Subject, Course, Assignment
-
-path = tools.GetAncestorPath("data/school.yaml")
-assert(path)
-school = School(path)
-
 from flask import Flask, Blueprint, render_template, request
 
 site = Blueprint('PCA', __name__, template_folder='templates')
 app = Flask(__name__)
 
+lastSchoolUpdated = None
+school = None
+def getSchool():
+  global school, lastSchoolUpdated
+  path = tools.GetAncestorPath("data/school.yaml")
+  last = os.path.getmtime(path)
+  if not lastSchoolUpdated or lastSchoolUpdated != last:
+    school = School(path)
+    lastSchoolUpdated = last
+  return school
+
+
 
 @app.route('/')
 def hello():
-  return render_template('main.html', user="Fred")
+  school = getSchool()
+  return render_template('main.html', school=school)
 
 
 @app.route('/info')
@@ -38,14 +48,16 @@ PATH: {os.path.abspath('.')}
 '''
 
 
-@app.route('/school')
-def _school():
-  return render_template('school.html', school=school)
+@app.route('/subjects')
+def _subjects():
+  school = getSchool()
+  return render_template('subjects.html', school=school)
 
 
-@app.route('/subject/<id>')
+@app.route('/subjects/<id>')
 def _subject(id):
-  subject = school[id]
+  school = getSchool()
+  subject = school()[id]
   if not subject:
     return render_template('error.html', message=f"Item '{id}' not found.")
   if not isinstance(subject, Subject):
@@ -55,7 +67,8 @@ def _subject(id):
 
 @app.route('/course/<id>')
 def _course(id):
-  course = school[id]
+  school = getSchool()
+  course = school()[id]
   if not course:
     return render_template('error.html', message=f"Item '{id}' not found.")
   if not isinstance(course, Course):
@@ -65,6 +78,7 @@ def _course(id):
 
 @app.route('/assignment/<id>')
 def _assignment(id):
+  school = getSchool()
   assignment = school[id]
   if not assignment:
     return render_template('error.html', message=f"Item '{id}' not found.")

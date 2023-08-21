@@ -5,6 +5,7 @@ thisPath = os.path.dirname(thisFile)
 root = os.path.abspath(os.path.join(thisPath, os.path.relpath('..')))
 sys.path.append(root)
 
+import  markdown
 import yaml
 import libs.tools as tools
 
@@ -36,14 +37,31 @@ class School:
       return None
     return self.items[id]
 
+  def Markdown(self, relPath):
+    '''
+    Find a *.md file and return the HTML of it.
+    '''
+    path = tools.GetAncestorPath(relPath)
+    if not path:
+      return f"Cannot find path '{relPath}'."
+    path = os.path.abspath(path)
+    if not os.path.exists(path):
+      return f"File '{path}' not found."
+    md = tools.readFile(path)
+    html = markdown.markdown(md, extensions=['fenced_code'])
+    return html
+
+
+
 
 class Item:
   '''Base class of many objects, such as Subject, Course, Assignment'''
   def __init__(self, school, yo):
     self.school = school
     self.id = yo.get('id', None)
-    self.title = yo.get('title', None)
+    self.title = yo.get('title', None) or self.id
     self.description = yo.get('description', None)
+    self.short = yo.get('short', '')
     prerequisites = yo.get('prerequisites', None)
     if prerequisites:
       self.prerequisites = set()

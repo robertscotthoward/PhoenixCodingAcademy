@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 {% block content %}
-<h1>COURSE: {{ course.name }}!</h1>
+<h1>COURSE: {{ course.title }}</h1>
 
 
 <pre>
@@ -8,6 +8,11 @@
   TITLE: {{course.title}}
   DESCRIPTION: {{course.description}}
 </pre>
+
+{% if course.description %}
+<h2>Description</h2>
+{{course.description}}
+{% endif %}
 
 <h2>Assignments</h2>
 <ul>

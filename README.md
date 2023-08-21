@@ -20,8 +20,11 @@
 
 # Strategy
 As a participant, you will be any or all of these roles:
+
 * **Learner**, where you follow courses, do assignments, take tests. Learners are students that continue to learn after the completing the courses.
+
 * **Teacher**, where you help other learners, and grade assignments.
+
 * **Author**, where you create courses, assignments, test questions, and other curriculum components.
 What you choose to do at any time is what you are.
 
@@ -46,7 +49,7 @@ If all are correct, then check all the boxes.
 If none are correct, then check no boxes.
 
 Example:
-```
+```text
 Which of the following are colors:
 [ ] Orange
 [ ] Dog
@@ -57,14 +60,12 @@ Which of the following are colors:
 
 As an author, you can easily model each question in a YAML file.
 The learner chooses:
+
 * A mode:
-  * `Learn`
-  * `Test`
+    * `Learn`
+    * `Test`
 * A number of questions (N).
 
 The test engine randomizes all questions and picks the first N of them. For each question, the engine randomizes all the answers (right and wrong ones) and then presents all answers (maximum five) as checkboxes. This implies that 5 checkboxes have only 1 in 32 ways to be correct. Each question will have a scoring method, which might (for example) be +1 for each correct answer, -1 for each incorrect one.
 
 In `Learn` mode, the learner answers a question, and then the answers and explanations are shown; correct answers in GREEN, incorrect ones in RED. In `Test` mode, the learner answers all questions first, a score is recorded, and then the learner has the option to review each question just like in `Learn` mode.
-
-# Links
-*

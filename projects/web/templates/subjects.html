@@ -4,7 +4,7 @@
 
 <ul>
 {% for subject in school.subjects: %}
-  <li><a href="{{ url_for('_subject', id=subject.id) }}">{{subject.id}}</a></li>
+  <li><a href="{{ url_for('_subject', id=subject.id) }}">{{subject.title}}</a> <i>{{subject.short}}</i></li>
 {% endfor %}
 </ul>
 
