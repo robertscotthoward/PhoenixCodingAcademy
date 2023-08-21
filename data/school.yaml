@@ -22,6 +22,56 @@ subjects:
   title: Programming Languages
   short: There are over 1000 programming language in use today and you can use most of them for free.
 
+
+- id: replit
+  title: Repl.it
+  short: |
+    Use this site to try out over 50 different programming languages without having to install any locally.
+    Just type your code in a press Run.
+    It's a quick way to perform experiments and satisfy your immediate curiosity.
+  parents: programming
+  links:
+  - https://replit.com
+  - url: https://dotnet.microsoft.com/en-us/languages
+    text: A similar Microsoft site for .NET languages.
+
+
+
+- id: math
+  title: Mathematics
+  short: |
+    Mathematics is very interesting and fun if you do it right.
+    All university science majors and engineering professions require it as the language.
+    You'll get lots of math in your school, but this club concentrates on using computers to understand and solve problems.
+    This subject is less about how to solve math problems and more about what types of problems are there that can make a
+    business profitable, and what types of tools exist that can solve them.
+
+- id: sagemath
+  title: SageMath
+  parents: math
+  short: |
+    System for Algebra and Geometry Experimentation is a free application that can solve problems as well as Mathematica.
+    No only can it give you the number to a solution, it can give your function that solves a Calculus problem.
+  links:
+  - https://www.sagemath.org/
+  - https://en.wikipedia.org/wiki/SageMath
+
+- id: matlab
+  title: MATLAB
+  parents: math
+  short: |
+    MATLAB is a programming platform designed specifically for engineers and scientists to analyze and design systems and products.
+    The heart of MATLAB is the MATLAB language, which is a matrix-based language that allows for the most natural expression
+    of computational mathematics1. MATLAB allows for matrix manipulations, plotting of functions and data, implementation of
+    algorithms, creation of user interfaces, and interfacing with programs written in other languages.
+    It is widely used by engineers and scientists worldwide for a range of applications, including deep learning and machine learning,
+    signal processing and communications, image and video processing, control systems, test and measurement, computational finance,
+    and computational biology
+  links:
+  - https://en.wikipedia.org/wiki/MATLAB
+  - https://www.mathworks.com/products/matlab.html
+  - https://www.mathworks.com/
+
 - id: os
   title: Operating Systems
   short: General overview of operating systems with emphasis on Windows and Linux
@@ -66,8 +116,7 @@ subjects:
   courses:
   - id: PythonBasics
     title: Python Basics
-    description: |
-      Ok
+    description: Get a working environment where you can execute Python code; e.g. install locally or use an online environment.
     assignments:
     - id: InstallPython
       title: Install Python3
@@ -81,7 +130,8 @@ subjects:
     - id: InstallPythonForLinux
       title: For Linux (wsl, Ubuntu)
       prerequisites: wsl
-      description:
+      description: |
+        You will get Python installed in your Linux environment, which we assume is WSL.
       steps: |
         Assuming you are at a Linux terminal, run:
         ```bash
@@ -122,26 +172,25 @@ subjects:
       acceptance: |
         Verify that python 3 is installed.
 
-        GIVEN I am at a Linux terminal
-        WHEN I run
+        * GIVEN I am at a Linux terminal
+        * WHEN I run
         ```bash
         python --version
         -or-
         python3 --version
         ```
-        THEN I see:
+        * THEN I see:
         ```
         Python 3.11.4
         ```
 
-        references:
-        - title: Python 3.11 Released! How to Install in Ubuntu 22.04 | 20.04 | 22.10
-          url: https://ubuntuhandbook.org/index.php/2022/10/python-3-11-released-how-install-ubuntu/
-        - title: Everything Important You Need to Know About Hard Link in Linux
-          url: https://linuxhandbook.com/hard-link/
-        - title: How do I create a permanent Bash alias?
-          url: https://askubuntu.com/questions/17536/how-do-i-create-a-permanent-bash-alias
-
+      links:
+      - title: Python 3.11 Released! How to Install in Ubuntu 22.04 | 20.04 | 22.10
+        url: https://ubuntuhandbook.org/index.php/2022/10/python-3-11-released-how-install-ubuntu/
+      - title: Everything Important You Need to Know About Hard Link in Linux
+        url: https://linuxhandbook.com/hard-link/
+      - title: How do I create a permanent Bash alias?
+        url: https://askubuntu.com/questions/17536/how-do-i-create-a-permanent-bash-alias
     - id: InstallLibraries
       title: Install Python Libraries
       prerequisites: InstallPython
@@ -171,10 +220,29 @@ subjects:
         references:
         - url: https://pip.pypa.io/en/stable/getting-started/
 
+  - id: PythonCode
+    title: Python Coding
+    description: Very simple coding tools, such as input, process, output to the console. Define functions and use libraries.
+
 - id: python_datascience
   title: Python Data Science
   short: Python is a complete data science toolkit.
   parents: datascience
+
+- id: numpy
+  title: Numpy
+  parents: math python_datascience
+  short: |
+    Numpy is the python equivalent to BLAS and MATLAB.
+
+- id: BLAS
+  title: Basic Linear Algebra Subprograms
+  parents: math
+  short: |
+    BLAS is used for high-speed computations and A.I. We'll see where this course goes in depth,
+    but a 30-minute understanding of this tool is important for future engineers.
+  links:
+  - https://en.wikipedia.org/wiki/Basic_Linear_Algebra_Subprograms
 
 - id: jupyter
   title: Juptyer Notebooks
@@ -220,3 +288,24 @@ subjects:
     It is available in open source and commercial editions and runs on the desktop (Windows, Mac, and Linux).
     RStudio is widely used by data scientists and statisticians for developing statistical software and data analysis.
 
+
+- id: dotnet
+  title: .NET Runtime Environment
+  short: |
+    The .NET runtime environment has greatly jumped in popularity since Microsoft made the environment open source in 2016.
+    Practically any programming language can be written to compile to .NET.
+  parents: programming
+  links:
+  - url: https://aristeksystems.com/blog/top-3-dot-net-framework-trends-2021/#what-id-dot-net
+    text: Top 3 .Net Framework Trends to Follow in 2021
+  - url: https://dotnet.microsoft.com/en-us/learn/dotnet/what-is-dotnet
+    text: What is .NET?
+  - url: https://learn.microsoft.com/en-us/dotnet/core/introduction
+    text: What is .NET? Introduction and overview
+  - url: https://en.wikipedia.org/wiki/Category:.NET_programming_languages
+    text: List of .NET Programming Languages
+
+- id: csharp
+  title: C# Programming
+  short: C# is the most popular .NET programming language. The demand for C# programmers has now exceeded Java programmers.
+  parents: dotnet

@@ -13,13 +13,7 @@
 
 
 <h2>Courses</h2>
-<ul>
-{% for course in subject.courses: %}
-<li>
-  <a href="{{ url_for('_course', id=course.id) }}">{{course.id}}</a>
-</li>
-{% endfor %}
-</ul>
+{{ subject.courses.Dag() | safe }}
 
 <h2>Links</h2>
 <ul>

@@ -30,6 +30,6 @@
 <a href="{{ url_for('_yaml') }}">YAML</a>
 
 
-{{ school.Markdown("README.md") | safe }}
+{{ FileMarkdown("README.md") | safe }}
 
 {% endblock %}

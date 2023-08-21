@@ -12,7 +12,7 @@
 
 
 # Goals
-* Primarily learn **what** subjects are important, why knowledge of them will give you a head start at the university or workplace, and increase your value to the world. Quickly know where to find the best online guides and tutorials, are and how to get started quickly. Then, if any subject really grabs your interest, you can go further into the subject by following the online tutorials to learn **how** to solve problems. You can become the Subject Matter Expert (SME) for any number of courses in the club to provide new learners a person from which get help. Interested in a subject that is not in "this list"? Create it!
+* Primarily learn **what** subjects are important, why knowledge of them will give you a head start at the university or workplace, and increase your value to the world. Quickly know where to find the best online guides and tutorials, and how to get started quickly. Then, if any subject really grabs your interest, you can go further into the subject by following the online tutorials to learn **how** to solve problems. You can become the Subject Matter Expert (SME) for any number of courses in the club to provide new learners a person from which get help. Interested in a subject that is not in "this list"? Create it!
 * Pad your resume very quickly with lots of techniques where you can talk for 5 minutes on any subject.
 * Learn why these subjects are important in the professional and academic fields and how.
 * Help create this class by creating subject content as a team.

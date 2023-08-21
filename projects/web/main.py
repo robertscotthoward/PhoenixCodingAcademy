@@ -14,7 +14,7 @@ sys.path.append(root)
 
 import yaml
 import libs.tools as tools
-from libs.school import School, Subject, Course, Assignment
+from libs.school import *
 from flask import Flask, Blueprint, render_template, request
 
 site = Blueprint('PCA', __name__, template_folder='templates')
@@ -76,7 +76,7 @@ def _subject(id):
   return render_template('subject.html', subject=subject)
 
 
-@app.route('/course/<id>')
+@app.route('/courses/<id>')
 def _course(id):
   school = getSchool()
   course = school[id]
@@ -87,7 +87,7 @@ def _course(id):
   return render_template('course.html', course=course)
 
 
-@app.route('/assignment/<id>')
+@app.route('/assignments/<id>')
 def _assignment(id):
   school = getSchool()
   assignment = school[id]
@@ -95,7 +95,7 @@ def _assignment(id):
     return render_template('error.html', message=f"Item '{id}' not found.")
   if not isinstance(assignment, Assignment):
     return render_template('error.html', message=f"Item '{id}' is not a Assignment, but rather a '{type(assignment)}'.")
-  return render_template('assignment.html', assignment=assignment)
+  return render_template('assignment.html', assignment=assignment, Markdown=Markdown)
 
 
 if __name__ == "__main__":

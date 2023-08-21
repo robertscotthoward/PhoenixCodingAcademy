@@ -20,6 +20,29 @@ A 'ya' is a YAML list; i.e. a list of items.
 '''
 
 
+
+def Markdown(md):
+  '''
+  Return the HTML of a markdown string.
+  '''
+  if not md: return ''
+  html = markdown.markdown(md, extensions=['fenced_code'])
+  return html
+
+def FileMarkdown(relPath):
+  '''
+  Find a *.md file and return the HTML of it.
+  '''
+  path = tools.GetAncestorPath(relPath)
+  if not path:
+    return f"Cannot find path '{relPath}'."
+  path = os.path.abspath(path)
+  if not os.path.exists(path):
+    return f"File '{path}' not found."
+  md = tools.readFile(path)
+  return Markdown(md)
+
+
 class School:
   def __init__(self, path):
     self.yaml = tools.readFile(os.path.abspath(path))
@@ -38,20 +61,6 @@ class School:
     if not id in self.items:
       return None
     return self.items[id]
-
-  def Markdown(self, relPath):
-    '''
-    Find a *.md file and return the HTML of it.
-    '''
-    path = tools.GetAncestorPath(relPath)
-    if not path:
-      return f"Cannot find path '{relPath}'."
-    path = os.path.abspath(path)
-    if not os.path.exists(path):
-      return f"File '{path}' not found."
-    md = tools.readFile(path)
-    html = markdown.markdown(md, extensions=['fenced_code'])
-    return html
 
 
 class Link:
@@ -146,22 +155,28 @@ class Items:
       return ''
 
     first = self.list[0]
-    type = ''
-    if isinstance(first, Subject):
-      type = 'subject'
-    elif isinstance(first, Course):
-      type = 'course'
-    elif isinstance(first, Assignment):
-      type = 'assignment'
-    else:
-      raise(f"Unrecognized type '{type(first)}'")
 
 
     html.write('<ul>')
     children = [x for x in self if parent in x.parents or (not parent and not x.parents)]
     for item in children:
       html.write('<li>')
-      html.write(f'''<a href="{type}/{item.id}">{item.title}</a> <i>{item.short}</i>''')
+      type = ''
+      if isinstance(first, Subject):
+        type = 'subjects'
+        if item.courses:
+          html.write(f'''<a href="/{type}/{item.id}">{item.title}</a> (<span title="Number of courses">{len(item.courses)}</span>) <i>{item.short}</i>''')
+        else:
+          html.write(f'''<a href="/{type}/{item.id}">{item.title}</a> <i>{item.short}</i>''')
+      elif isinstance(first, Course):
+        type = 'courses'
+        html.write(f'''<a href="/{type}/{item.id}">{item.title}</a> <i>{item.short}</i>''')
+      elif isinstance(first, Assignment):
+        type = 'assignments'
+        html.write(f'''<a href="/{type}/{item.id}">{item.title}</a> <i>{item.short}</i>''')
+      else:
+        raise(f"Unrecognized type '{type(first)}'")
+
       self._Dag1(html, item)
       html.write('</li>')
 
@@ -176,7 +191,7 @@ class Subject(Item):
     ya = yo.get('courses')
     self.courses = Items(school, ya, Course)
 
-  def toMarkdown(self):
+  def toFileMarkdown(self):
     md = f'''
     #{self.id}
 
@@ -198,6 +213,8 @@ class Course(Item):
 class Assignment(Item):
   def __init__(self, school, yo):
     Item.__init__(self, school, yo)
+    self.steps = yo.get('steps', '')
+    self.acceptance = yo.get('acceptance', '')
 
 
 
