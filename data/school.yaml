@@ -1,26 +1,35 @@
 subjects:
-- id: Git
+- id: git
   title: Git Version Control
   short: Use Git to help contribute to the club, and build collaborative project.
-  courses:
-  - id: Git_CreateAccount
-    title: Create your GitHub Account
-    description: |
-      You will need an GitHub account to help create content in this course.
-      This is also how pull requests will be made, your authentication to
-      use the web site and take exams, to report bugs, and communicate
-      with other team members.
-    assignments:
-    - id: Git_CreateAccount_1
-      title: Create your GitHub account
-      description: |
-        If you already have an account in https://github.com, then you're done.
-        Else follow these instructions:
-      acceptance: |
+  admin: false
+
+- id: environments
+  title: Frameworks and Runtime Environments
+  short: General overview of operating systems with emphasis on Windows and Linux
+
+- id: scoop
+  title: Frameworks and Runtime Environments
+  short: Scoop
+  parents: environments
+
+- id: os
+  title: Operating Systems
+  short: General overview of operating systems with emphasis on Windows and Linux
+
+- id: linux
+  title: Linux
+  short: Linux is a free version competitor of Microsoft Windows and Apple iOS. Most web sites run on Linux today.
+  parents: os
 
 - id: programming
   title: Programming Languages
   short: There are over 1000 programming language in use today and you can use most of them for free.
+
+- id: rust
+  title: Rust Programming
+  short: You know, cargo
+  parents: programming
 
 
 - id: replit
@@ -70,16 +79,8 @@ subjects:
   links:
   - https://en.wikipedia.org/wiki/MATLAB
   - https://www.mathworks.com/products/matlab.html
-  - https://www.mathworks.com/
-
-- id: os
-  title: Operating Systems
-  short: General overview of operating systems with emphasis on Windows and Linux
-
-- id: linux
-  title: Linux
-  short: Linux is a free version competitor of Microsoft Windows and Apple iOS. Most web sites run on Linux today.
-  parents: os
+  - url: https://www.mathworks.com/
+    text: MATLAB for Artificial Intelligence
 
 - id: web
   title: Web Development
@@ -95,6 +96,11 @@ subjects:
 - id: wsl
   title: Windows Subsystem for Linux
   short: If you have a machine with Windows on it, this is the fastest way to get up an running with Linux
+  description: |
+    This section assumes that you have permissions to install WSL.
+    Your school might not allow it on their machines (e.g a laptop you are borrowing) since it can allow you to bypass
+    tbe Windows Firewall in clever ways. But for you own machines at home, or your own personal device, WSL can get you started
+    in Linux very quickly.
   parents: linux
   courses:
   - id: wsl_install
@@ -108,6 +114,17 @@ subjects:
   links:
   - url: https://learn.microsoft.com/en-us/windows/wsl/
     text: Windows Subsystem for Linux Documentation
+  - url: https://www.bleepingcomputer.com/news/microsoft/windows-subsystem-for-linux-2-bypasses-the-windows-10-firewall/
+    text: WSL 2 bypasses the Windows firewall
+
+- id: msys2
+  title: MSYS2
+  short: MSYS2 Software Distribution and Building Platform for Windows
+  description: |
+    Where WSL2 might require administrative rights to install, MSYS2 does not.
+  parents: linux
+  links:
+  - url: https://www.msys2.org/
 
 - id: python
   title: Python Programming Language
@@ -309,3 +326,11 @@ subjects:
   title: C# Programming
   short: C# is the most popular .NET programming language. The demand for C# programmers has now exceeded Java programmers.
   parents: dotnet
+
+- id: lisp
+  title: LISP Programming
+  short:
+  parents: dotnet
+  links:
+  - url: https://towardsdatascience.com/how-to-set-up-common-lisp-ide-in-2021-5be70d88975b
+    text: How to Set Up a Common Lisp IDE in 2021

@@ -1,0 +1,36 @@
+description: |
+  Git is a distributed version control system that tracks changes in any set of computer files, usually used for coordinating
+  work among programmers who are collaboratively developing source code during software development.
+  It was originally authored by Linus Torvalds in 2005 for development of the Linux kernel, with other kernel developers
+  contributing to its initial development. Git is designed to handle everything from small to very large projects with
+  speed and efficiency. It is easy to learn and has a tiny footprint with lightning-fast performance. Git is widely used by
+  developers worldwide for a range of applications, including deep learning and machine learning, signal processing and communications,
+  image and video processing, control systems, test and measurement, computational finance, and computational biology.
+
+courses:
+- id: Git_CreateAccount
+  title: Create your GitHub Account
+  description: |
+    You will need an GitHub account to help create content in this course.
+    This is also how pull requests will be made, your authentication to
+    use the web site and take exams, to report bugs, and communicate
+    with other team members.
+  assignments:
+  - id: Git_CreateAccount_1
+    title: Create your GitHub account
+    description: |
+      If you already have an account in https://github.com, then you're done.
+      Else follow these instructions:
+    acceptance: |
+links:
+- https://en.wikipedia.org/wiki/Git
+- url: https://www.git-scm.com/book/en/v2
+  text: Git Book (Scott Chacon and Ben Straub) Apress
+- url: https://learn.microsoft.com/en-us/devops/develop/git/what-is-git.
+  text: What is Git? - Azure DevOps | Microsoft Learn.
+- url: https://www.atlassian.com/git/tutorials/what-is-git
+  text: What is Git | Atlassian Git Tutorial
+- url: https://www.javatpoint.com/git
+  text: Git Tutorial - javatpoint
+- url: https://www.youtube.com/watch?v=pBy1zgt0XPc
+  text: What is GitHub?

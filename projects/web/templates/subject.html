@@ -4,12 +4,9 @@
 
 <h1>SUBJECT: {{ subject.title }}</h1>
 
+<h2>Description</h2>
 
-<pre>
-  ID: {{subject.id}}
-  TITLE: {{subject.title}}
-  DESCRIPTION: {{subject.description}}
-</pre>
+{{ Markdown(subject.description) | safe }}
 
 
 <h2>Courses</h2>

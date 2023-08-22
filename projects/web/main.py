@@ -14,23 +14,12 @@ sys.path.append(root)
 
 import yaml
 import libs.tools as tools
+import glob
 from libs.school import *
 from flask import Flask, Blueprint, render_template, request
 
 site = Blueprint('PCA', __name__, template_folder='templates')
 app = Flask(__name__)
-
-lastSchoolUpdated = None
-school = None
-def getSchool():
-  global school, lastSchoolUpdated
-  path = tools.GetAncestorPath("data/school.yaml")
-  last = os.path.getmtime(path)
-  if not lastSchoolUpdated or lastSchoolUpdated != last:
-    school = School(path)
-    lastSchoolUpdated = last
-  return school
-
 
 
 @app.route('/')
@@ -73,7 +62,7 @@ def _subject(id):
     return render_template('error.html', message=f"Item '{id}' not found.")
   if not isinstance(subject, Subject):
     return render_template('error.html', message=f"Item '{id}' is not a Subject, but rather a '{type(subject)}'.")
-  return render_template('subject.html', subject=subject)
+  return render_template('subject.html', subject=subject, Markdown=Markdown)
 
 
 @app.route('/courses/<id>')
@@ -84,7 +73,7 @@ def _course(id):
     return render_template('error.html', message=f"Item '{id}' not found.")
   if not isinstance(course, Course):
     return render_template('error.html', message=f"Item '{id}' is not a Course, but rather a '{type(course)}'.")
-  return render_template('course.html', course=course)
+  return render_template('course.html', course=course, Markdown=Markdown)
 
 
 @app.route('/assignments/<id>')

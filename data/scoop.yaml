@@ -1,0 +1,25 @@
+description: |
+  Scoop installs programs from the command line with a minimal amount of friction. It:
+
+  * Eliminates permission popup windows
+  * Hides GUI wizard-style installers
+  * Prevents PATH pollution from installing lots of programs
+  * Avoids unexpected side-effects from installing and uninstalling programs
+  * Finds and installs dependencies automatically
+  * Performs all the extra setup steps itself to get a working program
+
+  The apps that install best with Scoop are commonly called "portable" apps: i.e. compressed program files
+  that run stand-alone when extracted and don't have side-effects like changing the registry or putting files
+  outside the program directory.
+
+links:
+- https://github.com/ScoopInstaller/Scoop
+courses:
+- id: scoop_course1
+  description: |
+    * Create a folder for scoop; e.g. `C:\john\scoop`
+    * Start Powershell
+    * Run `cd C:\john\scoop`
+    * Run `irm get.scoop.sh -outfile 'install.ps1'
+    * Run `.\install.ps1 -?`
+    * Run `.\install.ps1 -ScoopDir 'C:\john\scoop' -ScoopGlobalDir 'C:\john\scoop' -NoProxy`
