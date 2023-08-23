@@ -14,12 +14,18 @@ description: |
 
 links:
 - https://github.com/ScoopInstaller/Scoop
+- url: https://scoop.sh/
+  text: Search Scoop Packages
 courses:
 - id: scoop_course1
   description: |
+    Install scoop on your machine. First determine if it is already installed.
+
     * Create a folder for scoop; e.g. `C:\john\scoop`
     * Start Powershell
     * Run `cd C:\john\scoop`
     * Run `irm get.scoop.sh -outfile 'install.ps1'
     * Run `.\install.ps1 -?`
     * Run `.\install.ps1 -ScoopDir 'C:\john\scoop' -ScoopGlobalDir 'C:\john\scoop' -NoProxy`
+
+    If your machine does not allow PowerShell to run, then you'll need to install the portable version of PowerShell.
