@@ -107,7 +107,7 @@ class Link:
     else:
       self.url = yo.get('url', None)
       if not self.url:
-        raise(f"Missing 'url' property for ")
+        raise(f"Missing 'url' property for {yo}")
       self.text = yo.get('text', self.url)
 
 class Item:
@@ -118,6 +118,7 @@ class Item:
     self.title = yo.get('title', None) or self.id
     self.description = yo.get('description', None)
     self.short = yo.get('short', '')
+    self.purpose = yo.get('purpose', '')
 
     links = yo.get('links', [])
     self.links = []
