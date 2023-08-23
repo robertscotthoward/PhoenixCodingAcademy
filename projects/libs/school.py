@@ -1,5 +1,6 @@
 import os
 import sys
+import glob
 thisFile = os.path.abspath(sys.argv[0])
 thisPath = os.path.dirname(thisFile)
 root = os.path.abspath(os.path.join(thisPath, os.path.relpath('..')))
@@ -43,12 +44,46 @@ def FileMarkdown(relPath):
   return Markdown(md)
 
 
+
+updated = {}
+school = None
+def getSchool():
+  global school
+  dirty = False
+  data = tools.GetAncestorPath("data")
+  for fp in glob.glob(os.path.join(data, '*.yaml')):
+    last = os.path.getmtime(fp)
+    if fp in updated:
+      if updated[fp] != last:
+        updated[fp] = last
+        dirty = True
+    else:
+      updated[fp] = last
+      dirty = True
+  if not school or dirty:
+    school = School(os.path.join(data, 'school.yaml'))
+  return school
+
+
 class School:
   def __init__(self, path):
     self.yaml = tools.readFile(os.path.abspath(path))
     self.yo = tools.ReadYaml(os.path.abspath(path))
-    ya = self.yo.get('subjects')
     self.items = {}
+    ya = self.yo.get('subjects')
+
+    dataPath = tools.GetAncestorPath("data")
+    if dataPath:
+      for index, item in enumerate(ya):
+        id = item.get('id')
+        fn = os.path.join(dataPath, f"{id}.yaml")
+        if os.path.exists(fn):
+          yo = tools.ReadYaml(fn)
+          for key, value in yo.items():
+            if not key in item:
+              item[key] = value
+          break
+
     self.subjects = Items(self, ya, Subject)
 
   def __str__(self):
@@ -72,7 +107,7 @@ class Link:
     else:
       self.url = yo.get('url', None)
       if not self.url:
-        raise(f"Missing 'url' property for ")
+        raise(f"Missing 'url' property for {yo}")
       self.text = yo.get('text', self.url)
 
 class Item:
@@ -83,6 +118,7 @@ class Item:
     self.title = yo.get('title', None) or self.id
     self.description = yo.get('description', None)
     self.short = yo.get('short', '')
+    self.purpose = yo.get('purpose', '')
 
     links = yo.get('links', [])
     self.links = []
@@ -222,9 +258,7 @@ class Assignment(Item):
 
 
 def tests():
-  fp = tools.GetAncestorPath("data/school.yaml")
-  assert(fp)
-  school = School(fp)
+  school = getSchool()
   for subject in school.subjects:
     print("SUBJECT", subject.id)
     for course in subject.courses:

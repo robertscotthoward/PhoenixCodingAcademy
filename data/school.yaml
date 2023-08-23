@@ -1,26 +1,71 @@
 subjects:
-- id: Git
+- id: git
   title: Git Version Control
   short: Use Git to help contribute to the club, and build collaborative project.
-  courses:
-  - id: Git_CreateAccount
-    title: Create your GitHub Account
-    description: |
-      You will need an GitHub account to help create content in this course.
-      This is also how pull requests will be made, your authentication to
-      use the web site and take exams, to report bugs, and communicate
-      with other team members.
-    assignments:
-    - id: Git_CreateAccount_1
-      title: Create your GitHub account
-      description: |
-        If you already have an account in https://github.com, then you're done.
-        Else follow these instructions:
-      acceptance: |
+
+- id: environments
+  title: Frameworks and Runtime Environments
+  short: General overview of operating systems with emphasis on Windows and Linux
+
+- id: installers
+  title: Methods to Install Software
+  short: Methods to Install Software
+  parents: environments
+  description: |
+    Much of the interesting software can be installed on your laptop without requiring admin permissions, if you know how.
+    You are not bypassing the security of the laptop, but rather using a secondary approach, called the portable installation.
+    Once installed, the software cannot perform elevated operations, but it can run its intended functions just for you.
+  links:
+  - url: https://dev.to/davidkou/install-anything-without-admin-rights-4p0j
+    text: Install anything without Admin rights
+
+
+
+- id: chocolatey
+  title: Frameworks and Runtime Environments
+  short: Scoop
+  parents: installers
+  links:
+  - url: https://chocolatey.org/
+    text: The Package Manager for Windows
+  - url: https://dev.to/davidkou/install-anything-without-admin-rights-4p0j
+    text: Install Choco without admin
+
+- id: scoop
+  title: Frameworks and Runtime Environments
+  short: Scoop
+  parents: installers
+
+- id: os
+  title: Operating Systems
+  short: General overview of operating systems with emphasis on Windows and Linux
+
+- id: linux
+  title: Linux
+  short: Linux is a free version competitor of Microsoft Windows and Apple iOS. Most web sites run on Linux today.
+  parents: os
 
 - id: programming
   title: Programming Languages
   short: There are over 1000 programming language in use today and you can use most of them for free.
+  description: |
+    The [TIOBE](https://www.tiobe.com/tiobe-index/) index will show which programming languages are the most popular in the world.
+  links:
+  - url: https://www.tiobe.com/tiobe-index/
+    text: TIOBE Index
+  - url: https://madnight.github.io/githut/#/pull_requests/2023/2
+    text: GitHut 2.0 - language stats from Github.
+  - url: https://statisticstimes.com/tech/top-computer-languages.php
+    text: Statistics Times - Top Computer Languages
+  - url: https://github.com/topics
+    text: Github topics, organized and searchable
+  - url: https://pypl.github.io/PYPL.html
+    text: PYPL PopularitY of Programming Language - created by analyzing how often language tutorials are searched on Google.
+
+- id: rust
+  title: Rust Programming
+  short: You know, cargo
+  parents: programming
 
 
 - id: replit
@@ -34,7 +79,7 @@ subjects:
   - https://replit.com
   - url: https://dotnet.microsoft.com/en-us/languages
     text: A similar Microsoft site for .NET languages.
-
+  tags: web
 
 
 - id: math
@@ -70,16 +115,8 @@ subjects:
   links:
   - https://en.wikipedia.org/wiki/MATLAB
   - https://www.mathworks.com/products/matlab.html
-  - https://www.mathworks.com/
-
-- id: os
-  title: Operating Systems
-  short: General overview of operating systems with emphasis on Windows and Linux
-
-- id: linux
-  title: Linux
-  short: Linux is a free version competitor of Microsoft Windows and Apple iOS. Most web sites run on Linux today.
-  parents: os
+  - url: https://www.mathworks.com/
+    text: MATLAB for Artificial Intelligence
 
 - id: web
   title: Web Development
@@ -95,6 +132,11 @@ subjects:
 - id: wsl
   title: Windows Subsystem for Linux
   short: If you have a machine with Windows on it, this is the fastest way to get up an running with Linux
+  description: |
+    This section assumes that you have permissions to install WSL.
+    Your school might not allow it on their machines (e.g a laptop you are borrowing) since it can allow you to bypass
+    tbe Windows Firewall in clever ways. But for you own machines at home, or your own personal device, WSL can get you started
+    in Linux very quickly.
   parents: linux
   courses:
   - id: wsl_install
@@ -108,10 +150,24 @@ subjects:
   links:
   - url: https://learn.microsoft.com/en-us/windows/wsl/
     text: Windows Subsystem for Linux Documentation
+  - url: https://www.bleepingcomputer.com/news/microsoft/windows-subsystem-for-linux-2-bypasses-the-windows-10-firewall/
+    text: WSL 2 bypasses the Windows firewall
+
+- id: msys2
+  title: MSYS2
+  short: MSYS2 Software Distribution and Building Platform for Windows
+  description: |
+    Where WSL2 might require administrative rights to install, MSYS2 does not.
+  parents: linux
+  links:
+  - url: https://www.msys2.org/
 
 - id: python
   title: Python Programming Language
   short: Python is perhaps the most taught language in school these days. This site is built with it. There is very little you cannot do with Python.
+  description: |
+     According to [Google Searches for Tutorials](https://pypl.github.io/PYPL.html) Python is now the most popular language in the world
+     pushing Java into second place.
   parents: programming
   courses:
   - id: PythonBasics
@@ -309,3 +365,11 @@ subjects:
   title: C# Programming
   short: C# is the most popular .NET programming language. The demand for C# programmers has now exceeded Java programmers.
   parents: dotnet
+
+- id: lisp
+  title: LISP Programming
+  short:
+  parents: dotnet
+  links:
+  - url: https://towardsdatascience.com/how-to-set-up-common-lisp-ide-in-2021-5be70d88975b
+    text: How to Set Up a Common Lisp IDE in 2021

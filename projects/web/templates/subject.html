@@ -2,14 +2,15 @@
 {% block content %}
 
 
-<h1>SUBJECT: {{ subject.title }}</h1>
+<h1>{{ subject.title }}</h1>
 
+<h2>Description</h2>
 
-<pre>
-  ID: {{subject.id}}
-  TITLE: {{subject.title}}
-  DESCRIPTION: {{subject.description}}
-</pre>
+{{ Markdown(subject.description) | safe }}
+
+<h2>Purpose</h2>
+
+{{ Markdown(subject.purpose) | safe }}
 
 
 <h2>Courses</h2>

@@ -1,0 +1,79 @@
+description: |
+  **Git** is a distributed version control system that tracks changes in any set of computer files, usually used for coordinating
+  work among programmers who are collaboratively developing source code during software development. It is a block-chain of changes.
+  You typically install Git on your local machine.
+
+  **Github** is an online web version of Git that has become the defacto place to push your local changes to.
+
+  Git was originally authored by Linus Torvalds in 2005 for development of the Linux kernel, with other kernel developers
+  contributing to its initial development. Git is designed to handle everything from small to very large projects with
+  speed and efficiency. It is easy to learn and has a tiny footprint with lightning-fast performance. Git is widely used by
+  developers worldwide for a range of applications, including deep learning and machine learning, signal processing and communications,
+  image and video processing, control systems, test and measurement, computational finance, and computational biology.
+
+  Git must be the most powerful, simplest method to track your changes to any file you create. Git works best with
+
+purpose: |
+  Knowing Git is a requirement for any programming job, much like Calculus is a requirement for engineering jobs. But you don't need to
+  be a developer to use it. It's not a programming language. Have you ever created a Word document, and you saved versions of that file
+  with the file name containing the date and time; e.g. "Resume 2023-08-22 10:53.docx", and with Track Changes on? Why did you do this?
+  Because you wanted to go back to see what you did, or perhaps to undo changes if the formatting gets corrupted. Git does this
+  automatically for you, for all files in a folder tree.
+
+  With Git, you and your friends can work together in a team-manner to create an project that is expressed as a set of files.
+
+  Some uses of Git:
+
+  * Finding free, popular open source software. If it's free and you can download it to install on your machine, chances are very high the source code is in Github along with the documentation.
+  * Discover what technologies are in hot demand. Github tracks the popularity of downloads and commits by topic. For example, you can see which programming language is downloaded the most.
+  * Creating a book. Yes, authors often use Git to create their books or academic papers. Markdown and Latex are populate choices.
+  * Creating a resume. It is well known that employers often look at your Github account to determine how technical you are and what you are interested in.
+  * Working together, remotely, asynchronously (perhaps in different timezones), to create something in a non-linear manner.
+  * Scientific Research, for example, with Jupyter Notebooks to create Reproducible Research Papers.
+  * Learning new ways to develop by looking at other developers commits and pull requests to see how they solved problems.
+  * Incentive to be a better writer since everyone is looking at what you create.
+  * Project Planning, where issues are logged and resolved.
+
+courses:
+- id: Git_CreateAccount
+  title: Create your GitHub Account
+  description: |
+    You will need an GitHub account to help create content in this course.
+    This is also how pull requests will be made, your authentication to
+    use the web site and take exams, to report bugs, and communicate
+    with other team members.
+  assignments:
+  - id: Git_CreateAccount_1
+    title: Create your GitHub account
+    description: |
+      If you already have an account in https://github.com, then you're done.
+      Else follow these instructions:
+    acceptance: |
+links:
+- https://en.wikipedia.org/wiki/Git
+- url: https://www.git-scm.com/book/en/v2
+  text: Git Book (Scott Chacon and Ben Straub) Apress
+- url: https://learn.microsoft.com/en-us/devops/develop/git/what-is-git.
+  text: What is Git? - Azure DevOps | Microsoft Learn.
+- url: https://www.w3schools.com/git/default.asp
+  text: W3Schools Git Tutorial
+- url: https://www.freecodecamp.org/news/learn-the-basics-of-git-in-under-10-minutes-da548267cc91/
+  text: Learn the Basics of Git in Under 10 Minutes
+- url: https://www.atlassian.com/git/tutorials/why-git
+  text: Why Use Git for Your Organization
+- url: https://www.atlassian.com/git/tutorials/what-is-git
+  text: What is Git | Atlassian Git Tutorial
+- url: https://www.javatpoint.com/git
+  text: Git Tutorial - javatpoint
+- url: https://www.youtube.com/watch?v=pBy1zgt0XPc
+  text: What is GitHub?
+- url: https://www.digitalocean.com/community/tutorials/how-to-use-git-effectively
+  text: How To Use Git Effectively
+- url: https://www.makeuseof.com/tag/just-coders-9-ways-use-github-creative-work/
+  text: "Not Just for Coders: 9 Ways To Use GitHub For Creative Work"
+- url: https://docs.github.com/en/issues/planning-and-tracking-with-projects
+  text: Planning and tracking with Projects with Github
+- url: https://github.com/github-20k/awesome-opensource
+  text: Awesome open-source libraries voted by members
+- url: https://www.brendanschlagel.com/2018/09/28/repos-beyond-code-a-collection-of-creative-uses-of-github/
+  text: "Repos Beyond Code: A Collection of Creative Uses of GitHub"
