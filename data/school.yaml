@@ -19,8 +19,6 @@ subjects:
   - url: https://dev.to/davidkou/install-anything-without-admin-rights-4p0j
     text: Install anything without Admin rights
 
-
-
 - id: chocolatey
   title: Frameworks and Runtime Environments
   short: Scoop
@@ -36,6 +34,12 @@ subjects:
   short: Scoop
   parents: installers
 
+
+
+
+#================================================================================
+#  OPERATING SYSTEMS
+#================================================================================
 - id: os
   title: Operating Systems
   short: General overview of operating systems with emphasis on Windows and Linux
@@ -44,90 +48,6 @@ subjects:
   title: Linux
   short: Linux is a free version competitor of Microsoft Windows and Apple iOS. Most web sites run on Linux today.
   parents: os
-
-- id: programming
-  title: Programming Languages
-  short: There are over 1000 programming language in use today and you can use most of them for free.
-  description: |
-    The [TIOBE](https://www.tiobe.com/tiobe-index/) index will show which programming languages are the most popular in the world.
-  links:
-  - url: https://www.tiobe.com/tiobe-index/
-    text: TIOBE Index
-  - url: https://madnight.github.io/githut/#/pull_requests/2023/2
-    text: GitHut 2.0 - language stats from Github.
-  - url: https://statisticstimes.com/tech/top-computer-languages.php
-    text: Statistics Times - Top Computer Languages
-  - url: https://github.com/topics
-    text: Github topics, organized and searchable
-  - url: https://pypl.github.io/PYPL.html
-    text: PYPL PopularitY of Programming Language - created by analyzing how often language tutorials are searched on Google.
-
-- id: rust
-  title: Rust Programming
-  short: You know, cargo
-  parents: programming
-
-
-- id: replit
-  title: Repl.it
-  short: |
-    Use this site to try out over 50 different programming languages without having to install any locally.
-    Just type your code in a press Run.
-    It's a quick way to perform experiments and satisfy your immediate curiosity.
-  parents: programming
-  links:
-  - https://replit.com
-  - url: https://dotnet.microsoft.com/en-us/languages
-    text: A similar Microsoft site for .NET languages.
-  tags: web
-
-
-- id: math
-  title: Mathematics
-  short: |
-    Mathematics is very interesting and fun if you do it right.
-    All university science majors and engineering professions require it as the language.
-    You'll get lots of math in your school, but this club concentrates on using computers to understand and solve problems.
-    This subject is less about how to solve math problems and more about what types of problems are there that can make a
-    business profitable, and what types of tools exist that can solve them.
-
-- id: sagemath
-  title: SageMath
-  parents: math
-  short: |
-    System for Algebra and Geometry Experimentation is a free application that can solve problems as well as Mathematica.
-    No only can it give you the number to a solution, it can give your function that solves a Calculus problem.
-  links:
-  - https://www.sagemath.org/
-  - https://en.wikipedia.org/wiki/SageMath
-
-- id: matlab
-  title: MATLAB
-  parents: math
-  short: |
-    MATLAB is a programming platform designed specifically for engineers and scientists to analyze and design systems and products.
-    The heart of MATLAB is the MATLAB language, which is a matrix-based language that allows for the most natural expression
-    of computational mathematics1. MATLAB allows for matrix manipulations, plotting of functions and data, implementation of
-    algorithms, creation of user interfaces, and interfacing with programs written in other languages.
-    It is widely used by engineers and scientists worldwide for a range of applications, including deep learning and machine learning,
-    signal processing and communications, image and video processing, control systems, test and measurement, computational finance,
-    and computational biology
-  links:
-  - https://en.wikipedia.org/wiki/MATLAB
-  - https://www.mathworks.com/products/matlab.html
-  - url: https://www.mathworks.com/
-    text: MATLAB for Artificial Intelligence
-
-- id: web
-  title: Web Development
-  short: All things HTML, CSS, and JavaScript; plus dynamic site generation and hosting.
-
-- id: datascience
-  title: Data Science
-  short: |
-    All science degrees at the university will require basic fluency in data acquisition and generating charts.
-    Excel was a popular tool of the past, but Jupyter Notebooks are the current hot thing.
-    Basic understanding of statistics and proving one's hypothesis is paramount.
 
 - id: wsl
   title: Windows Subsystem for Linux
@@ -162,134 +82,88 @@ subjects:
   links:
   - url: https://www.msys2.org/
 
+
+
+
+#================================================================================
+#  PROGRAMMING
+#================================================================================
+- id: programming
+  title: Programming Languages
+  short: There are over 1000 programming language in use today and you can use most of them for free.
+  description: |
+    The [TIOBE](https://www.tiobe.com/tiobe-index/) index will show which programming languages are the most popular in the world.
+  links:
+  - url: https://www.tiobe.com/tiobe-index/
+    text: TIOBE Index
+  - url: https://madnight.github.io/githut/#/pull_requests/2023/2
+    text: GitHut 2.0 - language stats from Github.
+  - url: https://statisticstimes.com/tech/top-computer-languages.php
+    text: Statistics Times - Top Computer Languages
+  - url: https://github.com/topics
+    text: Github topics, organized and searchable
+  - url: https://pypl.github.io/PYPL.html
+    text: PYPL PopularitY of Programming Language - created by analyzing how often language tutorials are searched on Google.
+
+- id: replit
+  title: Repl.it
+  short: |
+    Use this site to try out over 50 different programming languages without having to install any locally.
+    Just type your code in a press Run.
+    It's a quick way to perform experiments and satisfy your immediate curiosity.
+  parents: programming
+  links:
+  - https://replit.com
+  - url: https://dotnet.microsoft.com/en-us/languages
+    text: A similar Microsoft site for .NET languages.
+  tags: web
+
+- id: yaml
+  title: Yet Another Markup Language
+  short: This is a human readable JSON text format. This web site encodes all its subjects, courses, and assignments in YAML.
+  parents: programming
+  links:
+  - https://en.wikipedia.org/wiki/YAML
+  - url: https://yaml.org/
+    text: Official YAML Web Site
+  - url: https://www.redhat.com/en/topics/automation/what-is-yaml
+    text: What is YAML?
+
 - id: python
   title: Python Programming Language
   short: Python is perhaps the most taught language in school these days. This site is built with it. There is very little you cannot do with Python.
-  description: |
-     According to [Google Searches for Tutorials](https://pypl.github.io/PYPL.html) Python is now the most popular language in the world
-     pushing Java into second place.
   parents: programming
-  courses:
-  - id: PythonBasics
-    title: Python Basics
-    description: Get a working environment where you can execute Python code; e.g. install locally or use an online environment.
-    assignments:
-    - id: InstallPython
-      title: Install Python3
-      description: |
-        Get Python 3.11 (or the latest version) installed on your laptop.
-    - id: InstallPythonForWindows
-      title: For Windows
-      description:
-      steps:
-      acceptance:
-    - id: InstallPythonForLinux
-      title: For Linux (wsl, Ubuntu)
-      prerequisites: wsl
-      description: |
-        You will get Python installed in your Linux environment, which we assume is WSL.
-      steps: |
-        Assuming you are at a Linux terminal, run:
-        ```bash
-        sudo add-apt-repository ppa:deadsnakes/ppa
-        sudo apt -y install python3.11
-        -or-
-        sudo apt -y install python3.11-full
-        ```
 
-        Run `python3.11 --version` to see the detailed version. This tells you that python 3.11 is installed.
-        But we typically only want to use one version of python. The command `python` defaults to the 2.7 version, but that's
-        so obsolete that we can forget about using it anymore.
+- id: rust
+  title: Rust Programming
+  short: You know, cargo
+  parents: programming
 
-        Run `python3 --version` to see the version. If you see a version other than 3.11,
-        then you have two python 3 versions installed. If so, you can run  `which python3` to see which folder the
-        python3 is in. Let's assume it returns `/usr/bin/python3`. Now type `ls -la /usr/bin | grep python`.
-        This returns a list of files in that folder. Look for a lines like this (not necessarily in this order):
 
-        ```
-        -rwxr-xr-x  1 root   root      7134808 Jun  7 05:45 python3.11
-        lrwxrwxrwx  1 root   root            9 Mar 13  2020 python3 -> python3.8
-        ```
 
-        The first line tells us that `python3.11` is installed.
 
-        In the second line, the first letter `l` means hard link, and you'll see a ` -> ` in the description. It says that the command `python3`
-        is pointing to `python3.8`.
 
-        Regardless, we can create any aliases we want. Run `nano ~/.bash_aliases` to edit (or create) an aliases file.
-        Add to this file, the following lines and save:
-        ```
-        alias python3=python3.11
-        alias python=python3.11
-        ```
-
-        Now run `. ~/.bashrc` to reload that `~/.bashrc` file.
-
-      acceptance: |
-        Verify that python 3 is installed.
-
-        * GIVEN I am at a Linux terminal
-        * WHEN I run
-        ```bash
-        python --version
-        -or-
-        python3 --version
-        ```
-        * THEN I see:
-        ```
-        Python 3.11.4
-        ```
-
-      links:
-      - title: Python 3.11 Released! How to Install in Ubuntu 22.04 | 20.04 | 22.10
-        url: https://ubuntuhandbook.org/index.php/2022/10/python-3-11-released-how-install-ubuntu/
-      - title: Everything Important You Need to Know About Hard Link in Linux
-        url: https://linuxhandbook.com/hard-link/
-      - title: How do I create a permanent Bash alias?
-        url: https://askubuntu.com/questions/17536/how-do-i-create-a-permanent-bash-alias
-    - id: InstallLibraries
-      title: Install Python Libraries
-      prerequisites: InstallPython
-      description: |
-        Python is great because there are 400,000 libraries out there that do just about everything you could want to do in Python.
-        It is easy to create a new library for others to use.
-        Learn:
-        * What types of libraries are out there and how they are organized; e.g. games, math, databases,...
-        * How to search for any existing library and how to install it.
-      assignments:
-      - title: Install Python
-        description: |
-          For the Data Science subject, many courses use Jupyter, Pandas, and Matplotlib.
-          Here you install those libraries and then verify they work.
-        steps: |
-          ```
-          pip install these libraries: jupyter scipy numpy pandas matplotlib
-          ```
-        acceptance:
-        - do: |
-            From the command line, run:
-            ```
-            python -c "exec(\"import sys\nfor r in range(10): print(f'--> [{r}]')\")"
-            ```
-
-          get:
-        references:
-        - url: https://pip.pypa.io/en/stable/getting-started/
-
-  - id: PythonCode
-    title: Python Coding
-    description: Very simple coding tools, such as input, process, output to the console. Define functions and use libraries.
-
-- id: python_datascience
-  title: Python Data Science
-  short: Python is a complete data science toolkit.
-  parents: datascience
-
-- id: numpy
-  title: Numpy
-  parents: math python_datascience
+#================================================================================
+#  MATHEMATICS
+#================================================================================
+- id: math
+  title: Mathematics
   short: |
-    Numpy is the python equivalent to BLAS and MATLAB.
+    Mathematics is very interesting and fun if you do it right.
+    All university science majors and engineering professions require it as the language.
+    You'll get lots of math in your school, but this club concentrates on using computers to understand and solve problems.
+    This subject is less about how to solve math problems and more about what types of problems are there that can make a
+    business profitable, and what types of tools exist that can solve them.
+
+- id: sagemath
+  title: SageMath
+  parents: math
+  short: |
+    System for Algebra and Geometry Experimentation is a free application that can solve problems as well as Mathematica.
+    No only can it give you the number to a solution, it can give your function that solves a Calculus problem.
+  links:
+  - https://www.sagemath.org/
+  - https://en.wikipedia.org/wiki/SageMath
 
 - id: BLAS
   title: Basic Linear Algebra Subprograms
@@ -300,42 +174,29 @@ subjects:
   links:
   - https://en.wikipedia.org/wiki/Basic_Linear_Algebra_Subprograms
 
-- id: jupyter
-  title: Juptyer Notebooks
-  short: Fundamentals of reproducible research and data science. Jupyter is a free substitute for R, Knitr, PDF generation, and Mathematica.
-  parents: python_datascience
-  description:
-  prerequisites: InstallPython
-
-- id: pandas
-  short: Pandas is the Python version of R language, and used by most Data Scientists today.
-  parents: python_datascience
-  prerequisites: InstallPython
-
-- id: matplotlib
-  short: This library is the Python version of R's GGPlot library.
-  parents: python_datascience
-  prerequisites: InstallPython
-  courses:
-
-- id: R
-  short: R is a complete data science toolkit, and pre-dates Python
-  parents: datascience
-
-- id: RStudio
-  short: R is a complete data science toolkit, and pre-dates Python
-  parents: R
+- id: matlab
+  title: MATLAB
+  parents: math
+  short: |
+    MATLAB is a programming platform designed specifically for engineers and scientists to analyze and design systems and products.
+    The heart of MATLAB is the MATLAB language, which is a matrix-based language that allows for the most natural expression
+    of computational mathematics1. MATLAB allows for matrix manipulations, plotting of functions and data, implementation of
+    algorithms, creation of user interfaces, and interfacing with programs written in other languages.
+    It is widely used by engineers and scientists worldwide for a range of applications, including deep learning and machine learning,
+    signal processing and communications, image and video processing, control systems, test and measurement, computational finance,
+    and computational biology
   links:
-  - https://www.rstudio.com/categories/rstudio-ide/
-  - https://en.wikipedia.org/wiki/RStudio
-  description: |
-      RStudio is an integrated development environment (IDE) for the R programming language, which is used for statistical computing and graphics.
-      It is available in two formats: RStudio Desktop, which is a regular desktop application, and RStudio Server, which runs on a remote server
-      and allows access to RStudio using a web browser.
-      RStudio includes a console, syntax-highlighting editor that supports direct code execution, and tools for plotting, history,
-      debugging, and workspace management.
-      It is available in open source and commercial editions and runs on the desktop (Windows, Mac, and Linux).
-      RStudio is widely used by data scientists and statisticians for developing statistical software and data analysis.
+  - https://en.wikipedia.org/wiki/MATLAB
+  - https://www.mathworks.com/products/matlab.html
+  - url: https://www.mathworks.com/
+    text: MATLAB for Artificial Intelligence
+
+- id: web
+  title: Web Development
+  short: All things HTML, CSS, and JavaScript; plus dynamic site generation and hosting.
+
+
+
 
 
 - id: flask
@@ -380,3 +241,83 @@ subjects:
   links:
   - url: https://towardsdatascience.com/how-to-set-up-common-lisp-ide-in-2021-5be70d88975b
     text: How to Set Up a Common Lisp IDE in 2021
+
+
+
+
+#================================================================================
+#  DATA SCIENCE
+#================================================================================
+- id: datascience
+  title: Data Science
+  short: |
+    All science degrees at the university will require basic fluency in data acquisition and generating charts.
+    Excel was a popular tool of the past, but Jupyter Notebooks are the current hot thing.
+    Basic understanding of statistics and proving one's hypothesis is paramount.
+
+- id: python_datascience
+  title: Python Data Science
+  short: Python is a complete data science toolkit.
+  parents: datascience
+
+- id: numpy
+  title: Numpy
+  parents: math python_datascience
+  short: |
+    Numpy is the python equivalent to BLAS and MATLAB.
+
+- id: jupyter
+  title: Juptyer Notebooks
+  short: Fundamentals of reproducible research and data science. Jupyter is a free substitute for R, Knitr, PDF generation, and Mathematica.
+  parents: python_datascience
+  description:
+  prerequisites: InstallPython
+
+- id: pandas
+  short: Pandas is the Python version of R language, and used by most Data Scientists today.
+  parents: python_datascience
+  prerequisites: InstallPython
+
+- id: matplotlib
+  short: This library is the Python version of R's GGPlot library.
+  parents: python_datascience
+  prerequisites: InstallPython
+  courses:
+
+- id: R
+  short: R is a complete data science toolkit, and pre-dates Python
+  parents: datascience
+
+- id: RStudio
+  short: R is a complete data science toolkit, and pre-dates Python
+  parents: R
+  links:
+  - https://www.rstudio.com/categories/rstudio-ide/
+  - https://en.wikipedia.org/wiki/RStudio
+  description: |
+      RStudio is an integrated development environment (IDE) for the R programming language, which is used for statistical computing and graphics.
+      It is available in two formats: RStudio Desktop, which is a regular desktop application, and RStudio Server, which runs on a remote server
+      and allows access to RStudio using a web browser.
+      RStudio includes a console, syntax-highlighting editor that supports direct code execution, and tools for plotting, history,
+      debugging, and workspace management.
+      It is available in open source and commercial editions and runs on the desktop (Windows, Mac, and Linux).
+      RStudio is widely used by data scientists and statisticians for developing statistical software and data analysis.
+
+
+
+
+
+#================================================================================
+#  SOFTWARE ENGINEERING
+#================================================================================
+- id: softeng
+  title: Software Engineering
+  short: What is software engineering? What are the major topics of it? How can you use it to help build this site?
+
+- id: softeng_specification
+  title: Writing a Software Product Specification (SPS)
+  short: What are the most important parts of an SPS?
+  parents: softeng
+
+
+

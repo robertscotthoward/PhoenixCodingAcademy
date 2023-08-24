@@ -63,7 +63,7 @@ def getRootYaml(path):
       for key, value in yo.items():
         if not key in item:
           item[key] = value
-      break
+      ya[index] = item
   return yaml
 
 updated = {}
@@ -91,8 +91,25 @@ class School:
   def __init__(self, path):
     self.yo = getRootYaml(os.path.abspath(path))
     self.yaml = tools.PrettifyYaml(self.yo)
+    self.types = {}
     self.items = {}
     ya = self.yo.get('subjects')
+
+    # Add items in inverse order of dependency
+    def adds(ya, cls):
+      if ya:
+        for yo in ya:
+          add(yo, cls)
+
+    def add(yo, cls):
+      id = yo['id']
+      self.types[id] = cls, yo
+      adds(yo.get('courses', []), Course)
+      adds(yo.get('assignments', []), Assignment)
+
+    for yo in ya:
+      add(yo, Subject)
+
     self.subjects = Items(self, ya, Subject)
 
   def __str__(self):
@@ -141,9 +158,8 @@ class Item:
         id = id.strip()
         item = self.school[id]
         if not item:
-          s = f"Cannot find parent '{id}' in item '{self.id}'"
-          print('ERROR', s)
-          raise(Exception(s))
+          cls,yo = self.school.types[id]
+          item = cls(self.school, yo)
         self.parents.add(item)
 
     self.prerequisites = set()

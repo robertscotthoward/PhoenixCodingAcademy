@@ -1,0 +1,114 @@
+description: |
+    According to [Google Searches for Tutorials](https://pypl.github.io/PYPL.html) Python is now the most popular language in the world
+    pushing Java into second place.
+courses:
+- id: PythonBasics
+  title: Python Basics
+  description: Get a working environment where you can execute Python code; e.g. install locally or use an online environment.
+  assignments:
+  - id: InstallPython
+    title: Install Python3
+    description: |
+      Get Python 3.11 (or the latest version) installed on your laptop.
+  - id: InstallPythonForWindows
+    title: For Windows
+    description:
+    steps:
+    acceptance:
+  - id: InstallPythonForLinux
+    title: For Linux (wsl, Ubuntu)
+    prerequisites: wsl
+    description: |
+      You will get Python installed in your Linux environment, which we assume is WSL.
+    steps: |
+      Assuming you are at a Linux terminal, run:
+      ```bash
+      sudo add-apt-repository ppa:deadsnakes/ppa
+      sudo apt -y install python3.11
+      -or-
+      sudo apt -y install python3.11-full
+      ```
+
+      Run `python3.11 --version` to see the detailed version. This tells you that python 3.11 is installed.
+      But we typically only want to use one version of python. The command `python` defaults to the 2.7 version, but that's
+      so obsolete that we can forget about using it anymore.
+
+      Run `python3 --version` to see the version. If you see a version other than 3.11,
+      then you have two python 3 versions installed. If so, you can run  `which python3` to see which folder the
+      python3 is in. Let's assume it returns `/usr/bin/python3`. Now type `ls -la /usr/bin | grep python`.
+      This returns a list of files in that folder. Look for a lines like this (not necessarily in this order):
+
+      ```
+      -rwxr-xr-x  1 root   root      7134808 Jun  7 05:45 python3.11
+      lrwxrwxrwx  1 root   root            9 Mar 13  2020 python3 -> python3.8
+      ```
+
+      The first line tells us that `python3.11` is installed.
+
+      In the second line, the first letter `l` means hard link, and you'll see a ` -> ` in the description. It says that the command `python3`
+      is pointing to `python3.8`.
+
+      Regardless, we can create any aliases we want. Run `nano ~/.bash_aliases` to edit (or create) an aliases file.
+      Add to this file, the following lines and save:
+      ```
+      alias python3=python3.11
+      alias python=python3.11
+      ```
+
+      Now run `. ~/.bashrc` to reload that `~/.bashrc` file.
+
+    acceptance: |
+      Verify that python 3 is installed.
+
+      * GIVEN I am at a Linux terminal
+      * WHEN I run
+      ```bash
+      python --version
+      -or-
+      python3 --version
+      ```
+      * THEN I see:
+      ```
+      Python 3.11.4
+      ```
+
+    links:
+    - title: Python 3.11 Released! How to Install in Ubuntu 22.04 | 20.04 | 22.10
+      url: https://ubuntuhandbook.org/index.php/2022/10/python-3-11-released-how-install-ubuntu/
+    - title: Everything Important You Need to Know About Hard Link in Linux
+      url: https://linuxhandbook.com/hard-link/
+    - title: How do I create a permanent Bash alias?
+      url: https://askubuntu.com/questions/17536/how-do-i-create-a-permanent-bash-alias
+  - id: InstallLibraries
+    title: Install Python Libraries
+    prerequisites: InstallPython
+    description: |
+      Python is great because there are 400,000 libraries out there that do just about everything you could want to do in Python.
+      It is easy to create a new library for others to use.
+      Learn:
+      * What types of libraries are out there and how they are organized; e.g. games, math, databases,...
+      * How to search for any existing library and how to install it.
+    assignments:
+    - id: InstallPythonAssignment
+      title: Install Python
+      description: |
+        For the Data Science subject, many courses use Jupyter, Pandas, and Matplotlib.
+        Here you install those libraries and then verify they work.
+      steps: |
+        ```
+        pip install these libraries: jupyter scipy numpy pandas matplotlib
+        ```
+      acceptance:
+      - do: |
+          From the command line, run:
+          ```
+          python -c "exec(\"import sys\nfor r in range(10): print(f'--> [{r}]')\")"
+          ```
+
+        get:
+      references:
+      - url: https://pip.pypa.io/en/stable/getting-started/
+
+- id: PythonCode
+  title: Python Coding
+  description: Very simple coding tools, such as input, process, output to the console. Define functions and use libraries.
