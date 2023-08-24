@@ -93,7 +93,17 @@ def WriteYaml(fn, obj):
   writeFile(dn, PrettifyYaml(obj))
 
 def PrettifyYaml(obj):
-  return yaml.dump(obj)
+  def str_presenter(dumper, data):
+      """configures yaml for dumping multiline strings
+      Ref: https://stackoverflow.com/questions/8640959/how-can-i-control-what-scalar-form-pyyaml-uses-for-my-data"""
+      if len(data.splitlines()) > 1:  # check for multiline string
+          return dumper.represent_scalar('tag:yaml.org,2002:str', data, style='|')
+      return dumper.represent_scalar('tag:yaml.org,2002:str', data)
+
+  yaml.add_representer(str, str_presenter)
+  yaml.representer.SafeRepresenter.add_representer(str, str_presenter)
+
+  return yaml.dump(obj, indent=2)
 
 
 def md5(s):

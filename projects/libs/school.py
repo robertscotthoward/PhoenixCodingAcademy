@@ -45,8 +45,30 @@ def FileMarkdown(relPath):
 
 
 
+def getRootYaml(path):
+  '''
+  @path is the path to the root yaml file; e.g. school.yaml
+  All supporting yaml files in that folder are included in the root yaml.
+  '''
+  if not os.path.exists(path):
+    raise(f"Cannot find YAML file '{path}'")
+  dataPath = os.path.dirname(path)
+  yaml = tools.ReadYaml(path)
+  ya = yaml['subjects']
+  for index, item in enumerate(ya):
+    id = item.get('id')
+    fn = os.path.join(dataPath, f"{id}.yaml")
+    if os.path.exists(fn):
+      yo = tools.ReadYaml(fn)
+      for key, value in yo.items():
+        if not key in item:
+          item[key] = value
+      break
+  return yaml
+
 updated = {}
 school = None
+
 def getSchool():
   global school
   dirty = False
@@ -67,23 +89,10 @@ def getSchool():
 
 class School:
   def __init__(self, path):
-    self.yaml = tools.readFile(os.path.abspath(path))
-    self.yo = tools.ReadYaml(os.path.abspath(path))
+    self.yo = getRootYaml(os.path.abspath(path))
+    self.yaml = tools.PrettifyYaml(self.yo)
     self.items = {}
     ya = self.yo.get('subjects')
-
-    dataPath = tools.GetAncestorPath("data")
-    if dataPath:
-      for index, item in enumerate(ya):
-        id = item.get('id')
-        fn = os.path.join(dataPath, f"{id}.yaml")
-        if os.path.exists(fn):
-          yo = tools.ReadYaml(fn)
-          for key, value in yo.items():
-            if not key in item:
-              item[key] = value
-          break
-
     self.subjects = Items(self, ya, Subject)
 
   def __str__(self):
