@@ -51,7 +51,7 @@ def getRootYaml(path):
   All supporting yaml files in that folder are included in the root yaml.
   '''
   if not os.path.exists(path):
-    raise(f"Cannot find YAML file '{path}'")
+    raise(Exception(f"Cannot find YAML file '{path}'"))
   dataPath = os.path.dirname(path)
   yaml = tools.ReadYaml(path)
   ya = yaml['subjects']
@@ -116,7 +116,7 @@ class Link:
     else:
       self.url = yo.get('url', None)
       if not self.url:
-        raise(f"Missing 'url' property for {yo}")
+        raise(Exception(f"Missing 'url' property for {yo}"))
       self.text = yo.get('text', self.url)
 
 class Item:
@@ -143,7 +143,7 @@ class Item:
         if not item:
           s = f"Cannot find parent '{id}' in item '{self.id}'"
           print('ERROR', s)
-          raise(s)
+          raise(Exception(s))
         self.parents.add(item)
 
     self.prerequisites = set()
@@ -155,7 +155,7 @@ class Item:
         if not item:
           s = f"Cannot find prerequisite '{id}' in item '{self.id}'"
           print('ERROR', s)
-          raise(s)
+          raise(Exception(s))
         self.prerequisites.add(item)
 
 
@@ -220,7 +220,7 @@ class Items:
         type = 'assignments'
         html.write(f'''<a href="/{type}/{item.id}">{item.title}</a> <i>{item.short}</i>''')
       else:
-        raise(f"Unrecognized type '{type(first)}'")
+        raise(Exception(f"Unrecognized type '{type(first)}'"))
 
       self._Dag1(html, item)
       html.write('</li>')

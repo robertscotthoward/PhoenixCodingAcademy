@@ -328,6 +328,14 @@ subjects:
   links:
   - https://www.rstudio.com/categories/rstudio-ide/
   - https://en.wikipedia.org/wiki/RStudio
+  description: |
+      RStudio is an integrated development environment (IDE) for the R programming language, which is used for statistical computing and graphics.
+      It is available in two formats: RStudio Desktop, which is a regular desktop application, and RStudio Server, which runs on a remote server
+      and allows access to RStudio using a web browser.
+      RStudio includes a console, syntax-highlighting editor that supports direct code execution, and tools for plotting, history,
+      debugging, and workspace management.
+      It is available in open source and commercial editions and runs on the desktop (Windows, Mac, and Linux).
+      RStudio is widely used by data scientists and statisticians for developing statistical software and data analysis.
 
 
 - id: flask
@@ -335,14 +343,13 @@ subjects:
   short: This python web engine/framework is what this site is running on. Build dynamic web sites quickly with Flask.
   parents: web
   prerequisites: InstallPython
-  description: |
-    RStudio is an integrated development environment (IDE) for the R programming language, which is used for statistical computing and graphics.
-    It is available in two formats: RStudio Desktop, which is a regular desktop application, and RStudio Server, which runs on a remote server
-    and allows access to RStudio using a web browser.
-    RStudio includes a console, syntax-highlighting editor that supports direct code execution, and tools for plotting, history,
-    debugging, and workspace management.
-    It is available in open source and commercial editions and runs on the desktop (Windows, Mac, and Linux).
-    RStudio is widely used by data scientists and statisticians for developing statistical software and data analysis.
+
+
+- id: this_web
+  title: Contributing to this school web site
+  short: Learn how to help evolve this site by creating subjects, courses, assignments, and exams.
+  parents: flask yaml git
+  prerequisites: InstallPython
 
 
 - id: dotnet
