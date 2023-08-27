@@ -1,5 +1,7 @@
 questions:
-- question: What are examples of declarative programming in Python?
+- id: prog1
+  tags: programming
+  question: What are examples of declarative programming in Python?
   right:
   - answer: numpy
     explanation: |
@@ -34,3 +36,73 @@ questions:
     - https://www.educative.io/blog/declarative-vs-imperative-programming
     - https://www.tutorialspoint.com/object_oriented_analysis_design/ooad_object_oriented_paradigm.htm
 
+
+- id: prog2
+  tags: programming
+  question: Which languages are mainly procedural languages?
+  right:
+  - BASIC
+  - C
+  - C++
+  - C#
+  - COBOL
+  - Python
+  - Fortran
+  - Java
+  - JavaScript
+  - Assembly Language
+  wrong:
+  - answer: Erlang
+  - answer: Haskell
+  - answer: Prolog
+  - answer: SQL
+
+- id: prog3
+  tags: programming
+  question: Which languages are object-oriented languages?
+  right:
+  - answer: C#
+  - answer: C++
+  - answer: Go
+  - answer: Java
+  - answer: JavaScript
+  - answer: Julia
+  - answer: Objective-C
+  - answer: Python
+  - answer: Ruby
+  - answer: Rust
+  - answer: Visual Basic
+  wrong:
+  - answer: BASIC
+  - answer: C
+  - answer: COBOL
+  - answer: Fortran
+  - answer: Assembly Language
+  - answer: Haskell
+  - answer: Prolog
+  - answer: SQL
+
+- id: prog4
+  tags: programming
+  question: Which languages are functional languages (pure or impure)?
+  right:
+  - answer: C++
+  - answer: C#
+  - answer: Haskell
+  - answer: Java 8
+  - answer: Julia
+  - answer: Python
+  - answer: Rust
+  wrong:
+  - answer: Assembly Language
+  - answer: BASIC
+  - answer: C
+  - answer: COBOL
+  - answer: Fortran
+  - answer: Go
+  - answer: JavaScript
+  - answer: Objective-C
+  - answer: Prolog
+  - answer: Ruby
+  - answer: SQL
+  - answer: Visual Basic

@@ -112,6 +112,9 @@ class School:
 
     self.subjects = Items(self, ya, Subject)
 
+  def markdown(self, md):
+    return Markdown(md)
+
   def __str__(self):
     return f"School[{len(self.subjects)}]"
 
@@ -127,6 +130,8 @@ class School:
 class Link:
   '''Represents a link to some site.'''
   def __init__(self, yo):
+    self.short = ''
+    self.description = ''
     if isinstance(yo, str):
       self.url = yo
       self.text = yo
@@ -135,6 +140,8 @@ class Link:
       if not self.url:
         raise(Exception(f"Missing 'url' property for {yo}"))
       self.text = yo.get('text', self.url)
+      self.short = yo.get('short', '')
+      self.description = yo.get('description', '')
 
 class Item:
   '''Base class of many objects, such as Subject, Course, Assignment'''
@@ -174,8 +181,19 @@ class Item:
           raise(Exception(s))
         self.prerequisites.add(item)
 
-
-
+  def includeLinksSection(self):
+    s = ""
+    if self.links:
+      s = f"\n<h2>Links</h2>\n"
+      s += "<ul>\n"
+      for link in self.links:
+        s += f"""<li><a href="{link.url}">{link.text}</a>"""
+        if link.short:
+          s += f""" - <i>{link.short}</i>"""
+        if link.description:
+          s += f"""<div style="margin-left: 10px; font-size: smaller;">{Markdown(link.description)}</div>"""
+      s += "</ul>\n"
+    return s
 
 class Items:
   '''A list of items that do not have duplicate id's.'''

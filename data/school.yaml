@@ -1,3 +1,12 @@
+data:
+  contact: |
+    **Emails**
+
+    * [Admin](mailto:pca@willo.org)
+    * [Membership](mailto:pca@willo.org)
+    * [Web](mailto:pca@willo.org)
+    * [Info](mailto:pca@willo.org)
+
 subjects:
 - id: git
   title: Git Version Control
@@ -93,6 +102,16 @@ subjects:
   short: There are over 1000 programming language in use today and you can use most of them for free.
   description: |
     The [TIOBE](https://www.tiobe.com/tiobe-index/) index will show which programming languages are the most popular in the world.
+
+    Some languages that might be fun for the class to explore:
+    * Assembly Language (x86)
+    * APL
+    * Erlang
+    * Forth
+    * Haskell
+    * Julia
+    * Prolog
+    * Rust
   links:
   - url: https://www.tiobe.com/tiobe-index/
     text: TIOBE Index
@@ -116,6 +135,8 @@ subjects:
   - https://replit.com
   - url: https://dotnet.microsoft.com/en-us/languages
     text: A similar Microsoft site for .NET languages.
+  - url: https://blog.replit.com/nix
+    text: How we went from supporting 50 languages to all of them
   tags: web
 
 - id: yaml
@@ -237,10 +258,8 @@ subjects:
 - id: lisp
   title: LISP Programming
   short:
-  parents: dotnet
-  links:
-  - url: https://towardsdatascience.com/how-to-set-up-common-lisp-ide-in-2021-5be70d88975b
-    text: How to Set Up a Common Lisp IDE in 2021
+  parents: programming
+
 
 
 

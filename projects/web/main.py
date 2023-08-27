@@ -76,6 +76,11 @@ def _course(id):
   return render_template('course.html', course=course, Markdown=Markdown)
 
 
+@app.route('/exam')
+def _exam():
+  request.args
+  return render_template('exam.html', assignment=assignment, Markdown=Markdown)
+
 @app.route('/assignments/<id>')
 def _assignment(id):
   school = getSchool()
@@ -85,6 +90,15 @@ def _assignment(id):
   if not isinstance(assignment, Assignment):
     return render_template('error.html', message=f"Item '{id}' is not a Assignment, but rather a '{type(assignment)}'.")
   return render_template('assignment.html', assignment=assignment, Markdown=Markdown)
+
+@app.route('/<path:path>')
+def _default(path):
+  """
+  The default catch-all path. If you hit https://DOMAIN/bananasplit, and there is no explicit route for "bananasplit",
+  then this route will match, and path will be "bananasplit"
+  """
+  school = getSchool()
+  return render_template(f'{path}.html', school=school)
 
 
 if __name__ == "__main__":

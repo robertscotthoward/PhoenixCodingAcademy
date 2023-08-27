@@ -1,0 +1,26 @@
+description: |
+  C++ is a very powerful and popular language. Most high-performance games are written in C++.
+  C++ is an advanced language and difficult to master.
+
+purpose: |
+  Many engineering professions require knowledge of C++ for embedded systems programming.
+
+links:
+- url:
+  text:
+- url: https://towardsdatascience.com/how-to-set-up-common-lisp-ide-in-2021-5be70d88975b
+  text: How to Set Up a Common Lisp IDE in 2021
+
+courses:
+- id: install_cpp
+  title: Installing C++
+  description: |
+    Know that you can run this code in [Repl.it](https://replit.com) to learn.
+    To install it locally, you have these options:
+    * Use Cygwin to install `gcc`
+  links:
+  - url: https://www.haskell.org/downloads/
+    text:
+  prerequisites: scoop
+  description:
+    You can install Haskell with scoop: `scoop install haskell`.
