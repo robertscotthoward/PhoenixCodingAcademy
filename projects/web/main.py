@@ -32,7 +32,9 @@ def hello():
 def info():
   return f'''
 <pre>
-PATH: {os.path.abspath('.')}
+os.path.abspath('.'):         {os.path.abspath('.')}
+app.instance_path:            {app.instance_path}
+os.path.abspath(sys.argv[0]): {os.path.abspath(sys.argv[0])}
 </pre>
 '''
 
