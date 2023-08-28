@@ -89,6 +89,9 @@ def getSchool():
 
 class School:
   def __init__(self, path, parent=None):
+    gp = tools.GetAncestorPath('.git')
+    self.repoRoot = os.path.join(gp, '..')
+
     self.yo = getRootYaml(os.path.abspath(path))
     self.yaml = tools.PrettifyYaml(self.yo)
     self.types = {}

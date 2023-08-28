@@ -22,6 +22,13 @@ site = Blueprint('PCA', __name__, template_folder='templates')
 app = Flask(__name__)
 
 
+def RepoRoot():
+  'Get the absolute folder path that contains the .git folder.'
+  gp = tools.GetAncestorPath('.git')
+  return os.path.abspath(os.path.join(gp, '..'))
+
+
+
 @app.route('/')
 def hello():
   school = getSchool()
@@ -104,12 +111,12 @@ def _default(path):
   then this route will match, and path will be "bananasplit"
   """
   school = getSchool()
+  rootRepo = RepoRoot()
 
   if os.path.exists(path):
     if path.startswith('data/'):
-      dp = tools.GetAncestorPath('data')
-      path = os.path.join(dp, '..', path)
-      path = os.path.abspath(path)
+      dp = os.path.join(rootRepo, 'data')
+      path = os.path.join(rootRepo, path)
     if path.lower().endswith('.md'):
       data = tools.readFile(path)
       return render_template('markdown.html', data=data, Markdown=Markdown)
