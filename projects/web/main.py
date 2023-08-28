@@ -3,19 +3,20 @@ From the command line, run:
   flask --app main.py --debug run
 This will start the Flask web but watch it for changes and automatically reload the site.
 '''
+import glob
 import os
 import sys
+import yaml
+
 thisFile = os.path.abspath(sys.argv[0])
 thisPath = os.path.dirname(thisFile)
 root = os.path.abspath(os.path.join(thisPath, os.path.relpath('..')))
 
-os.chdir
 sys.path.append(root)
 
-import yaml
 import libs.tools as tools
-import glob
 from libs.school import *
+from libs.exam import *
 from flask import Flask, Blueprint, render_template, request
 
 site = Blueprint('PCA', __name__, template_folder='templates')
@@ -91,8 +92,8 @@ def _course(id):
 
 @app.route('/exam')
 def _exam():
-  request.args
-  return render_template('exam.html', assignment=assignment, Markdown=Markdown)
+  #request.args
+  return render_template('exam.html')
 
 @app.route('/assignments/<id>')
 def _assignment(id):

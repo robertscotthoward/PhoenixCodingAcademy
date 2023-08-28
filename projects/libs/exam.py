@@ -1,5 +1,3 @@
-from school import School, getSchool
-import libs.tools as tools
 from io import StringIO
 import yaml
 import markdown
@@ -10,6 +8,9 @@ thisFile = os.path.abspath(sys.argv[0])
 thisPath = os.path.dirname(thisFile)
 root = os.path.abspath(os.path.join(thisPath, os.path.relpath('..')))
 sys.path.append(root)
+
+from libs.school import School, getSchool
+import libs.tools as tools
 
 
 
@@ -64,7 +65,7 @@ class Exam():
     self.school = school
     self.questions = {}
 
-  def __iter__(self): return tools.Iterator(self.questions)
+  def __iter__(self): return tools.Iterator([x for x in self.questions.items()])
 
 
   def loadQuestions(self, tags = []):
@@ -98,10 +99,17 @@ class Exam():
 
 
 
-def test1():
+def getExam(ids):
   school = getSchool()
   exam = Exam(school)
-  exam.loadQuestions("programming")
+  exam.loadQuestions(ids)
+  return exam
+
+
+
+
+def test1():
+  exam = getExam("programming")
   test = exam.createTest()
 
   for question in exam:

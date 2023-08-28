@@ -289,7 +289,6 @@ subjects:
   title: Juptyer Notebooks
   short: Fundamentals of reproducible research and data science. Jupyter is a free substitute for R, Knitr, PDF generation, and Mathematica.
   parents: python_datascience
-  description:
   prerequisites: InstallPython
 
 - id: pandas
