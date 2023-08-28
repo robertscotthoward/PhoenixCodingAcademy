@@ -1,0 +1,15 @@
+description: |
+  Jupyter Notebooks
+
+  A couple examples of some notebooks:
+
+  * [Sympy - Quadratic](https://www.pythonanywhere.com/jupyterhub/user/phoenixcodingacademy/notebooks/PhoenixCodingAcademy/projects/notebooks/sympy1.ipynb)
+  * [Sympy/Numpy - Simultaneous Equations](https://www.pythonanywhere.com/jupyterhub/user/phoenixcodingacademy/notebooks/PhoenixCodingAcademy/projects/notebooks/SimultaneousEquations.ipynb)
+
+purpose: |
+  Reproducible Research.
+
+links:
+- url: https://jupyter.org/
+  text: Jupyter Home
+
