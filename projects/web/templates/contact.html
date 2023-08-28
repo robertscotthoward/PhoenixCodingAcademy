@@ -1,0 +1,7 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>Contact Us</h1>
+
+{{ school.markdown(school.yo['data']['contact']) | safe }}
+
+{% endblock %}

@@ -1,0 +1,35 @@
+description: |
+
+purpose: |
+
+links:
+- url: https://www.geeksforgeeks.org/what-is-haskell-programming-language/
+  text: What is Haskell Programming Language?
+- url: https://towardsdatascience.com/how-to-set-up-common-lisp-ide-in-2021-5be70d88975b
+  text: How to Set Up a Common Lisp IDE in 2021
+- url: https://wiki.haskell.org/Learn_Haskell_in_10_minutes
+  text: Learn Haskell in 10 minutes
+- url: http://www.learnyouahaskell.com/
+  text: Learn You a Haskell for Great Good!
+  short: A book you can read online, or optionally buy it.
+  description: |
+    The funkiest way to learn Haskell, which is the best functional programming language around.
+    You may have heard of it. This guide is meant for people who have programmed already, but have yet to try functional programming.
+- url: https://serokell.io/blog/how-to-learn-haskell-in-10-minutes
+  text: 15 Resources to Help You Learn Haskell in 2023
+  short: Why learn Haskell, how to learn Haskell, and great resources.
+  description:
+- url: https://www.udemy.com/course/learning-haskell-programming
+  text: Cheap Udemy course
+courses:
+- id: install_haskell
+  title: Installing Haskell
+  description: |
+    Know that Haskell is a [Repl.it](https://replit.com) language, which gives you the ability to run Haskell code in the browser.
+    Having said that, you can install it locally in various methods.
+  links:
+  - url: https://www.haskell.org/downloads/
+    text:
+  prerequisites: scoop
+  description:
+    You can install Haskell with scoop: `scoop install haskell`.

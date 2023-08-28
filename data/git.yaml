@@ -53,6 +53,12 @@ links:
 - https://en.wikipedia.org/wiki/Git
 - url: https://www.git-scm.com/book/en/v2
   text: Git Book (Scott Chacon and Ben Straub) Apress
+  description: |
+    The entire Pro Git book, written by **Scott Chacon** and **Ben Straub** and published by Apress, is available here.
+    All content is licensed under the Creative Commons Attribution Non Commercial Share Alike 3.0 license.
+    Print versions of the book are available on Amazon.com.
+    The version found here has been updated with corrections and additions from hundreds of contributors.
+  short: Online book for free
 - url: https://learn.microsoft.com/en-us/devops/develop/git/what-is-git.
   text: What is Git? - Azure DevOps | Microsoft Learn.
 - url: https://www.w3schools.com/git/default.asp

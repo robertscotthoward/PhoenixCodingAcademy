@@ -1,5 +1,6 @@
 questions:
-- question: Which of the following are nice letters?
+- id: test1
+  question: Which of the following are nice letters?
   right:
   - answer: A
     explanation: |

@@ -1,0 +1,12 @@
+description: |
+  PowerShell is Microsoft's version of the Linux Bash Shell.
+  Your school might not let you run PowerShell because it has locked it down by restricting it in the Local Group Policy Editor or the Local Security Policy.
+  Since you don't have elevated permissions, you cannot change this.
+  This section is more for students with their own machines that does not have this locked down.
+
+links:
+- url: https://learn.microsoft.com/en-us/powershell/scripting/overview?view=powershell-7.3
+  text: What is PowerShell?
+- url: https://learn.microsoft.com/en-us/powershell/
+  text: PowerShell Documentation
+

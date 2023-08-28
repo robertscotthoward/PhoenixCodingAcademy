@@ -1,0 +1,24 @@
+description: |
+  # Overview
+
+  A software product specification (SPS) is a written document that explains what you want and how you will know if you get it.
+  It is often called then "specs" or "requirements".
+
+  There are million ways to write an SPS. Only a few are good ways. Many specs are formal patterns, and many are just ad hoc.
+  Less important is how to write them. More important is what principles to follow when writing them. Here, we talk about those principles:
+
+  # Principles
+
+  ## Write for your understanding
+  > Writing shows us how sloppy our thinking is.
+
+  ## Write with the reader in mind.
+
+  Bad writers write for themselves to read; to check some documentation box. Good writers write for and have empathy for the reader.
+  You understand the topic. That's why you are writing it. Taking your knowledge for granted is one big mistake in writing for others.
+  Assume the reader doesn't know something and at minimal, provide a link to ramp up quickly.
+
+  ## Think like a lawyer
+
+  If there are multiple ways to interpret something written, then assume the reader will accidentally (or worse deliberately) interpret it the wrong way.
+

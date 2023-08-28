@@ -18,8 +18,10 @@ links:
   text: Search Scoop Packages
 courses:
 - id: scoop_course1
+  title: Install scoop on a Windows laptop with no admin permissions.
   description: |
-    Install scoop on your machine. First determine if it is already installed.
+    You have a school laptop, and it's all locked down. You want to install scoop but supposedly this requires elevated permissions.
+    First determine if it is already installed.
 
     * Create a folder for scoop; e.g. `C:\john\scoop`
     * Start Powershell

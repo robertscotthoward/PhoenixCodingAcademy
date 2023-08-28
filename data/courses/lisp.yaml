@@ -1,0 +1,17 @@
+description: |
+  Lisp (or List Processing) is an old language
+purpose: |
+
+links:
+- url: https://www.gnu.org/software/clisp/propaganda.html
+  text: Reasons to learn Common LISP
+- url: https://towardsdatascience.com/how-to-set-up-common-lisp-ide-in-2021-5be70d88975b
+  text: How to Set Up a Common Lisp IDE in 2021
+
+courses:
+- id: install_ros
+  title: There is a nice system for install LISP these days; roswell (or just ros).
+  description:
+  prerequisites: scoop
+  links:
+  - https://github.com/roswell/roswell

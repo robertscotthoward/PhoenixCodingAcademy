@@ -25,11 +25,10 @@
 </pre>
 
 
-<a href="{{ url_for('_subjects') }}">SUBJECTS</a>
-|
-<a href="{{ url_for('_yaml') }}">YAML</a>
-
-
 {{ FileMarkdown("README.md") | safe }}
 
 {% endblock %}
+
+{% macro showLinks(links) -%}
+xxx
+{%- endmacro %}

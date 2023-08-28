@@ -45,8 +45,30 @@ def FileMarkdown(relPath):
 
 
 
+def getRootYaml(path):
+  '''
+  @path is the path to the root yaml file; e.g. school.yaml
+  All supporting yaml files in that folder are included in the root yaml.
+  '''
+  if not os.path.exists(path):
+    raise(Exception(f"Cannot find YAML file '{path}'"))
+  dataPath = os.path.dirname(path)
+  yaml = tools.ReadYaml(path)
+  ya = yaml['subjects']
+  for index, item in enumerate(ya):
+    id = item.get('id')
+    fn = os.path.join(dataPath, f"{id}.yaml")
+    if os.path.exists(fn):
+      yo = tools.ReadYaml(fn)
+      for key, value in yo.items():
+        if not key in item:
+          item[key] = value
+      ya[index] = item
+  return yaml
+
 updated = {}
 school = None
+
 def getSchool():
   global school
   dirty = False
@@ -67,24 +89,31 @@ def getSchool():
 
 class School:
   def __init__(self, path):
-    self.yaml = tools.readFile(os.path.abspath(path))
-    self.yo = tools.ReadYaml(os.path.abspath(path))
+    self.yo = getRootYaml(os.path.abspath(path))
+    self.yaml = tools.PrettifyYaml(self.yo)
+    self.types = {}
     self.items = {}
     ya = self.yo.get('subjects')
 
-    dataPath = tools.GetAncestorPath("data")
-    if dataPath:
-      for index, item in enumerate(ya):
-        id = item.get('id')
-        fn = os.path.join(dataPath, f"{id}.yaml")
-        if os.path.exists(fn):
-          yo = tools.ReadYaml(fn)
-          for key, value in yo.items():
-            if not key in item:
-              item[key] = value
-          break
+    # Add items in inverse order of dependency
+    def adds(ya, cls):
+      if ya:
+        for yo in ya:
+          add(yo, cls)
+
+    def add(yo, cls):
+      id = yo['id']
+      self.types[id] = cls, yo
+      adds(yo.get('courses', []), Course)
+      adds(yo.get('assignments', []), Assignment)
+
+    for yo in ya:
+      add(yo, Subject)
 
     self.subjects = Items(self, ya, Subject)
+
+  def markdown(self, md):
+    return Markdown(md)
 
   def __str__(self):
     return f"School[{len(self.subjects)}]"
@@ -101,14 +130,18 @@ class School:
 class Link:
   '''Represents a link to some site.'''
   def __init__(self, yo):
+    self.short = ''
+    self.description = ''
     if isinstance(yo, str):
       self.url = yo
       self.text = yo
     else:
       self.url = yo.get('url', None)
       if not self.url:
-        raise(f"Missing 'url' property for {yo}")
+        raise(Exception(f"Missing 'url' property for {yo}"))
       self.text = yo.get('text', self.url)
+      self.short = yo.get('short', '')
+      self.description = yo.get('description', '')
 
 class Item:
   '''Base class of many objects, such as Subject, Course, Assignment'''
@@ -132,9 +165,8 @@ class Item:
         id = id.strip()
         item = self.school[id]
         if not item:
-          s = f"Cannot find parent '{id}' in item '{self.id}'"
-          print('ERROR', s)
-          raise(s)
+          cls,yo = self.school.types[id]
+          item = cls(self.school, yo)
         self.parents.add(item)
 
     self.prerequisites = set()
@@ -146,11 +178,22 @@ class Item:
         if not item:
           s = f"Cannot find prerequisite '{id}' in item '{self.id}'"
           print('ERROR', s)
-          raise(s)
+          raise(Exception(s))
         self.prerequisites.add(item)
 
-
-
+  def includeLinksSection(self):
+    s = ""
+    if self.links:
+      s = f"\n<h2>Links</h2>\n"
+      s += "<ul>\n"
+      for link in self.links:
+        s += f"""<li><a href="{link.url}">{link.text}</a>"""
+        if link.short:
+          s += f""" - <i>{link.short}</i>"""
+        if link.description:
+          s += f"""<div style="margin-left: 10px; font-size: smaller;">{Markdown(link.description)}</div>"""
+      s += "</ul>\n"
+    return s
 
 class Items:
   '''A list of items that do not have duplicate id's.'''
@@ -211,7 +254,7 @@ class Items:
         type = 'assignments'
         html.write(f'''<a href="/{type}/{item.id}">{item.title}</a> <i>{item.short}</i>''')
       else:
-        raise(f"Unrecognized type '{type(first)}'")
+        raise(Exception(f"Unrecognized type '{type(first)}'"))
 
       self._Dag1(html, item)
       html.write('</li>')

@@ -1,0 +1,16 @@
+description: |
+ A Programming Language (APL) was created in 1960s by Kenneth E. Iverson. It's a strange language that looks like math or greek,
+ but interesting nevertheless.
+
+ The language does run in repl.it.
+
+purpose: |
+
+
+links:
+- url: https://en.wikipedia.org/wiki/APL_(programming_language)
+- url: https://tryapl.org/
+  text:
+- url: https://towardsdatascience.com/how-to-set-up-common-lisp-ide-in-2021-5be70d88975b
+  text: How to Set Up a Common Lisp IDE in 2021
+
