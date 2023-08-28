@@ -121,7 +121,8 @@ def _default(path):
       data = tools.readFile(path)
       return render_template('markdown.html', data=data, Markdown=Markdown)
     return render_template(f'{path}.html', school=school)
-
+  else:
+    return f"""'{path}' does not exist."""
 
 
 if __name__ == "__main__":
