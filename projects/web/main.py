@@ -98,7 +98,17 @@ def _default(path):
   then this route will match, and path will be "bananasplit"
   """
   school = getSchool()
-  return render_template(f'{path}.html', school=school)
+
+  if os.path.exists(path):
+    if path.startswith('data/'):
+      dp = tools.GetAncestorPath('data')
+      path = os.path.join(dp, '..', path)
+      path = os.path.abspath(path)
+    if path.lower().endswith('.md'):
+      data = tools.readFile(path)
+      return render_template('markdown.html', data=data, Markdown=Markdown)
+    return render_template(f'{path}.html', school=school)
+
 
 
 if __name__ == "__main__":
