@@ -44,7 +44,7 @@ As a participant, you will do one or more of the following:
 Rather than delve deep into any one subject, you'll be encouraged to complete only the first one or two assignments of the first course and then move onto another subject. This will give you a quick broad sweep of many skills that can come together to later to build big complex systems. You'll figure out which courses interest you the most, and then you can create content for those courses to teach yourself more, and perhaps other learners as well.
 
 # Testing
-You can actually learn a lot by taking tests, but only if the tests explain why an answer is correct or not.
+You can actually learn a lot by taking tests, but only if the tests explain why an answer is correct or not; see [reason](data/questions/README.md).
 When you take a practice test, you are asked a series of questions. Each question has zero or more correct answers and one or more wrong answers. The answers are randomized and presented as check boxes.
 If all are correct, then check all the boxes.
 If none are correct, then check no boxes.
