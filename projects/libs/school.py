@@ -88,7 +88,7 @@ def getSchool():
 
 
 class School:
-  def __init__(self, path):
+  def __init__(self, path, parent=None):
     self.yo = getRootYaml(os.path.abspath(path))
     self.yaml = tools.PrettifyYaml(self.yo)
     self.types = {}
@@ -110,7 +110,7 @@ class School:
     for yo in ya:
       add(yo, Subject)
 
-    self.subjects = Items(self, ya, Subject)
+    self.subjects = Items(self, ya, Subject, self)
 
   def markdown(self, md):
     return Markdown(md)
@@ -145,8 +145,9 @@ class Link:
 
 class Item:
   '''Base class of many objects, such as Subject, Course, Assignment'''
-  def __init__(self, school, yo):
+  def __init__(self, school, yo, parent):
     self.school = school
+    self.parent = parent
     self.id = yo.get('id', None)
     self.title = yo.get('title', None) or self.id
     self.description = yo.get('description', None)
@@ -166,7 +167,7 @@ class Item:
         item = self.school[id]
         if not item:
           cls,yo = self.school.types[id]
-          item = cls(self.school, yo)
+          item = cls(self.school, yo, parent)
         self.parents.add(item)
 
     self.prerequisites = set()
@@ -195,18 +196,30 @@ class Item:
       s += "</ul>\n"
     return s
 
+  def Breadcrumbs(self):
+    s = ''
+    if self.parent and not isinstance(self.parent, School):
+      s = self.parent.Breadcrumbs()
+      if s: s += " > "
+      s += f'''<a href="/{self.parent.plural}/{self.parent.id}">{self.parent.title}</a>'''
+    return s
+
+
+
+
 class Items:
   '''A list of items that do not have duplicate id's.'''
-  def __init__(self, school, ya, cls):
+  def __init__(self, school, ya, cls, parent):
     '''
     @ya = YAML array
     @cls = the class to instantiate for each item; e.g. Subject, Course, Assignment
     '''
     self.school = school
+    self.parent = parent
     self.list = []
     if not ya: return
     for yo in ya:
-      item = cls(school, yo)
+      item = cls(school, yo, parent)
       if item in self:
         raise Exception(f"Duplicate id '{item.id}' found for Items of '{cls}'")
       self.list.append(item)
@@ -265,10 +278,13 @@ class Items:
 
 
 class Subject(Item):
-  def __init__(self, school, yo):
-    Item.__init__(self, school, yo)
+  singular = "subject"
+  plural = "subjects"
+
+  def __init__(self, school, yo, parent):
+    Item.__init__(self, school, yo, parent)
     ya = yo.get('courses')
-    self.courses = Items(school, ya, Course)
+    self.courses = Items(school, ya, Course, self)
 
   def toFileMarkdown(self):
     md = f'''
@@ -281,17 +297,23 @@ class Subject(Item):
 
 
 class Course(Item):
-  def __init__(self, school, yo):
-    Item.__init__(self, school, yo)
+  singular = "course"
+  plural = "courses"
+
+  def __init__(self, school, yo, parent):
+    Item.__init__(self, school, yo, parent)
     ya = yo.get('assignments')
-    self.assignments = Items(school, ya, Assignment)
+    self.assignments = Items(school, ya, Assignment, self)
 
 
 
 
 class Assignment(Item):
-  def __init__(self, school, yo):
-    Item.__init__(self, school, yo)
+  singular = "assignment"
+  plural = "assignments"
+
+  def __init__(self, school, yo, parent):
+    Item.__init__(self, school, yo, parent)
     self.steps = yo.get('steps', '')
     self.acceptance = yo.get('acceptance', '')
 
@@ -305,9 +327,10 @@ def tests():
   for subject in school.subjects:
     print("SUBJECT", subject.id)
     for course in subject.courses:
-      print("  COURSE", course.id)
+      print("  COURSE", course.id, subject)
       for assignment in course.assignments:
-        print("    ASSIGNMENT", assignment.id)
+        print("    ASSIGNMENT", assignment.id, course)
+        print(assignment.Breadcrumbs())
 
 
 if __name__ == "__main__":

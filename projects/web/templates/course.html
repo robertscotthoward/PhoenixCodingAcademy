@@ -1,13 +1,9 @@
 {% extends 'base.html' %}
 {% block content %}
-<h1>COURSE: {{ course.title }}</h1>
+<h1>{{ course.title }}</h1>
 
+{{ course.Breadcrumbs() | safe }}
 
-<pre>
-  ID: {{course.id}}
-  TITLE: {{course.title}}
-  DESCRIPTION: {{course.description}}
-</pre>
 
 {% if course.description %}
 <h2>Description</h2>
