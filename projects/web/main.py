@@ -113,16 +113,14 @@ def _default(path):
   school = getSchool()
   rootRepo = RepoRoot()
 
-  if os.path.exists(path):
-    if path.startswith('data/'):
-      dp = os.path.join(rootRepo, 'data')
-      path = os.path.join(rootRepo, path)
-    if path.lower().endswith('.md'):
-      data = tools.readFile(path)
-      return render_template('markdown.html', data=data, Markdown=Markdown)
-    return render_template(f'{path}.html', school=school)
-  else:
-    return f"""'{path}' does not exist."""
+  if path.startswith('data/'):
+    dp = os.path.join(rootRepo, 'data')
+    path = os.path.join(rootRepo, path)
+  if path.lower().endswith('.md'):
+    data = tools.readFile(path)
+    return render_template('markdown.html', data=data, Markdown=Markdown)
+  return render_template(f'{path}.html', school=school)
+  #return f"""'{path}' does not exist."""
 
 
 if __name__ == "__main__":
