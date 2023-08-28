@@ -30,11 +30,15 @@ def hello():
 
 @app.route('/info')
 def info():
+  gp = tools.GetAncestorPath('.git')
+  root = os.path.join(gp, '..')
   return f'''
 <pre>
 os.path.abspath('.'):         {os.path.abspath('.')}
 app.instance_path:            {app.instance_path}
 os.path.abspath(sys.argv[0]): {os.path.abspath(sys.argv[0])}
+Repo Root:                    {os.path.abspath(root)}
+.git:                         {os.path.abspath(gp)}
 </pre>
 '''
 
