@@ -115,9 +115,25 @@ def md5(s):
   return  hash.hexdigest()
 
 
+class Iterator:
+  def __init__(self, items):
+    if isinstance(items, dict):
+      items = items.items()
+    self.items = items
+    self.index = 0
+  def __next__(self):
+    if self.index >= len(self.items) - 1:
+      raise StopIteration()
+    item = self.items[self.index]
+    self.index += 1
+    return item
+
+
 def tests():
   h = md5("The quick brown fox jumps over the lazy dog")
   assert(h == "9e107d9d372bb6826bd81d3542a419d6")
 
 if __name__ == "__main__":
   tests()
+
+

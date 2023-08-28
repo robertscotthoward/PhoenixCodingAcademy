@@ -15,6 +15,10 @@ links:
   description: |
     The funkiest way to learn Haskell, which is the best functional programming language around.
     You may have heard of it. This guide is meant for people who have programmed already, but have yet to try functional programming.
+- url: https://serokell.io/blog/how-to-learn-haskell-in-10-minutes
+  text: 15 Resources to Help You Learn Haskell in 2023
+  short: Why learn Haskell, how to learn Haskell, and great resources.
+  description:
 - url: https://www.udemy.com/course/learning-haskell-programming
   text: Cheap Udemy course
 courses:

@@ -64,6 +64,9 @@ class Exam():
     self.school = school
     self.questions = {}
 
+  def __iter__(self): return tools.Iterator(self.questions)
+
+
   def loadQuestions(self, tags = []):
     if isinstance(tags, str):
       tags = tags.split()
@@ -100,8 +103,9 @@ def test1():
   exam = Exam(school)
   exam.loadQuestions("programming")
   test = exam.createTest()
-  for id, question in exam.questions.items():
-    print(id)
+
+  for question in exam:
+    print(question)
 
 if __name__ == "__main__":
   test1()
