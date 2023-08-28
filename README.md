@@ -35,6 +35,7 @@ Any participant (author) will create the content in this school. [Git Workflow](
 This class is a series of courses (at least one for each subject) that grow over time that the club members create. Each course can be completed in any order; or skipped altogether. A course will have one or more assignments. The goal of the first assignment will be do the minimal thing needed to allow you to go deeper into the subject. For example, for the "Python" course, you can expect the first assignment to show you how to get Python installed on your machine, or use a web host (e.g. repl.it or w3schools) to enter a single line of code that prints "Hello World". Such an assignment can be completed in 5 minutes, but then other assignments in that course can build on top of the first one. Tutorials will likely be a combination of free online references that successively get more advanced. Each stage of a course will have tests that measure your progress. You can take any test at any time. You can memorize the answers if you wish, but even that takes effort, and you will learn because each question presents the
 
 As a participant, you will do one or more of the following:
+
 * Follow a course to learn new skills in that course
 * Complete course assignments that apply what you learn
 * Grade other assignment
