@@ -30,10 +30,8 @@ def Markdown(md):
   if not md: return ''
   try:
     html = markdown.markdown(md, extensions=[
+      'pymdownx.arithmatex',
       #'mdx_math',
-      'mathjax', # https://github.com/sJohnsonStoever/python-markdown-mathjax
-      'eqnmath',
-      'alignmath',
       'fenced_code',
       'md_mermaid',
       ])

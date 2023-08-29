@@ -90,10 +90,10 @@ def _course(id):
   return render_template('course.html', course=course, Markdown=Markdown)
 
 
-@app.route('/exam')
+@app.route('/exams')
 def _exam():
   #request.args
-  return render_template('exam.html')
+  return render_template('exams.html')
 
 @app.route('/assignments/<id>')
 def _assignment(id):
@@ -114,26 +114,35 @@ def _default(path):
   The default catch-all path. If you hit https://DOMAIN/bananasplit, and there is no explicit route for "bananasplit",
   then this route will match, and path will be "bananasplit"
   """
-  school = getSchool()
-  rootRepo = RepoRoot()
-  webPath = os.path.join(rootRepo, 'projects', 'web')
 
-  if 'favicon.ico' in path:
-    print()
+  try:
+    school = getSchool()
+    rootRepo = RepoRoot()
+    webPath = os.path.join(rootRepo, 'projects', 'web')
 
-  if path.lower().endswith('.md'):
+    if path.lower().endswith('.md'):
+      path = os.path.join(rootRepo, path)
+      data = tools.readFile(path)
+      return render_template('markdown.html', data=data, Markdown=Markdown)
+
+    p = os.path.join(webPath, 'static', path)
+    if os.path.exists(p):
+      return send_file(p)
+
+    p = os.path.join(webPath, 'templates', path)
+    if os.path.exists(p):
+      return render_template(path)
+
+    p = os.path.join(webPath, 'templates', path + ".html")
+    if os.path.exists(p):
+      return render_template(path + ".html", school=school)
+
+    dp = os.path.join(rootRepo, 'data')
     path = os.path.join(rootRepo, path)
-    data = tools.readFile(path)
-    return render_template('markdown.html', data=data, Markdown=Markdown)
-
-  p = os.path.join(webPath, 'static', path)
-  if os.path.exists(p):
-    return send_file(p)
-  dp = os.path.join(rootRepo, 'data')
-  path = os.path.join(rootRepo, path)
-  return render_template(f'{path}.html', school=school)
-  #return f"""'{path}' does not exist."""
-
+    return render_template(f'{path}.html', school=school)
+    #return f"""'{path}' does not exist."""
+  except Exception as e:
+    return render_template("error.html", message=e.message)
 
 if __name__ == "__main__":
   app.run()

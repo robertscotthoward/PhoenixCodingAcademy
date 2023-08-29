@@ -1,5 +1,6 @@
 # Markdown
-$x = y$
+
+$p(x|y) = \frac{p(y|x)p(x)}{p(y)}$
 
 First become familiar with basic markdown:
 
