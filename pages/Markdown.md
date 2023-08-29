@@ -1,4 +1,5 @@
 # Markdown
+$x = y$
 
 First become familiar with basic markdown:
 
@@ -126,8 +127,6 @@ You can do Bottom-to-Top (BT) and Right-to-Left (RL) as well.
 ## Sequence Diagrams
 Here is a classic multi-tier sequence diagram example.
 ```
-
-```mermaid
 sequenceDiagram
 
 participant Client
@@ -426,6 +425,7 @@ APIM --> HttpTrigger1
 ```
 
 The diagram above implies these facts:
+
 * A user can user a mobile device or a browser to user the SaaS app.
 * The browser loads its main structure (Angular) from a CDN.
 * From there, the devices connect to the functional part of the application via APIM.
@@ -439,6 +439,7 @@ The diagram above implies these facts:
 
 # Mathematics
 You can include standard LaTeX mathematical formulae in two methods:
+
 * Inline, like a span tag by enclosing the formula in single `$` characters, like this:
   * `$Y = \sqrt[3]{\frac{A}{B}}$` yields $Y = \sqrt[3]{\frac{A}{B}}$
 * Block, like a div tag by enclosing in `$$` characters:

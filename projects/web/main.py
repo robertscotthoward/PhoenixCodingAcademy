@@ -17,7 +17,7 @@ sys.path.append(root)
 import libs.tools as tools
 from libs.school import *
 from libs.exam import *
-from flask import Flask, Blueprint, render_template, request
+from flask import Flask, Blueprint, render_template, request, send_file
 
 site = Blueprint('PCA', __name__, template_folder='templates')
 app = Flask(__name__)
@@ -105,6 +105,9 @@ def _assignment(id):
     return render_template('error.html', message=f"Item '{id}' is not a Assignment, but rather a '{type(assignment)}'.")
   return render_template('assignment.html', assignment=assignment, Markdown=Markdown)
 
+
+
+
 @app.route('/<path:path>')
 def _default(path):
   """
@@ -113,13 +116,21 @@ def _default(path):
   """
   school = getSchool()
   rootRepo = RepoRoot()
+  webPath = os.path.join(rootRepo, 'projects', 'web')
 
-  if path.startswith('data/'):
-    dp = os.path.join(rootRepo, 'data')
-    path = os.path.join(rootRepo, path)
+  if 'favicon.ico' in path:
+    print()
+
   if path.lower().endswith('.md'):
+    path = os.path.join(rootRepo, path)
     data = tools.readFile(path)
     return render_template('markdown.html', data=data, Markdown=Markdown)
+
+  p = os.path.join(webPath, 'static', path)
+  if os.path.exists(p):
+    return send_file(p)
+  dp = os.path.join(rootRepo, 'data')
+  path = os.path.join(rootRepo, path)
   return render_template(f'{path}.html', school=school)
   #return f"""'{path}' does not exist."""
 

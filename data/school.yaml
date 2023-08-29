@@ -53,6 +53,17 @@ subjects:
   title: Documentation and Technical Writing
   short: Tools for creating documentation.
 
+- id: mermaid
+  parents: documentation
+  title: Create diagrams with just text.
+  short: Include diagrams in your Markdown files with Mermaid
+  links:
+  - url: https://mermaid.js.org/intro/
+    text: Mermaid Home
+  - url: https://github.blog/2022-02-14-include-diagrams-markdown-files-mermaid/
+    text: Include diagrams in your Markdown files with Mermaid
+
+
 
 
 

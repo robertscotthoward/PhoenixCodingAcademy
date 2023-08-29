@@ -7,6 +7,7 @@ root = os.path.abspath(os.path.join(thisPath, os.path.relpath('..')))
 sys.path.append(root)
 
 import markdown
+import mdx_mathjax
 import yaml
 from io import StringIO
 import libs.tools as tools
@@ -27,8 +28,20 @@ def Markdown(md):
   Return the HTML of a markdown string.
   '''
   if not md: return ''
-  html = markdown.markdown(md, extensions=['fenced_code'])
-  return html
+  try:
+    html = markdown.markdown(md, extensions=[
+      #'mdx_math',
+      'mathjax', # https://github.com/sJohnsonStoever/python-markdown-mathjax
+      'eqnmath',
+      'alignmath',
+      'fenced_code',
+      'md_mermaid',
+      ])
+    return html
+  except Exception as e:
+    print(e)
+    html = markdown.markdown(md, extensions=['fenced_code'])
+    return html
 
 def FileMarkdown(relPath):
   '''
