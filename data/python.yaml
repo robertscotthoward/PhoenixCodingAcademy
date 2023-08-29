@@ -1,6 +1,9 @@
 description: |
     According to [Google Searches for Tutorials](https://pypl.github.io/PYPL.html) Python is now the most popular language in the world
-    pushing Java into second place.
+    pushing Java into second place. There are about 500,000 open source projects and libraries in Python available for free.
+
+purpose: |
+  ...
 courses:
 - id: PythonBasics
   title: Python Basics
@@ -73,11 +76,14 @@ courses:
       ```
 
     links:
-    - title: Python 3.11 Released! How to Install in Ubuntu 22.04 | 20.04 | 22.10
+    - text: The Python Package Index (PyPI)
+      description: Find, install and publish Python packages with the Python Package Index
+      url: https://pypi.org/
+    - text: Python 3.11 Released! How to Install in Ubuntu 22.04 | 20.04 | 22.10
       url: https://ubuntuhandbook.org/index.php/2022/10/python-3-11-released-how-install-ubuntu/
-    - title: Everything Important You Need to Know About Hard Link in Linux
+    - text: Everything Important You Need to Know About Hard Link in Linux
       url: https://linuxhandbook.com/hard-link/
-    - title: How do I create a permanent Bash alias?
+    - text: How do I create a permanent Bash alias?
       url: https://askubuntu.com/questions/17536/how-do-i-create-a-permanent-bash-alias
   - id: InstallLibraries
     title: Install Python Libraries

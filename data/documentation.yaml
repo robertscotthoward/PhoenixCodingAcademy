@@ -1,0 +1,21 @@
+description: |
+  Writing documentation (e.g. in English) to be rendered in some electronic form (e.g. html, markdown, pdf) is more important
+  than any other programming language. English is the most important programming language (at least in the USA) because it allows you to program
+  computer programmers. Companies think so because they will pay you more if your ability to write coherent documentation is great.
+
+  > Writing is nature's way of letting you know how sloppy your thinking is. - Dick Guindon
+
+  I've also heard this sequitur:
+
+  > Math is nature's way of letting you know how sloppy your writing is.
+
+purpose: |
+  * Learn why good writing will make you a higher paid engineer.
+  * Find resources that will help you become a better writer.
+  * Discuss some general tricks for writing technical specifications.
+
+links:
+- url: https://medium.com/codex/3-writing-exercises-guaranteed-to-make-you-a-better-engineer-cf8e88f6af2b
+  text: 3 Writing Exercises Guaranteed to Make You a Better Engineer
+- url: https://careerconnections.smeal.psu.edu/blog/2018/06/07/how-strong-writing-skills-benefit-your-career/
+  text: How Strong Writing Skills Benefit Your Career - PennState
