@@ -7,7 +7,6 @@ root = os.path.abspath(os.path.join(thisPath, os.path.relpath('..')))
 sys.path.append(root)
 
 import markdown
-import mdx_mathjax
 import yaml
 from io import StringIO
 import libs.tools as tools
