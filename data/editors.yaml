@@ -1,0 +1,35 @@
+description: |
+  As an engineer or programmer, you will be using your keyboard a lot. It will be your number one tool of the production.
+  Even if you are an electronic engineer, you will be writing specifications, bug reports, test programs, and general documentation.
+  Using Office applications, like Libre Office or Microsoft Office, are quickly becoming antiquated in lieu of the more contemporary
+  methods of changed tracking systems of collaborative development.
+
+  The older generation might be comfortable using Microsoft Word to create documentation, such as a book, contract, or specification.
+  But no one would use it to create programs right? They'd use an Interactive Development Environment (IDE), such as Visual Studio,
+  VS Code, Eclipse, IntelliJ, JDeveloper, PyCharm, CodeBlocks or even Notepad++.
+
+  Microsoft Word was primarily invented for a single person to create a single document that looks nice one the screen and prints
+  out nicely. But here are some problems with it:
+
+  * You must use Microsoft Word to read *.docx file; else you need to export/import them into other applications.
+  * Although there are Track Changes in Word (recently), you cannot merge files easily and are required to save into many different files; one for each version and author.
+  * Git does not see difference in docx files very well.
+  * You need to decide what the theme and format of the document is as you write; e.g. clicking bold, font size, header styles, etc. This is similar to how HTML tags used to contain the formatting in it. Remember `<div font="arial" color="red" ...>`? No one does that any more. Rather, we split out the styles into CSS files, behavior into JS files, and use HTML5 hints that the UI will use. We leave it up to the user to decide how to view the document.
+
+  Using a good editor, like Visual Code, has these advantages:
+
+  * You specify the content in text, without specific formatting.
+  * Git can track and merge changes from many users, and thus supports collaborative development.
+  * These editors can be used to create just about any readable artifact.
+
+purpose: |
+
+  * Become very fluent in Visual Code - perhaps today's most popular Editor/IDE
+
+links:
+- url: https://code.visualstudio.com/
+  text: Microsoft's Home Page for Visual Code
+- url: https://blog.cloudanalogy.com/10-features-of-vs-code-every-developer-should-know/
+  text: List of 10 features every developer should know about Visual Studio Code
+- url: https://code.visualstudio.com/shortcuts/keyboard-shortcuts-windows.pdf
+  text: Keyboard Shortcuts Cheat Sheet

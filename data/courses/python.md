@@ -8,7 +8,7 @@ Python is:
 * The most popular language taught in universities
 * The #1 language to teach computer science. It used to be Pascal or C.
 * [Multi-paradigm](https://en.wikipedia.org/wiki/Programming_paradigm), such as imperative, procedural, object oriented, functional
-
+* About 500,000 open source projects and libraries in Python available for free.
 
 # References
 * [The Rise of the Python Programming Language](https://www.udacity.com/blog/2021/01/the-rise-of-the-python-programming-language.html)

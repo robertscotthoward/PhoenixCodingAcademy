@@ -47,6 +47,16 @@ subjects:
 
 
 #================================================================================
+#  DOCUMENTATION
+#================================================================================
+- id: documentation
+  title: Documentation and Technical Writing
+  short: Tools for creating documentation.
+
+
+
+
+#================================================================================
 #  OPERATING SYSTEMS
 #================================================================================
 - id: os
@@ -123,6 +133,8 @@ subjects:
     text: Github topics, organized and searchable
   - url: https://pypl.github.io/PYPL.html
     text: PYPL PopularitY of Programming Language - created by analyzing how often language tutorials are searched on Google.
+  - url: https://careerkarma.com/blog/best-programming-languages-for-engineers/
+    text: Most Popular Programming Languages for Engineers
 
 - id: replit
   title: Repl.it
@@ -321,6 +333,21 @@ subjects:
       It is available in open source and commercial editions and runs on the desktop (Windows, Mac, and Linux).
       RStudio is widely used by data scientists and statisticians for developing statistical software and data analysis.
 
+
+
+
+
+#================================================================================
+#  EDITORS and IDEs
+#================================================================================
+- id: editors
+  title: Editors and IDEs
+  short: Text editors and Interactive Development Environements
+
+- id: vscode
+  title: Microsoft Visual Code (not Visual Studio)
+  parents: editors
+  short: Text editors and Interactive Development Environements
 
 
 
