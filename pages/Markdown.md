@@ -1,7 +1,5 @@
 # Markdown
 
-$$x = {-b \pm \sqrt{\texttip{b^2-4ac}{descriminant}} \over 2a}.$$
-
 First become familiar with basic markdown:
 
 * [Syntax guidance for basic Markdown usage](https://docs.microsoft.com/en-us/azure/devops/project/wiki/markdown-guidance?view=azure-devops)
@@ -445,6 +443,7 @@ You can include standard LaTeX mathematical formulae in two methods:
   * `$Y = \sqrt[3]{\frac{A}{B}}$` yields $Y = \sqrt[3]{\frac{A}{B}}$
 * Block, like a div tag by enclosing in `$$` characters:
 
+## Quantum Mechanics
 ```
 $$
 \frac{\partial^2 \psi}{\partial x^2}+\frac{\partial^2 \psi}{\partial z^2}-\frac{1}{c^2}
@@ -457,6 +456,21 @@ $$
 $$
 
 
+## Dirac Equation
+```
+$$(i\hbar \gamma ^{\mu }\partial _{\mu }-mc)\psi (x)=0$$
+```
+$$(i\hbar \gamma ^{\mu }\partial _{\mu }-mc)\psi (x)=0$$
+
+## Schrödinger's Wave Equation
+```
+$$i\hbar \frac{d}{dt}|\psi\rangle = \hat{H}|\psi\rangle$$
+```
+
+$$i\hbar \frac{d}{dt}|\psi\rangle = \hat{H}|\psi\rangle$$
+
+
+## Fourier Transform
 ```
 $$
 f(x) = \int_{-\infty}^\infty \hat f(\xi) \,e ^ {2 ^ \pi i \xi x}
@@ -467,6 +481,7 @@ $$
 f(x) = \int_{-\infty}^\infty \hat f(\xi) \,e ^ {2 ^ \pi i \xi x}
 $$
 
+## Fermat's Equation
 ```
 $$
 x^n + y^n = z^n
