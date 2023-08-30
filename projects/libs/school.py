@@ -29,7 +29,7 @@ def Markdown(md):
   if not md: return ''
   try:
     html = markdown.markdown(md, extensions=[
-      'pymdownx.arithmatex',
+      #'pymdownx.arithmatex',
       #'mdx_math',
       'fenced_code',
       'md_mermaid',

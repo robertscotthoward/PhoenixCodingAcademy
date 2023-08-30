@@ -1,6 +1,6 @@
 # Markdown
 
-$p(x|y) = \frac{p(y|x)p(x)}{p(y)}$
+$$x = {-b \pm \sqrt{\texttip{b^2-4ac}{descriminant}} \over 2a}.$$
 
 First become familiar with basic markdown:
 
