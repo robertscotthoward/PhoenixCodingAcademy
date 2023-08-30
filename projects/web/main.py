@@ -145,4 +145,4 @@ def _default(path):
     return render_template("error.html", message=e.message)
 
 if __name__ == "__main__":
-  app.run()
+  app.run(host="0.0.0.0")

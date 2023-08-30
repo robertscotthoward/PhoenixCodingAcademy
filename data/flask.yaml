@@ -1,0 +1,19 @@
+description: |
+  Flask is a powerful web framework that runs in Python.
+  It is also easy to learn and similar to Node's [express](https://expressjs.com/) framework.
+
+  Some pluses to using Flask:
+
+  * Since it's Python, you can capitalize on your current understanding to evolve the project.
+  * For $5/month, you can deploy your application to https://pythonanywhere.com where it runs 24x7 in the public domain.
+  * All the libraries that Python can access are at your disposal; e.g. Markdown, Matplotlib, Numpy, Jupyter, and Pandas.
+
+purpose: |
+  * Learn about programmatically generating HTML to make a dynamic interactive web site.
+  * Use this site as a working example of what Flask can do.
+
+links:
+- url: https://pypi.org/project/Flask/
+  text: Main Flask Home Page
+- url: https://flask.palletsprojects.com/en/2.3.x/
+  text: Flask Documentation

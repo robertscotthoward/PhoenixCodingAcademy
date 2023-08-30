@@ -53,6 +53,15 @@ subjects:
   title: Documentation and Technical Writing
   short: Tools for creating documentation.
 
+- id: markdown
+  parents: documentation
+  title: Markdown Language for Documentation
+  short: Use a text editor to easily create web page content without dealing with HTML.
+  description: |
+    Much of the content on this web site is encoded in Markdown, including this description paragraph here.
+    All documentation on Github and Wikipedia is down with Markdown.
+    See the [Markdown Page](/pages/markdown.md) for a demonstration of what can be done with Markdown.
+
 - id: mermaid
   parents: documentation
   title: Create diagrams with just text.

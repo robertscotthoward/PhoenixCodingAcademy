@@ -2,6 +2,17 @@
 
 [Phoenix Coding Academy](https://www.pxu.org/coding) (PCA) has an after-hours Computer Science Club that meets Friday after class. Members will learn modern tools for engineering and university academics. The course is designed for self-driven learners who attend PCA, but anyone is welcome. Attendance can be remote and asynchronous.
 
+- [Phoenix Coding Academy Computer Science Club](#phoenix-coding-academy-computer-science-club)
+- [Quick Links](#quick-links)
+- [Summary Goals](#summary-goals)
+- [Goals](#goals)
+- [Strategy](#strategy)
+- [Testing](#testing)
+
+# Quick Links
+* [Quick Start](/pages/QuickStart.md) - how to pull the code and run it locally.
+* [How this site works](/pages/Architecture.md)
+
 # Summary Goals
 * Learn by teaching. Help create class content and tests.
 * Learn collaborative application development through Git.

@@ -1,4 +1,26 @@
-# Markdown
+# Markdown1
+
+- [Markdown1](#markdown1)
+- [Principles](#principles)
+- [Structure](#structure)
+- [Mermaid](#mermaid)
+  - [Example of a Left-to-Right (LR) graph](#example-of-a-left-to-right-lr-graph)
+  - [Example of a Top-to-Bottom (TB) graph](#example-of-a-top-to-bottom-tb-graph)
+  - [Sequence Diagrams](#sequence-diagrams)
+- [Flowcharts](#flowcharts)
+- [Nodes and Edges](#nodes-and-edges)
+  - [Nodes](#nodes)
+  - [Arrows](#arrows)
+- [Architecture](#architecture)
+- [Example Architecture Diagram](#example-architecture-diagram)
+- [Mathematics](#mathematics)
+  - [Quantum Mechanics](#quantum-mechanics)
+  - [Dirac Equation](#dirac-equation)
+  - [Schrödinger's Wave Equation](#schrödingers-wave-equation)
+  - [Fourier Transform](#fourier-transform)
+  - [Fermat's Equation](#fermats-equation)
+- [References](#references)
+
 
 First become familiar with basic markdown:
 

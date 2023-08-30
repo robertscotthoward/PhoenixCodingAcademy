@@ -1,6 +1,14 @@
 description: |
-    According to [Google Searches for Tutorials](https://pypl.github.io/PYPL.html) Python is now the most popular language in the world
-    pushing Java into second place. There are about 500,000 open source projects and libraries in Python available for free.
+  Python is:
+
+  * The most popular language taught in universities. According to [Google Searches for Tutorials](https://pypl.github.io/PYPL.html) Python is now the most popular language in the world
+    pushing Java into second place.
+  * The #1 language to teach computer science. It used to be Pascal or C.
+  * [Multi-paradigm](https://en.wikipedia.org/wiki/Programming_paradigm), such as imperative, procedural, object oriented, functional
+  * About 500,000 open source projects and libraries in Python available for free.
+  * Recently surpassed R as the data science toolkit to know.
+  * Used in machine learning and scientific research and simulation.
+
 
 purpose: |
   ...
