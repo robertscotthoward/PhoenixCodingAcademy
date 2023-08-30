@@ -19,8 +19,8 @@ from libs.school import *
 from libs.exam import *
 from flask import Flask, Blueprint, render_template, request, send_file, redirect
 
-fnStartup = tools.GetAncestorPath('startup.yaml')
-startup = tools.ReadYaml(fnStartup)
+#fnStartup = tools.GetAncestorPath('startup.yaml')
+#startup = tools.ReadYaml(fnStartup)
 
 
 site = Blueprint('PCA', __name__, template_folder='templates')
