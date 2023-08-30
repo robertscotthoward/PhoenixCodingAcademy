@@ -11,7 +11,8 @@ description: |
   developers worldwide for a range of applications, including deep learning and machine learning, signal processing and communications,
   image and video processing, control systems, test and measurement, computational finance, and computational biology.
 
-  Git must be the most powerful, simplest method to track your changes to any file you create. Git works best with
+  Git must be the most powerful, simplest method to track your changes to any file you create. Git works best with simple text editors,
+  like Notepad++, VS Code, or any IDE.
 
 purpose: |
   Knowing Git is a requirement for any programming job, much like Calculus is a requirement for engineering jobs. But you don't need to
