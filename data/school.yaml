@@ -60,7 +60,7 @@ subjects:
   description: |
     Much of the content on this web site is encoded in Markdown, including this description paragraph here.
     All documentation on Github and Wikipedia is down with Markdown.
-    See the [Markdown Page](/pages/markdown.md) for a demonstration of what can be done with Markdown.
+    See the [Markdown Page](/pages/Markdown.md) for a demonstration of what can be done with Markdown.
 
 - id: mermaid
   parents: documentation
