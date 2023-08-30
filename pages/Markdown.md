@@ -1,25 +1,9 @@
-# Markdown1
+# Markdown
 
-- [Markdown1](#markdown1)
-- [Principles](#principles)
-- [Structure](#structure)
-- [Mermaid](#mermaid)
-  - [Example of a Left-to-Right (LR) graph](#example-of-a-left-to-right-lr-graph)
-  - [Example of a Top-to-Bottom (TB) graph](#example-of-a-top-to-bottom-tb-graph)
-  - [Sequence Diagrams](#sequence-diagrams)
-- [Flowcharts](#flowcharts)
-- [Nodes and Edges](#nodes-and-edges)
-  - [Nodes](#nodes)
-  - [Arrows](#arrows)
-- [Architecture](#architecture)
-- [Example Architecture Diagram](#example-architecture-diagram)
-- [Mathematics](#mathematics)
-  - [Quantum Mechanics](#quantum-mechanics)
-  - [Dirac Equation](#dirac-equation)
-  - [Schrödinger's Wave Equation](#schrödingers-wave-equation)
-  - [Fourier Transform](#fourier-transform)
-  - [Fermat's Equation](#fermats-equation)
-- [References](#references)
+[Markdown](https://en.wikipedia.org/wiki/Markdown) is a lightweight method to create nicely formatted documents with just a text editor; as opposed to using an office word processor application. Markdown supports basic concepts, such as nested headers, bullet, bold, italics, etc. WIth markdown extensions, it can support [mermaid](https://mermaid.js.org/intro/) language for creating charts and graphs, and [LaTeX Math]() notation via the [MathJax](https://en.wikipedia.org/wiki/MathJax) JavaScript library.
+
+[TOC]
+
 
 
 First become familiar with basic markdown:
@@ -28,6 +12,7 @@ First become familiar with basic markdown:
 * [Syntax guidance for Markdown usage in Wiki](https://docs.microsoft.com/en-us/azure/devops/project/wiki/wiki-markdown-guidance?view=azure-devops)
 
 # Principles
+<a>
 
 The most common questions asked about a documentation system are:
 
@@ -185,7 +170,7 @@ Web -->> Client: Return HTML Table
 Client -->> Client: Searches Table
 ```
 
-# Flowcharts
+## Flowcharts
 ```
 graph LR
 A(Start) --> B
@@ -212,8 +197,8 @@ F --> |No| G(Fool! You didn't put it<br>where it belongs.)
 F --> |Yes| H(Fool! Stop bothering<br>me next time!)
 ```
 
-# Nodes and Edges
-## Nodes
+## Nodes and Edges
+### Nodes
 ```
 id[text]   Rectangular node
 id (text)  Rounded rectangle node
@@ -222,7 +207,7 @@ id>text]   Right flag node
 id{text}   Diamond node
 ```
 
-## Arrows
+### Arrows
 ```
 >         Add tail arrow
 -         Do not add tail arrow
@@ -234,7 +219,7 @@ id{text}   Diamond node
 -.text.-  Dotted line and text
 ```
 
-# Architecture
+## Architecture
 A great architectural diagram only needs these items:
 * Boxes (or nodes) that define the nouns of the system; the components, classes, processes, modules, applications, resources, etc.
   * Names in the boxes should be environment agnostic; no DEV, QA, and PROD terms. Use "*" in place of those; e.g. `bh-dbt-*-cvv-funct`
@@ -266,7 +251,7 @@ This strategy combines a dependency (or component) model with a data flow diagra
 * Arrows always point to dependencies; and
 * Data flows against the "R" arrows and with the "W" arrows.
 
-# Example Architecture Diagram
+### Example Architecture Diagram
 Here is a typical diagram to show how to make them. It represents a customer using some device to use an enterprise application.  Dotted lines mean state is never changed. Solid lines means write operations where state might change.
 
 ```
@@ -464,6 +449,12 @@ You can include standard LaTeX mathematical formulae in two methods:
 * Inline, like a span tag by enclosing the formula in single `$` characters, like this:
   * `$Y = \sqrt[3]{\frac{A}{B}}$` yields $Y = \sqrt[3]{\frac{A}{B}}$
 * Block, like a div tag by enclosing in `$$` characters:
+
+In general, anything that the [Mathematical expressions](https://www.overleaf.com/learn/latex/Mathematical_expressions) page shows between the `\[ ... \]` pairs, replace with `$ ... $` in markdown. For example:
+
+* REPLACE THIS: `\[ x^n + y^n = z^n \]`
+* WITH: `$ x^n + y^n = z^n $` or `$$ x^n + y^n = z^n $$`
+* To be rendered as $ x^n + y^n = z^n $ or $$ x^n + y^n = z^n $$
 
 ## Quantum Mechanics
 ```

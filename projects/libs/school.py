@@ -26,6 +26,7 @@ def Markdown(md):
   '''
   Return the HTML of a markdown string.
   '''
+  from markdown.extensions.toc import TocExtension
   if not md: return ''
   try:
     html = markdown.markdown(md, extensions=[
@@ -33,6 +34,8 @@ def Markdown(md):
       #'mdx_math',
       'fenced_code',
       'md_mermaid',
+      #'toc',
+      TocExtension(toc_depth=2)
       ])
     return html
   except Exception as e:
