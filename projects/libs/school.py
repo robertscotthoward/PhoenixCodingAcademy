@@ -30,17 +30,14 @@ def Markdown(md):
   if not md: return ''
   try:
     html = markdown.markdown(md, extensions=[
-      #'pymdownx.arithmatex',
-      #'mdx_math',
       'fenced_code',
       'md_mermaid',
-      #'toc',
       TocExtension(toc_depth=2)
       ])
     return html
   except Exception as e:
     print(e)
-    html = markdown.markdown(md, extensions=['fenced_code'])
+    html = markdown.markdown(md, extensions=['fenced_code','toc'])
     return html
 
 def FileMarkdown(relPath):
