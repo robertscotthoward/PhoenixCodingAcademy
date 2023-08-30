@@ -21,12 +21,12 @@ purpose: |
   Because you wanted to go back to see what you did, or perhaps to undo changes if the formatting gets corrupted. Git does this
   automatically for you, for all files in a folder tree.
 
-  With Git, you and your friends can work together in a team-manner to create an project that is expressed as a set of files.
+  With Git, you and your friends can work together in a team-manner to create a project that is expressed as a set of files.
 
   Some uses of Git:
 
   * Finding free, popular open source software. If it's free and you can download it to install on your machine, chances are very high the source code is in Github along with the documentation.
-  * Discover what technologies are in hot demand. Github tracks the popularity of downloads and commits by topic. For example, you can see which programming language is downloaded the most.
+  * Discover what technologies are in hot demand. Github tracks the [popularity of downloads and commits by programming language](https://pypl.github.io/PYPL.html). For example, you can see which programming language is downloaded the most.
   * Creating a book. Yes, authors often use Git to create their books or academic papers. Markdown and Latex are populate choices.
   * Creating a resume. It is well known that employers often look at your Github account to determine how technical you are and what you are interested in.
   * Working together, remotely, asynchronously (perhaps in different timezones), to create something in a non-linear manner.

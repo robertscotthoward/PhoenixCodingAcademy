@@ -7,6 +7,9 @@ data:
     * [Web](mailto:pca@willo.org)
     * [Info](mailto:pca@willo.org)
 
+  notebooks:
+    baseUrl: https://colab.research.google.com/github/PhoenixCodingAcademy/PhoenixCodingAcademy/blob/main/projects/notebooks
+
 subjects:
 - id: git
   title: Git Version Control

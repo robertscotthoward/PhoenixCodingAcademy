@@ -17,7 +17,11 @@ sys.path.append(root)
 import libs.tools as tools
 from libs.school import *
 from libs.exam import *
-from flask import Flask, Blueprint, render_template, request, send_file
+from flask import Flask, Blueprint, render_template, request, send_file, redirect
+
+fnStartup = tools.GetAncestorPath('startup.yaml')
+startup = tools.ReadYaml(fnStartup)
+
 
 site = Blueprint('PCA', __name__, template_folder='templates')
 app = Flask(__name__)
@@ -95,6 +99,7 @@ def _exam():
   #request.args
   return render_template('exams.html')
 
+
 @app.route('/assignments/<id>')
 def _assignment(id):
   school = getSchool()
@@ -104,6 +109,39 @@ def _assignment(id):
   if not isinstance(assignment, Assignment):
     return render_template('error.html', message=f"Item '{id}' is not a Assignment, but rather a '{type(assignment)}'.")
   return render_template('assignment.html', assignment=assignment, Markdown=Markdown)
+
+
+
+@app.route('/notebooks')
+def _notebooks():
+  school = getSchool()
+  baseUrl = school.yo['data']['notebooks']['baseUrl']
+  notebooksPath = tools.GetAncestorPath('projects/notebooks')
+
+  html = '<ul>'
+  sp = os.path.join(notebooksPath, '*.ipynb')
+  for p in glob.glob(sp):
+    fn = os.path.split(p)[-1]
+    url = os.path.join(baseUrl, fn)
+    html += f"""<li><a href="{url}">{fn}</li>"""
+    html += "\n"
+  html += '</ul>'
+
+  model = {
+    "path": notebooksPath,
+    "html": html
+  }
+  return render_template('notebooks.html', model=model)
+
+@app.route('/notebooks/<id>')
+def _notebook(id):
+  '''
+  @id (string) name like 'Sympy1.ipynb'
+  '''
+  school = getSchool()
+  baseUrl = school.yo['data']['notebooks']['baseUrl']
+  path = os.path.join(baseUrl, 'tree')
+  return redirect(path, code=302)
 
 
 
