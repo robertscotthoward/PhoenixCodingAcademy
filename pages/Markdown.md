@@ -2,27 +2,8 @@
 
 [Markdown](https://en.wikipedia.org/wiki/Markdown) is a lightweight method to create nicely formatted documents with just a text editor; as opposed to using an office word processor application. Markdown supports basic concepts, such as nested headers, bullet, bold, italics, etc. WIth markdown extensions, it can support [mermaid](https://mermaid.js.org/intro/) language for creating charts and graphs, and [LaTeX Math]() notation via the [MathJax](https://en.wikipedia.org/wiki/MathJax) JavaScript library.
 
+[TOC]
 
-- [Markdown](#markdown)
-- [Principles](#principles)
-- [Structure](#structure)
-- [Mermaid](#mermaid)
-  - [Example of a Left-to-Right (LR) graph](#example-of-a-left-to-right-lr-graph)
-  - [Example of a Top-to-Bottom (TB) graph](#example-of-a-top-to-bottom-tb-graph)
-  - [Sequence Diagrams](#sequence-diagrams)
-  - [Flowcharts](#flowcharts)
-  - [Nodes and Edges](#nodes-and-edges)
-    - [Nodes](#nodes)
-    - [Arrows](#arrows)
-  - [Architecture](#architecture)
-    - [Example Architecture Diagram](#example-architecture-diagram)
-- [Mathematics](#mathematics)
-  - [Quantum Mechanics](#quantum-mechanics)
-  - [Dirac Equation](#dirac-equation)
-  - [Schrödinger's Wave Equation](#schrödingers-wave-equation)
-  - [Fourier Transform](#fourier-transform)
-  - [Fermat's Equation](#fermats-equation)
-- [References](#references)
 
 
 First become familiar with basic markdown:
