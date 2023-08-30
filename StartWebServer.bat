@@ -1,1 +1,1 @@
-python projects/web/main.py
+python projects/web/main.py --debug run
