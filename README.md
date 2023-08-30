@@ -10,8 +10,8 @@
 - [Testing](#testing)
 
 # Quick Links
-* [Quick Start](/pages/QuickStart.md) - how to pull the code and run it locally.
-* [How this site works](/pages/Architecture.md)
+* [Quick Start](/pages/QuickStart.md) - *how to pull the code for this site and run it locally on you machine.*
+* [How this site works](/pages/Architecture.md) - *general architecture and requirements choices.*
 
 # Summary Goals
 * Learn by teaching. Help create class content and tests.
