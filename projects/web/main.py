@@ -20,7 +20,7 @@ from libs.exam import *
 from flask import Flask, Blueprint, render_template, request, send_file, redirect
 
 #fnStartup = tools.GetAncestorPath('startup.yaml')
-#startup = tools.ReadYaml(fnStartup)
+#startup = tools.readYaml(fnStartup)
 
 
 site = Blueprint('PCA', __name__, template_folder='templates')
@@ -123,8 +123,22 @@ def _notebooks():
   for p in glob.glob(sp):
     fn = os.path.split(p)[-1]
     url = os.path.join(baseUrl, fn)
-    html += f"""<li><a href="{url}">{fn}</li>"""
-    html += "\n"
+
+    jo = tools.readJson(os.path.join(notebooksPath, fn))
+    cells = jo['cells']
+    description = ''
+    for cell in cells:
+      if cell["cell_type"] == "markdown":
+        lines = cell["source"]
+        for line in lines:
+          if line.startswith('DESCRIPTION:'):
+            description = line.split(':')[-1].strip()
+            break
+
+    html += f"""<li><a href="{url}">{fn}</a>"""
+    if description:
+      html += f''' - <i>{description}</i>'''
+    html += "</li>\n"
   html += '</ul>'
 
   model = {

@@ -75,7 +75,7 @@ class Exam():
     self.questions = {}
     data = tools.GetAncestorPath("data")
     for fp in glob.glob(os.path.join(data, 'questions', '*.yaml')):
-      yo = tools.ReadYaml(fp)
+      yo = tools.readYaml(fp)
       for question in yo['questions']:
         id = question['id']
         qTags = question.get('tags', '').split()

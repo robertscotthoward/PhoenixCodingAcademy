@@ -1,5 +1,6 @@
 import os
 import yaml
+import json5 as json
 
 def GetAncestorPath(relBasePath):
   p = os.path.curdir
@@ -43,7 +44,7 @@ def subloadYaml(data):
     # Does it have a 'ref' property?
     if 'ref' in data:
       # Yes, so that means to replace it with the external file.
-      data['ref'] = ReadYaml(data['ref'])
+      data['ref'] = readYaml(data['ref'])
     else:
       # No, so recur on each property.
       for k in data:
@@ -69,8 +70,14 @@ def writeFile(fn, data):
   with open(fn, 'w') as f:
     f.write(data)
 
+def readJson(fn):
+  dn = GetDataPath(fn)
+  with open(dn) as f:
+    s = f.read()
+  return json.loads(s)
 
-def ReadYaml(fn):
+
+def readYaml(fn):
   '''
   Read a *.yaml file from the "data" folder into a dict (i.e. dictionary) object.
   If any parts of the file refer to other files, read those in recursively.

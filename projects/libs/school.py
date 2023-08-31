@@ -63,13 +63,13 @@ def getRootYaml(path):
   if not os.path.exists(path):
     raise(Exception(f"Cannot find YAML file '{path}'"))
   dataPath = os.path.dirname(path)
-  yaml = tools.ReadYaml(path)
+  yaml = tools.readYaml(path)
   ya = yaml['subjects']
   for index, item in enumerate(ya):
     id = item.get('id')
     fn = os.path.join(dataPath, f"{id}.yaml")
     if os.path.exists(fn):
-      yo = tools.ReadYaml(fn)
+      yo = tools.readYaml(fn)
       for key, value in yo.items():
         if not key in item:
           item[key] = value
