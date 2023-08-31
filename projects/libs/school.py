@@ -170,6 +170,7 @@ class Item:
     links = yo.get('links', [])
     self.links = []
     for link in links:
+      if not link['url']: continue
       self.links.append(Link(link))
 
     self.parents = set()
