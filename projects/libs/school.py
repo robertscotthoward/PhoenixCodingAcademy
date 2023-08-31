@@ -201,6 +201,7 @@ class Item:
       s = f"\n<h2>Links</h2>\n"
       s += "<ul>\n"
       for link in self.links:
+        if not link['url']: continue
         s += f"""<li><a href="{link.url}">{link.text}</a>"""
         if link.short:
           s += f""" - <i>{link.short}</i>"""

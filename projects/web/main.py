@@ -127,6 +127,8 @@ def _notebooks():
     jo = tools.readJson(os.path.join(notebooksPath, fn))
     cells = jo['cells']
     description = ''
+
+    # Scan all cells for a line that starts with 'DESCRIPTION:'. That will define description of our notebook.
     for cell in cells:
       if cell["cell_type"] == "markdown":
         lines = cell["source"]
