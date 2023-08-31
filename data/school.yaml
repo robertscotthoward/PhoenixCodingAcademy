@@ -183,6 +183,8 @@ subjects:
     text: PYPL PopularitY of Programming Language - created by analyzing how often language tutorials are searched on Google.
   - url: https://careerkarma.com/blog/best-programming-languages-for-engineers/
     text: Most Popular Programming Languages for Engineers
+  - url: https://dataoverhaulers.com/programming-languages-in-english/
+    text: Are All Programming Languages In English?
 
 - id: replit
   title: Repl.it
