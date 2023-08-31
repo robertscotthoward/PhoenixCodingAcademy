@@ -124,18 +124,20 @@ def _notebooks():
     fn = os.path.split(p)[-1]
     url = os.path.join(baseUrl, fn)
 
-    jo = tools.readJson(os.path.join(notebooksPath, fn))
-    cells = jo['cells']
+    nbPath = os.path.join(notebooksPath, fn)
+    jo = tools.readJson(nbPath)
     description = ''
+    if jo:
+      cells = jo['cells']
 
-    # Scan all cells for a line that starts with 'DESCRIPTION:'. That will define description of our notebook.
-    for cell in cells:
-      if cell["cell_type"] == "markdown":
-        lines = cell["source"]
-        for line in lines:
-          if line.startswith('DESCRIPTION:'):
-            description = line.split(':')[-1].strip()
-            break
+      # Scan all cells for a line that starts with 'DESCRIPTION:'. That will define description of our notebook.
+      for cell in cells:
+        if cell["cell_type"] == "markdown":
+          lines = cell["source"]
+          for line in lines:
+            if line.startswith('DESCRIPTION:'):
+              description = line.split(':')[-1].strip()
+              break
 
     html += f"""<li><a href="{url}">{fn}</a>"""
     if description:

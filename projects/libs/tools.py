@@ -71,10 +71,13 @@ def writeFile(fn, data):
     f.write(data)
 
 def readJson(fn):
-  dn = GetDataPath(fn)
-  with open(dn) as f:
-    s = f.read()
-  return json.loads(s)
+  try:
+    with open(fn) as f:
+      s = f.read()
+    return json.loads(s)
+  except Exception as ex:
+    print(ex)
+    return None
 
 
 def readYaml(fn):

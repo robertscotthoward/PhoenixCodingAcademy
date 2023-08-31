@@ -1,33 +1,24 @@
 description: |
-  Pandas is Python's most popular data science toolkit library.
+  Pandas is Python's most popular data science toolkit library. It is a more declarative replacement for Excel.
 
 purpose: |
   * Become familiar with what pandas is and why it's important.
   * Use Pandas to create data plots and charts in Jupyter Notebooks.
 
 links:
-- url:
-  text:
 - url: https://www.w3schools.com/python/pandas/default.asp
   text: W3Schools Tutorial
+- url: https://pandas.pydata.org/pandas-docs/stable/getting_started/index.html
+  text: Getting started
 - url: https://pandas.pydata.org/pandas-docs/version/1.3/reference/
   text: Panda's API Reference
 - url: https://pandas.pydata.org/pandas-docs/stable/user_guide/cookbook.html
   text: Panda's Cookbook
   short: For those of you who want to cook pandas.
-- url:
-  text:
-- url:
-  text:
-- url:
-  text:
-- url:
-  text:
-- url:
-  text:
-- url:
-  text:
-- url:
-  text:
-- url:
-  text:
+- url: https://geopandas.org/en/stable/getting_started/introduction.html
+  text: Introduction to GeoPandas
+- url: https://geopandas.org/en/stable/docs.html
+  text: GeoPandas Documentation
+- url: https://realpython.com/lessons/pandas-dataframe-overview/
+  text: The pandas DataFrame (Overview)
+  short: Intro video by Cesar Aguilar (5:45) for a free online course.

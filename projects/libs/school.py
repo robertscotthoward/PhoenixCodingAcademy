@@ -150,8 +150,6 @@ class Link:
       self.text = yo
     else:
       self.url = yo.get('url', None)
-      if not self.url:
-        raise(Exception(f"Missing 'url' property for {yo}"))
       self.text = yo.get('text', self.url)
       self.short = yo.get('short', '')
       self.description = yo.get('description', '')
@@ -170,8 +168,9 @@ class Item:
     links = yo.get('links', [])
     self.links = []
     for link in links:
-      if not link['url']: continue
-      self.links.append(Link(link))
+      l = Link(link)
+      if not l.url: continue
+      self.links.append(l)
 
     self.parents = set()
     parents = yo.get('parents', None)
