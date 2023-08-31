@@ -1,0 +1,33 @@
+description: |
+  Pandas is Python's most popular data science toolkit library.
+
+purpose: |
+  * Become familiar with what pandas is and why it's important.
+  * Use Pandas to create data plots and charts in Jupyter Notebooks.
+
+links:
+- url:
+  text:
+- url: https://www.w3schools.com/python/pandas/default.asp
+  text: W3Schools Tutorial
+- url: https://pandas.pydata.org/pandas-docs/version/1.3/reference/
+  text: Panda's API Reference
+- url: https://pandas.pydata.org/pandas-docs/stable/user_guide/cookbook.html
+  text: Panda's Cookbook
+  short: For those of you who want to cook pandas.
+- url:
+  text:
+- url:
+  text:
+- url:
+  text:
+- url:
+  text:
+- url:
+  text:
+- url:
+  text:
+- url:
+  text:
+- url:
+  text:

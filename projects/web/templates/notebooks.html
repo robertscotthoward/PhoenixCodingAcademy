@@ -1,6 +1,9 @@
 {% extends 'base.html' %}
 {% block content %}
 <h1>Jupyter Notebooks</h1>
+These notebooks are saved in the `projects/notebooks` folder where they can be tested locally by running `jupyter notebook` in that folder.
+Once deployed to the server, they appear here below, where Google will run them for us in a safe sandbox environment. Thanks Google.
+I wonder how long that will be free to the public?
 
 {{ model.html | safe }}
 
