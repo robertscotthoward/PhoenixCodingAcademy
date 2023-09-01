@@ -34,6 +34,9 @@ subjects:
     Much of the interesting software can be installed on your laptop without requiring admin permissions, if you know how.
     You are not bypassing the security of the laptop, but rather using a secondary approach, called the portable installation.
     Once installed, the software cannot perform elevated operations, but it can run its intended functions just for you.
+
+    The general strategy is to create a root subfolder for you; e.g. `C:\sofia` and then add all your portable software there.
+
   links:
   - url: https://dev.to/davidkou/install-anything-without-admin-rights-4p0j
     text: Install anything without Admin rights

@@ -44,15 +44,25 @@ courses:
     Git is a command-line toolkit that you can run locally. Many editors and IDEs have Git integration, and some use these commands.
     Let's see if you have Git already installed:
 
-    * Run the command shell; e.g. WINDOWS-Q, cmd
+    * Run the command shell; e.g. WIN-Q, cmd
     * GET a windows that looks like this:
     ```dos
     Microsoft Windows [Version 10.0.19045.3324]
     (c) Microsoft Corporation. All rights reserved.
 
-    C:\Users\rob
+    C:\users\sofia
     >
     ```
+    * Run `git --version`
+    * GET `git version 2.34.1.windows.1` or something similar if Git is installed. You are done.
+    * ELSE GET `'git' is not recognized as an internal or external command, operable program or batch file.` if Git is not installed.
+
+    **Install Git**
+
+    * As described in [installers](/subjects/installers), start in you portable folder; e.g. `C:\sofia`
+
+
+
 
   assignments:
   - id: Git_Install_1
@@ -89,10 +99,37 @@ courses:
       Clone the repo:
 
       * Find a folder (or create one) in Windows Explorer
+      * Run the command shell; e.g. WIN-Q, cmd
+      * GET a windows that looks like this:
+      ```dos
+      Microsoft Windows [Version 10.0.19045.3324]
+      (c) Microsoft Corporation. All rights reserved.
+
+      C:\sofia\projects
+      >
+      ```
+      * From the folder in that terminal, run `git clone https://github.com/PhoenixCodingAcademy/PhoenixCodingAcademy.git`
+      * GET a new subfolder named git clone "PhoenixCodingAcademy"
+      * Change to that folder and run `StartWebServer.bat`
+      * GET:
+      ```dos
+      * Serving Flask app 'main'
+      * Debug mode: on
+      WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+      * Running on all addresses (0.0.0.0)
+      * Running on http://127.0.0.1:5000
+      * Running on http://192.168.0.4:5000
+      Press CTRL+C to quit
+      * Restarting with watchdog (windowsapi)
+      * Debugger is active!
+      * Debugger PIN: 136-839-246
+      ```
+
 
     acceptance: |
       * GIVEN I open this URL in my browser: http://127.0.0.1:5000/
       * THEN I see the web site running
+
 - id: Git_CreateAccount
   title: Create your GitHub Account
   description: |
