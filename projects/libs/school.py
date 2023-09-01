@@ -128,6 +128,10 @@ class School:
   def markdown(self, md):
     return Markdown(md)
 
+  def Content(self, name):
+    md = self.yo['content'][name]
+    return Markdown(md)
+
   def __str__(self):
     return f"School[{len(self.subjects)}]"
 
@@ -201,7 +205,7 @@ class Item:
       s = f"\n<h2>Links</h2>\n"
       s += "<ul>\n"
       for link in self.links:
-        if not link['url']: continue
+        if not link.url: continue
         s += f"""<li><a href="{link.url}">{link.text}</a>"""
         if link.short:
           s += f""" - <i>{link.short}</i>"""
@@ -214,10 +218,10 @@ class Item:
     s = ''
     if self.parent and not isinstance(self.parent, School):
       s = self.parent.Breadcrumbs()
-      if s: s += " > "
+      #if s: s += " > "
+      s += " > "
       s += f'''<a href="/{self.parent.plural}/{self.parent.id}">{self.parent.title}</a>'''
     return s
-
 
 
 

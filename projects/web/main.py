@@ -196,7 +196,6 @@ def _default(path):
     dp = os.path.join(rootRepo, 'data')
     path = os.path.join(rootRepo, path)
     return render_template(f'{path}.html', school=school)
-    #return f"""'{path}' does not exist."""
   except Exception as e:
     return render_template("error.html", message=e.message)
 

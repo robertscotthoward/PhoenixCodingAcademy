@@ -36,6 +36,63 @@ purpose: |
   * Project Planning, where issues are logged and resolved.
 
 courses:
+- id: Git_Install
+  title: Ensure Git is installed
+  description: |
+    In this short course, you will ensure Git is installed on your machine so that you can run the git commands.
+
+    Git is a command-line toolkit that you can run locally. Many editors and IDEs have Git integration, and some use these commands.
+    Let's see if you have Git already installed:
+
+    * Run the command shell; e.g. WINDOWS-Q, cmd
+    * GET a windows that looks like this:
+    ```dos
+    Microsoft Windows [Version 10.0.19045.3324]
+    (c) Microsoft Corporation. All rights reserved.
+
+    C:\Users\rob
+    >
+    ```
+
+  assignments:
+  - id: Git_Install_1
+    title: Install Git
+    description: |
+      You'll need to have
+
+- id: Git_CloneWebRepo
+  title: Clone the web repo to a local folder and run the site.
+  description: |
+    You don't need a GitHub account to clone a repo from Github, but you do need an account to push your changes back.
+  purpose: |
+    * Ensure git is installed on your machine.
+    * Show the basics of cloning a repository (repo) from Github.
+    * Run the web site locally.
+
+  assignments:
+  - id: Git_CloneWebRepo_2
+    title: Clone the Web Repo
+    description: |
+      Get the repo name:
+
+      * Go to the PhoenixCodingAcademy account on Github: https://github.com/PhoenixCodingAcademy
+      * GET a web page that reads "Phoenix Coding Academy Computer Science Club" at the top.
+      * Click Repositories in the menu at the top
+      * GET PhoenixCodingAcademy marked as a public repo.
+      * Click PhoenixCodingAcademy
+      * GET your url should now be https://github.com/PhoenixCodingAcademy/PhoenixCodingAcademy
+      * SEE a big green button that says "Code"
+      * Click that button
+      * See tab HTTP
+      * Click the copy button to copy " https://github.com/PhoenixCodingAcademy/PhoenixCodingAcademy.git" into the clipboard
+
+      Clone the repo:
+
+      * Find a folder (or create one) in Windows Explorer
+
+    acceptance: |
+      * GIVEN I open this URL in my browser: http://127.0.0.1:5000/
+      * THEN I see the web site running
 - id: Git_CreateAccount
   title: Create your GitHub Account
   description: |

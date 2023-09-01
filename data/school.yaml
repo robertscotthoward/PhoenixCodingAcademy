@@ -10,6 +10,13 @@ data:
   notebooks:
     baseUrl: https://colab.research.google.com/github/PhoenixCodingAcademy/PhoenixCodingAcademy/blob/main/projects/notebooks
 
+content:
+  subjects: |
+    The subjects below are mainly suggested topics that can be discussed in the club  depending on popular interest.
+    Some will be [emphasized](pages/EmphasizedSubjects.md) since they will help the participants work with the general projects, but most are optional.
+
+
+
 subjects:
 - id: git
   title: Git Version Control

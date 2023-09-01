@@ -2,6 +2,8 @@
 {% block content %}
 <h1>Subjects</h1>
 
+{{ school.Content('subjects') | safe }}
+
 {{ school.subjects.Dag() | safe }}
 
 {% endblock %}
