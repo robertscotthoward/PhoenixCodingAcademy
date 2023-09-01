@@ -3,3 +3,10 @@ blockquote {
   font-style: italic;
   font-size: larger;
 }
+
+pre {
+  background-color: gainsboro;
+  /*background-color: ghostwhite;*/
+  padding: 10px;
+  color: black;
+}
