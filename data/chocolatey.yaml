@@ -1,0 +1,26 @@
+description: |
+  Chocolatey is a software installer that we'll need to install user-mode PowerShell (called "powershell.portable" or just "pwsh").
+  Admin-mode PowerShell comes out of the box with Windows 10, but local execution policies prevent it from running.
+  To install [scoop](/subjects/scoop), you must download a powershell script (`install.ps1`) and run that,
+  which is why we need at least "powershell.portable". Once Chocolatey is installed and you use that to install "powershell.portable",
+  you probably won't need Chocolatey anymore since Scoop will solve most if not all of our needs.
+
+courses:
+- id: chocolatey_install
+  title: Install Chocolatey
+  short: The install process is not textbook because of your laptop restrictions.
+  description:
+    Because your school laptops might have PowerShell restricted, which
+
+  pwsh
+  Set-ExecutionPolicy RemoteSigned -Scope CurrentUser # Optional: Needed to run a remote script the first time
+  irm get.scoop.sh | iex
+  iwr -useb get.scoop.sh | iex
+
+  ```
+links:
+- url: https://chocolatey.org/
+  text: The Package Manager for Windows
+- url: https://dev.to/davidkou/install-anything-without-admin-rights-4p0j
+  text: Install Choco without admin
+
