@@ -201,7 +201,7 @@ def _default(path):
 
 
 
-@app.route('/downloads/<filename>', methods=['GET'])
+@app.route('/zips/<filename>', methods=['GET'])
 def download(filename):
     downloads = os.path.join(app.root_path, 'downloads')
     return send_from_directory(downloads, filename)
