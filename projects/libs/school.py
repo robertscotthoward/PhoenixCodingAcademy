@@ -199,6 +199,15 @@ class Item:
           raise(Exception(s))
         self.prerequisites.add(item)
 
+  def includePurposeSection(self):
+    s = ""
+    if self.purpose:
+      s = f"""
+      <h2>Purpose</h2>
+      {Markdown(self.purpose)}
+      """
+    return s
+
   def includeLinksSection(self):
     s = ""
     if self.links:
@@ -272,21 +281,9 @@ class Items:
     for item in children:
       html.write('<li>')
       type = ''
-      if isinstance(first, Subject):
-        type = 'subjects'
-        if item.courses:
-          html.write(f'''<a href="/{type}/{item.id}">{item.title}</a> (<span title="Number of courses">{len(item.courses)}</span>) <i>{item.short}</i>''')
-        else:
-          html.write(f'''<a href="/{type}/{item.id}">{item.title}</a> <i>{item.short}</i>''')
-      elif isinstance(first, Course):
-        type = 'courses'
-        html.write(f'''<a href="/{type}/{item.id}">{item.title}</a> <i>{item.short}</i>''')
-      elif isinstance(first, Assignment):
-        type = 'assignments'
-        html.write(f'''<a href="/{type}/{item.id}">{item.title}</a> <i>{item.short}</i>''')
-      else:
-        raise(Exception(f"Unrecognized type '{type(first)}'"))
 
+      anchor = item.GetAnchor()
+      html.write(anchor)
       self._Dag1(html, item)
       html.write('</li>')
 
@@ -303,6 +300,48 @@ class Subject(Item):
     Item.__init__(self, school, yo, parent)
     ya = yo.get('courses')
     self.courses = Items(school, ya, Course, self)
+
+  def GetAnchor(self):
+    type = 'subjects'
+    if self.courses:
+      return f'''<a href="/{type}/{self.id}">{self.title}</a> (<span title="Number of courses">{len(self.courses)}</span>) <i>{self.short}</i>'''
+    return f'''<a href="/{type}/{self.id}">{self.title}</a> <i>{self.short}</i>'''
+
+
+  def includeCoursesSection(self):
+    s = ""
+    if self.courses:
+      s = f"""
+      <h2>Courses</h2>
+      {self.courses.Dag()}
+      """
+    return s
+
+  def includeRelatedSection(self):
+    species = [item for id,item in self.school.items.items() if isinstance(item, type(self))]
+
+    html = StringIO()
+
+    # PARENTS
+    children = [x for x in species if x in self.parents]
+    if children:
+      html.write(f"<b>Parents</b>")
+      html.write(f"<ul>")
+      for child in children:
+        html.write(f"<li>{child.GetAnchor()}</li>")
+    html.write(f"</ul>")
+
+    # CHILDREN
+    children = [x for x in species if self in x.parents]
+    if children:
+      html.write(f"<b>Children</b>")
+      html.write(f"<ul>")
+      for child in children:
+        html.write(f"<li>{child.GetAnchor()}</li>")
+    html.write(f"</ul>")
+
+    html.seek(0)
+    return html.read()
 
   def toFileMarkdown(self):
     md = f'''
@@ -323,6 +362,19 @@ class Course(Item):
     ya = yo.get('assignments')
     self.assignments = Items(school, ya, Assignment, self)
 
+  def GetAnchor(self):
+    type = 'courses'
+    return f'''<a href="/{type}/{self.id}">{self.title}</a> <i>{self.short}</i>'''
+
+  def includeAssignmentsSection(self):
+    s = ""
+    if self.assignments:
+      s = f"""
+      <h2>Assignments</h2>
+      {self.assignments.Dag()}
+      """
+    return s
+
 
 
 
@@ -335,6 +387,9 @@ class Assignment(Item):
     self.steps = yo.get('steps', '')
     self.acceptance = yo.get('acceptance', '')
 
+  def GetAnchor(self):
+    type = 'assignments'
+    return f'''<a href="/{type}/{self.id}">{self.title}</a> <i>{self.short}</i>'''
 
 
 
