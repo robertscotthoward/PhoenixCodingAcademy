@@ -4,13 +4,10 @@
 
 {{ course.Breadcrumbs() | safe }}
 
-
-{% if course.description %}
-<h2>Description</h2>
 {{ Markdown(course.description) | safe }}
-{% endif %}
+{{ course.includePurposeSection() | safe }}
+{{ course.includeAssignmentsSection() | safe }}
 
-{{ course.includeLinksSection() }}
 
 <h2>Assignments</h2>
 <ul>

@@ -35,16 +35,46 @@ subjects:
     You are not bypassing the security of the laptop, but rather using a secondary approach, called the portable installation.
     Once installed, the software cannot perform elevated operations, but it can run its intended functions just for you.
 
-    The general strategy is to create a root subfolder for you; e.g. `C:\sofia` and then add all your portable software there.
+    The general strategy is to create a root subfolder for you; e.g. `C:\sofia` (called the "app folder") and then add all your portable software there.
+
+    An alternative strategy is to install [scoop](/subjects/scoop) or [chocolatey](/subjects/chocolatey) or both
+    to make installing software very easy. Winget requires admin permissions and so we'll ignore it. Some decisions facts:
+    * Chocolatey tends to require more admin permissions and PowerShell
+    * Scoop installs more to user folders.
 
   links:
   - url: https://dev.to/davidkou/install-anything-without-admin-rights-4p0j
     text: Install anything without Admin rights
+  - url: https://dev.to/bowmanjd/chocolatey-vs-scoop-package-managers-for-windows-2kik
+    text: "Chocolatey vs. Scoop: Package Managers for Windows"
+  - url: https://www.onmsft.com/feature/scoop-or-chocolatey-which-windows-10-package-manager-should-you-use/
+    text: Scoop or Chocolatey? Which Windows 10 package manager should you use?
 
 - id: chocolatey
   title: Chocolatey
   short: Chocolatey package manager and installer
   parents: installers
+  description: |
+    ```
+    PORTABLE:
+    http://phoenixcodingacademy.pythonanywhere.com/download/chocolatey.zip
+    Unzip chocolatey to L:\
+    cd L:\chocolatey
+    set ChocolateyInstall=L:\chocolatey
+    choco install powershell.portable
+
+
+    Packages will be installed in L:\chocolatey\lib
+
+    C:\Users\<username>\AppData\Local\Temp\chocolatey
+
+
+    PS:
+    Set-ExecutionPolicy RemoteSigned -Scope CurrentUser # Optional: Needed to run a remote script the first time
+    irm get.scoop.sh | iex
+    iwr -useb get.scoop.sh | iex
+
+    ```
   links:
   - url: https://chocolatey.org/
     text: The Package Manager for Windows
@@ -215,6 +245,8 @@ subjects:
   title: Yet Another Markup Language
   short: This is a human readable JSON text format. This web site encodes all its subjects, courses, and assignments in YAML.
   parents: programming
+  description: |
+    YAML (short for Yet Another Markup Language) is often known as human-readable JSON. Anything you can do with JSON, you can do with
   links:
   - https://en.wikipedia.org/wiki/YAML
   - url: https://yaml.org/
@@ -310,7 +342,7 @@ subjects:
   title: .NET Runtime Environment
   short: |
     The .NET runtime environment has greatly jumped in popularity since Microsoft made the environment open source in 2016.
-    Practically any programming language can be written to compile to .NET.
+    Practically any programming language can be written to compile to .NET. Your Windows 10 laptop most likely has
   parents: programming
   links:
   - url: https://aristeksystems.com/blog/top-3-dot-net-framework-trends-2021/#what-id-dot-net

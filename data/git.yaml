@@ -59,16 +59,22 @@ courses:
 
     **Install Git**
 
-    * As described in [installers](/subjects/installers), start in you portable folder; e.g. `C:\sofia`
-
-
+    * As described in [installers](/subjects/installers), start in your [apps folder](/pages/Glossary.md#apps-folder).
+    * Go to https://git-scm.com/downloads
+    * Click `Windows`
+    * GET https://git-scm.com/download/win
+    * Under `Portable ("thumbdrive edition")`, click `64-bit Git for Windows Portable.`
+    * GET file is downloaded. Ensure it is saved in your apps folder.
+    * Run the exe there to unzip the files
 
 
   assignments:
   - id: Git_Install_1
     title: Install Git
     description: |
-      You'll need to have
+      You'll need to have git installed on your machine before you can use it.
+
+      *
 
 - id: Git_CloneWebRepo
   title: Clone the web repo to a local folder and run the site.

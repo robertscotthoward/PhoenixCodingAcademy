@@ -17,7 +17,7 @@ sys.path.append(root)
 import libs.tools as tools
 from libs.school import *
 from libs.exam import *
-from flask import Flask, Blueprint, render_template, request, send_file, redirect
+from flask import Flask, Blueprint, render_template, request, send_file, redirect, send_from_directory
 
 #fnStartup = tools.GetAncestorPath('startup.yaml')
 #startup = tools.readYaml(fnStartup)
@@ -198,6 +198,15 @@ def _default(path):
     return render_template(f'{path}.html', school=school)
   except Exception as e:
     return render_template("error.html", message=e.message)
+
+
+
+@app.route('/downloads/<filename>', methods=['GET'])
+def download(filename):
+    downloads = os.path.join(app.root_path, 'downloads')
+    return send_from_directory(downloads, filename)
+
+
 
 if __name__ == "__main__":
   app.run(host="0.0.0.0")
