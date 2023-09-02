@@ -55,9 +55,10 @@ subjects:
   short: Chocolatey package manager and installer
   parents: installers
   description: |
+    [zip](http://phoenixcodingacademy.pythonanywhere.com/zips/chocolatey.zip)
     ```
     PORTABLE:
-    http://phoenixcodingacademy.pythonanywhere.com/download/chocolatey.zip
+    http://phoenixcodingacademy.pythonanywhere.com/zips/chocolatey.zip
     Unzip chocolatey to L:\
     cd L:\chocolatey
     set ChocolateyInstall=L:\chocolatey
