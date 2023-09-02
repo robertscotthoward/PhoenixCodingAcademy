@@ -4,6 +4,44 @@ description: |
   Since you don't have elevated permissions, you cannot change this.
   This section is more for students with their own machines that does not have this locked down.
 
+courses:
+- id: powershell_install
+  title: Install PowerShell
+  description: |
+    ### Method 1
+    First, let's see if you can actually run PowerShell:
+
+    * WIN-Q, search "powershell"
+    * Click "Windows PowerShell (x86)"
+    * If you see a console window that reads "Windows PowerShell (x86)" where you can enter commands like "dir", then you have powershell installed.
+    * Else continue with next method.
+
+    ### Method 2
+    Try this:
+    * From the command console (cmd), run `%SystemRoot%\system32\WindowsPowerShell\v1.0\powershell.exe`
+    * If that works, great. This is your new way to start a power shell.
+
+    ### Method 3
+    * WIN-Q, search "powershell"
+    * See "Windows PowerShell (x86)" as an option
+    * Expand the arrow to the right
+    * Click "Open file location". If this doesn't exist, then try the next method.
+    * Right click the "Windows PowerShell (x86)" link and select "Properties"
+    * Copy the Target into the clipboard. It should be something like `"%windir%\...\PowerShell_ISE.exe"
+    * Open a command console (cmd)
+    * Paste that string into the window and hit ENTER
+    * You might see a powershell window open up.
+    * If instead, you just want the shell (without the window) then run the command above but remove the `_ISE` from the end.
+
+    ### Method 4
+    * If none of these methods work, then we have a final method.
+    * In your apps folder, download [chocolatey.zip](/zips/chocolatey.zip) and "Extract here".
+    * You should have a new folder called "chocolatey".
+    * Set a user environment variable `ChocolateyInstall` to point to this new chocolatey folder.
+    * From that folder, run "cmd" to get a command shell in that folder.
+    * Run `choco install powershell.portable`
+    * You should then be able to run PowerShell by typing `pwsh`
+
 links:
 - url: https://learn.microsoft.com/en-us/powershell/scripting/overview?view=powershell-7.3
   text: What is PowerShell?

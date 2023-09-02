@@ -54,33 +54,6 @@ subjects:
   title: Chocolatey
   short: Chocolatey package manager and installer
   parents: installers
-  description: |
-    [zip](http://phoenixcodingacademy.pythonanywhere.com/zips/chocolatey.zip)
-    ```
-    PORTABLE:
-    http://phoenixcodingacademy.pythonanywhere.com/zips/chocolatey.zip
-    Unzip chocolatey to L:\
-    cd L:\chocolatey
-    set ChocolateyInstall=L:\chocolatey
-    choco install powershell.portable
-
-
-    Packages will be installed in L:\chocolatey\lib
-
-    C:\Users\<username>\AppData\Local\Temp\chocolatey
-
-
-    PS:
-    Set-ExecutionPolicy RemoteSigned -Scope CurrentUser # Optional: Needed to run a remote script the first time
-    irm get.scoop.sh | iex
-    iwr -useb get.scoop.sh | iex
-
-    ```
-  links:
-  - url: https://chocolatey.org/
-    text: The Package Manager for Windows
-  - url: https://dev.to/davidkou/install-anything-without-admin-rights-4p0j
-    text: Install Choco without admin
 
 - id: scoop
   title: Scoop

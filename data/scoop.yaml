@@ -23,11 +23,21 @@ courses:
     You have a school laptop, and it's all locked down. You want to install scoop but supposedly this requires elevated permissions.
     First determine if it is already installed.
 
-    * Create a folder for scoop; e.g. `C:\john\scoop`
-    * Start Powershell
-    * Run `cd C:\john\scoop`
+    * Create a folder for scoop off your apps folder; e.g. `C:\sofia\scoop`
+    * Set environment variable "SCOOP" to point to that scoop folder; e.g. `set SCOOP=C:\sofia\scoop`
+    * Start [Powershell](/subjects/powershell)
+    * Run `cd C:\sofia\scoop`
+    * Run `irm get.scoop.sh | iex`
+    * This should automatically create the necessary files in the scoop folder.
+    * VERIFY: you have `C:\sofia\scoop\shims` in your environment path files.
+    * Reopen your command shell and type `scoop`. You should see:
+    ```dos
+    Usage: scoop <command> [<args>]
+    ...
+    ```
+    * Otherwise, something is not set up. Retrace your steps.
+
+  Alternatively:
     * Run `irm get.scoop.sh -outfile 'install.ps1'
     * Run `.\install.ps1 -?`
-    * Run `.\install.ps1 -ScoopDir 'C:\john\scoop' -ScoopGlobalDir 'C:\john\scoop' -NoProxy`
-
-    If your machine does not allow PowerShell to run, then you'll need to install the portable version of PowerShell.
+    * Run `.\install.ps1 -ScoopDir 'C:\sofia\scoop' -ScoopGlobalDir 'C:\sofia\scoop' -NoProxy`
