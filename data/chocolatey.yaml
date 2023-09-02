@@ -9,13 +9,15 @@ courses:
 - id: chocolatey_install
   title: Install Chocolatey
   short: The install process is not textbook because of your laptop restrictions.
+  prerequisites: powershell
   description:
-    Because your school laptops might have PowerShell restricted, which
+    ### Method 1
+    * Follow the instructions here: https://www.liquidweb.com/kb/how-to-install-chocolatey-on-windows/
 
-  pwsh
-  Set-ExecutionPolicy RemoteSigned -Scope CurrentUser # Optional: Needed to run a remote script the first time
-  irm get.scoop.sh | iex
-  iwr -useb get.scoop.sh | iex
+    ### Method 2
+    * In your apps folder, download [chocolatey.zip](/zips/chocolatey.zip) and "Extract here".
+    * You should have a new folder called "chocolatey".
+    * Set a user environment variable `ChocolateyInstall` to point to this new chocolatey folder.
 
   ```
 links:
