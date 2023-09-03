@@ -6,6 +6,7 @@
 {{ Markdown(subject.description) | safe }}
 {{ subject.includePurposeSection() | safe }}
 {{ subject.includeRelatedSection() | safe }}
+{{ subject.includeLinksSection() | safe }}
 {{ subject.includeCoursesSection() | safe }}
 
 {% endblock %}

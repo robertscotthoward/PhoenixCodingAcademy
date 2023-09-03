@@ -79,8 +79,9 @@ def _subject(id):
   if not subject:
     return render_template('error.html', message=f"Item '{id}' not found.")
   if not isinstance(subject, Subject):
-    return render_template('error.html', message=f"Item '{id}' is not a Subject, but rather a '{type(subject)}'.")
-  return render_template('subject.html', subject=subject, Markdown=Markdown)
+    return render_template('error.html', message=f"Item '{id}' is not a Subject, but rather a '{type(subject)}'.", title="ERROR")
+  title = subject.title
+  return render_template('subject.html', subject=subject, Markdown=Markdown, title=title)
 
 
 @app.route('/courses/<id>')
@@ -90,8 +91,9 @@ def _course(id):
   if not course:
     return render_template('error.html', message=f"Item '{id}' not found.")
   if not isinstance(course, Course):
-    return render_template('error.html', message=f"Item '{id}' is not a Course, but rather a '{type(course)}'.")
-  return render_template('course.html', course=course, Markdown=Markdown)
+    return render_template('error.html', message=f"Item '{id}' is not a Course, but rather a '{type(course)}'.", title="ERROR")
+  title = course.title
+  return render_template('course.html', course=course, Markdown=Markdown, title=title)
 
 
 @app.route('/exams')
@@ -108,7 +110,8 @@ def _assignment(id):
     return render_template('error.html', message=f"Item '{id}' not found.")
   if not isinstance(assignment, Assignment):
     return render_template('error.html', message=f"Item '{id}' is not a Assignment, but rather a '{type(assignment)}'.")
-  return render_template('assignment.html', assignment=assignment, Markdown=Markdown)
+  title = assignment.title
+  return render_template('assignment.html', assignment=assignment, Markdown=Markdown, title="ERROR")
 
 
 

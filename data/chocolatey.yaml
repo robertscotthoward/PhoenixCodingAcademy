@@ -1,16 +1,17 @@
 description: |
-  Chocolatey is a software installer that we'll need to install user-mode PowerShell (called "powershell.portable" or just "pwsh").
-  Admin-mode PowerShell comes out of the box with Windows 10, but local execution policies prevent it from running.
-  To install [scoop](/subjects/scoop), you must download a powershell script (`install.ps1`) and run that,
-  which is why we need at least "powershell.portable". Once Chocolatey is installed and you use that to install "powershell.portable",
-  you probably won't need Chocolatey anymore since Scoop will solve most if not all of our needs.
+  Chocolatey is a software installer that we'll need to install user-mode PowerShell (called "powershell.portable" or just "pwsh")
+  in the event you cannot get your local PowerShell to run. Admin-mode PowerShell comes out of the box with Windows 10, but local execution policies prevent it from running.
+
+  We also need PowerShell to install [scoop](/subjects/scoop).
+
+  You probably won't need Chocolatey anymore since Scoop will solve most if not all of our needs, but there might be software that only Chocolatey can install that Scoop cannot.
 
 courses:
 - id: chocolatey_install
   title: Install Chocolatey
   short: The install process is not textbook because of your laptop restrictions.
   prerequisites: powershell
-  description:
+  description: |
     ### Method 1
     * Follow the instructions here: https://www.liquidweb.com/kb/how-to-install-chocolatey-on-windows/
 
@@ -19,7 +20,6 @@ courses:
     * You should have a new folder called "chocolatey".
     * Set a user environment variable `ChocolateyInstall` to point to this new chocolatey folder.
 
-  ```
 links:
 - url: https://chocolatey.org/
   text: The Package Manager for Windows

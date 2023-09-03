@@ -14,8 +14,11 @@ description: |
 
 links:
 - https://github.com/ScoopInstaller/Scoop
+- url: https://github.com/ScoopInstaller/scoop/wiki/So-What
+  text: Why should you care about Scoop?
 - url: https://scoop.sh/
   text: Search Scoop Packages
+
 courses:
 - id: scoop_course1
   title: Install scoop on a Windows laptop with no admin permissions.
@@ -37,7 +40,53 @@ courses:
     ```
     * Otherwise, something is not set up. Retrace your steps.
 
-  Alternatively:
+    Alternatively:
     * Run `irm get.scoop.sh -outfile 'install.ps1'
     * Run `.\install.ps1 -?`
     * Run `.\install.ps1 -ScoopDir 'C:\sofia\scoop' -ScoopGlobalDir 'C:\sofia\scoop' -NoProxy`
+
+  assignments:
+  - id: scoop_course1_1
+    title: Prove you have installed scoop and can run it.
+    acceptance: |
+      * WHEN I start a command shell
+      * AND I type `scoop`
+      * THEN I see:
+      ```dos
+      Usage: scoop <command> [<args>]
+      ...
+
+- id: scoop_course2
+  title: Install something with scoop
+  description: |
+    You have a school laptop, and it's all locked down. You want to install scoop but supposedly this requires elevated permissions.
+
+  assignments:
+  - id: scoop_course1_2
+    title: Prove you can install something with scoop
+    prerequisites: scoop_course1_1
+    description: |
+      You now have scoop installed on your machine. Let's use it!
+
+      You can find all the programs you can install at https://scoop.sh/ by just searching. You can use terms like "games" or "language".
+      Whatever app you find, it will have a name like "whatever". To install that app,
+      just type (in the command line) `scoop install whatever`. Chances are that when it's finished, you can run the app by typing `whatever`.
+
+      * At the command prompt, type "which".
+      * Hopefully, you will get `'which' is not recognized as an internal or external command, operable program or batch file.`
+      * This means "which" is not installed. So let's install it.
+      * See [which](https://linuxhandbook.com/which-command/) for a description of what it does.
+      * Type `scoop install which`
+      * Now type "which".
+      * You should see that it does something, like tell you that you need to add some parameters to use it.
+      * Type `which powershell`
+      * It should respond with `C:\WINDOWS\System32\WindowsPowerShell\v1.0\powershell.EXE` or some path to the program.
+      * This is what "which" does: it tells you in which path a program is installed.
+
+    acceptance: |
+      * WHEN I start a command shell
+      * AND I type `which `
+      * THEN I see:
+      ```dos
+      Usage: scoop <command> [<args>]
+      ...
