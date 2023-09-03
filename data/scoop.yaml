@@ -85,8 +85,19 @@ courses:
 
     acceptance: |
       * WHEN I start a command shell
-      * AND I type `which `
-      * THEN I see:
-      ```dos
-      Usage: scoop <command> [<args>]
-      ...
+      * AND I type `which which`
+      * THEN I get `C:\sofia\scoop\shims\which.EXE`
+      * AND this tells me that which is installed in the scoop shims folder.
+
+      A "shim" is a lightweight pointer to an executable (much like a shortcut). The `shims` folder is a place to put
+      these shims for all software installed with scoop so that we only need one entry
+      in our PATH environment variable. So if you install "git" for example and "gimp", those will be put in their own subfolder
+      under `scoop\apps`, but the main commands will be put in `scoop\shims`.
+
+      The workflow goes something like this:
+      * You type "which" in your command line.
+      * Windows looks in that folder to find a file called "which".
+      * It doesn't find it there, so it looks in every folder defined the PATH environment variable for which until it finds one; or not.
+      * It sees that one of the path entries is `C:\sofia\scoop\shims` and it finds "which.exe" there.
+      * It runs that file, and it redirects to `C:\sofia\scoop\apps\which\2.20\bin\which.exe` and runs that file instead.
+
