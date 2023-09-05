@@ -231,8 +231,8 @@ class Item:
     s = ''
     if self.parent and not isinstance(self.parent, School):
       s = self.parent.Breadcrumbs()
-      #if s: s += " > "
-      s += " > "
+      #if s: s += "  &#9658; "
+      s += " &#10148; "
       s += f'''<a href="/{self.parent.plural}/{self.parent.id}">{self.parent.title}</a>'''
     return s
 
