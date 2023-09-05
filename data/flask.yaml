@@ -17,3 +17,9 @@ links:
   text: Main Flask Home Page
 - url: https://flask.palletsprojects.com/en/2.3.x/
   text: Flask Documentation
+- url: https://nickymarino.com/2021/04/13/create-python-web-apps-with-flask-and-replit/
+  text: Create Python Web Apps with Flask and Replit
+- url: https://flask.palletsprojects.com/en/2.3.x/
+  text: Flask User Guide
+- url: https://hackersandslackers.com/flask-routes/
+  text: The Art of Routing in Flask
