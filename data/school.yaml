@@ -303,7 +303,13 @@ subjects:
   title: Web Development
   short: All things HTML, CSS, and JavaScript; plus dynamic site generation and hosting.
 
-
+- id: bootstrap
+  title: Bootstrap CSS and JS web site styles
+  links:
+  - url: https://getbootstrap.com
+    text: Build fast, responsive sites with Bootstrap
+  - url: https://blog.appseed.us/flask-template-bootstrap-open-source-starters/
+    text: Flask Bootstrap Templates - Open-Source Starters
 
 
 

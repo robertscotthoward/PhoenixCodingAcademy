@@ -1,0 +1,78 @@
+description: |
+  Unix and Linux have produced so many great tool, like the GCC compiler, X Windows, Emacs, the Bash Shell, and all the free
+  software that comes with it, that Cygwin was invented in the late 1990's to let Windows users capitalize on these tools. The
+  alternative was to dual-boot Linux, or run it on another machine.
+
+  This was so popular that Microsoft later created [WSL](/subjects/wsl) in 2016 to allow Windows users to use Linux while in
+  Windows and without using a third-party hypervisor; e.g. VMWare, VirtualBox, or QEMU.
+
+purpose: |
+  * Learn that such a tool exists.
+  * Create an run a Hello World program in C or C++ or Fortran or Ada just to say that you did.
+  * Learn a little about Bash tools, like grep, awk, and sed and why you might call yourself a real hacker if you know them.
+
+courses:
+- id: cygwin_basics
+  title: Install and Use Cygwin
+  short: Install and use this environment
+  description: |
+    In this course, you'll:
+
+    * Download Cygwin
+    * Install it
+    * Run it
+    * Install applications
+    * Run applications
+
+  assignments:
+  - id: cygwin_basics_1
+    title: Install Cygwin
+    description: |
+      * Create a folder named "Cygwin" in your APPS folder.
+      * Go to https://www.cygwin.com/
+      * Click link "Install Cygwin by running setup-x86_64.exe"
+      * Save the "setup-x86_64.exe" file in your "Cygwin" folder
+      * Run that exe. If it requires you to have admin permissions, then instead:
+        * Start a command prompt in that folder
+        * Run `setup-x86_64 --no-admin`
+      * Choose "Install from Internet"
+      * Set your Root Directory to your "Cygwin" folder; e.g. `C:\Sofia\Cygwin`
+      * Choose "Install for just me"
+      * Next
+      * Set your Local Package Directory to your "Cygwin" folder; e.g. `C:\Sofia\Cygwin`
+      * Next, Direct Connection
+      * Next, Choose any mirror that sounds good.
+      * Next, and wait for it to download all the package references.
+      * When finished, you should see a list of things you can install in a window titled "Cygwin Setup - Select Packages". A package is an application you can install.
+      * Choose View = "Full" to see all the packages.
+
+  - id: cygwin_basics_2
+    title: Install Cygwin Application
+    prerequisites: cygwin_basics_1
+    description: |
+      Install a Package (or app):
+
+        * From [the previous assignment](/assignments/cygwin_basics_1), you see the "Cygwin Setup - Select Packages" window.
+        * Suppose you want to play with the Common Lisp language.
+        * Search for "lisp"
+        * See package "clisp" appear.
+        * In the "New" column, you can choose "Install"
+        * Select "Next" at the bottom to install this package.
+        * When finished, you can close the setup window.
+
+      Run the app:
+
+        * From the Cygwin folder, run the "Cygwin.bat" file to get a BASH shell terminal.
+        * Type "clisp" to run the Common LISP [REPL](https://en.wikipedia.org/wiki/Read%E2%80%93eval%E2%80%93print_loop).
+        * You should see `[1]>`
+        * Type in there `(+ 23 45 9 -3)`
+        * GET `74` because that's the sum of those 4 numbers.
+        * LISP works.
+        * Type `(quit)` to exit.
+        * You can learn more about this language in [LISP](/subjects/lisp)
+
+
+
+links:
+- url: https://www.cygwin.com/
+- url: https://en.wikipedia.org/wiki/Cygwin
