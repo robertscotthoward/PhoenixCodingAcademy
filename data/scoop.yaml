@@ -18,6 +18,8 @@ links:
   text: Why should you care about Scoop?
 - url: https://scoop.sh/
   text: Search Scoop Packages
+- url: https://mrotaru.co.uk/blog/windows-package-manager-scoop/
+  text: "Finally, a Decent Package Manager for Windows: Scoop"
 
 courses:
 - id: scoop_course1
@@ -83,6 +85,9 @@ courses:
       * It should respond with `C:\WINDOWS\System32\WindowsPowerShell\v1.0\powershell.EXE` or some path to the program.
       * This is what "which" does: it tells you in which path a program is installed.
 
+      ### Uninstall an app
+      To uninstall an app, just type `scoop uninstall THEAPPNAME`
+
     acceptance: |
       * WHEN I start a command shell
       * AND I type `which which`
@@ -100,4 +105,16 @@ courses:
       * It doesn't find it there, so it looks in every folder defined the PATH environment variable for which until it finds one; or not.
       * It sees that one of the path entries is `C:\sofia\scoop\shims` and it finds "which.exe" there.
       * It runs that file, and it redirects to `C:\sofia\scoop\apps\which\2.20\bin\which.exe` and runs that file instead.
+
+courses:
+- id: scoop_course2
+  title: Cool stuff you might install with scoop
+  description: |
+    Here is just some of the many things you can installed with scoop.
+    Some will (or eventually) have their own "subject" in this web site.
+
+    * `nodejs` - the JavaScript [nodejs](https://nodejs.org/en/about) runtime
+    * `haskell` -
+    * `` -
+    * `sbcl` - common lisp environment
 

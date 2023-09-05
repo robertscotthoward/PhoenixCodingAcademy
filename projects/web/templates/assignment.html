@@ -1,29 +1,14 @@
 {% extends 'base.html' %}
 {% block content %}
-<h1>{{ assignment.title }}!</h1>
+<h1>{{ assignment.title }}</h1>
 
 {{ assignment.Breadcrumbs() | safe }}
 
-<h2>Description</h2>
+
+{{ assignment.Breadcrumbs() | safe }}
 
 {{ Markdown(assignment.description) | safe }}
-
-<h2>Steps</h2>
-
-{{ Markdown(assignment.steps) | safe }}
-
-<h2>Acceptance Criteria</h2>
-
-{{ Markdown(assignment.acceptance) | safe }}
-
-
-<h2>Links</h2>
-<ul>
-{% for link in assignment.links: %}
-<li>
-  <a href="{{link.url}}">{{link.text}}</a>
-</li>
-{% endfor %}
-</ul>
+{{ assignment.includePurposeSection() | safe }}
+{{ assignment.includeAcceptanceSection() | safe }}
 
 {% endblock %}

@@ -69,7 +69,11 @@ def getRootYaml(path):
     id = item.get('id')
     fn = os.path.join(dataPath, f"{id}.yaml")
     if os.path.exists(fn):
-      yo = tools.readYaml(fn)
+      try:
+        yo = tools.readYaml(fn)
+      except Exception as e:
+        print("Cannot read", fn, "\n", e)
+        return
       for key, value in yo.items():
         if not key in item:
           item[key] = value
@@ -390,6 +394,15 @@ class Assignment(Item):
   def GetAnchor(self):
     type = 'assignments'
     return f'''<a href="/{type}/{self.id}">{self.title}</a> <i>{self.short}</i>'''
+
+  def includeAcceptanceSection(self):
+    s = ""
+    if self.acceptance:
+      s = f"""
+      <h2>Acceptance Criteria</h2>
+      { Markdown(self.acceptance) }
+      """
+    return s
 
 
 

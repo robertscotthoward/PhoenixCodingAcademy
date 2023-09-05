@@ -1,0 +1,66 @@
+description: |
+  QEMU is a machine (or CPU) simulator for your laptop. If you want to run
+
+courses:
+- id: qemu_install
+  title: Install QEMU
+  description: Install the software
+  assignments:
+  - id: qemu_install_1
+    title: Install QEMU using Scoop
+    description: |
+      * `scoop install qemu`
+      * Get folder "C:\sofia\scoop\apps\qemu"
+      * Add that folder to your local environment PATH variable.
+      * Create a new folder "C:\sofia\qemu" where you can put other images you download and configurations.
+    acceptance: |
+      * WHEN I start a command console (cmd)
+      * AND I run `qemu-system-x86_64 --machine help`
+      * THEN I see a list of machines that the x86_64 system supports.
+
+- id: qemu_debianserver
+  description: |
+    * Download "amd64" from https://www.debian.org/CD/netinst/
+    * You file will be something like `debian-12.1.0-amd64-netinst.iso`
+    * Run `qemu-img.exe create debserv.img 20G –f raw`
+    * Run `qemu-system-x86_64 -m 1024 -nic user -boot d -cdrom debian-12.1.0-amd64-netinst.iso -hda debserv.img -display gtk`
+    * Choose "Install"
+
+- id: qemu_tinycore
+  description: |
+    * Download [TinyCore](http://tinycorelinux.net/14.x/x86/release/TinyCore-current.iso) from http://tinycorelinux.net/downloads.html
+    * Run `qemu-img.exe create tinycore.img 10G –f raw` to create a virtual file system.
+    * Run `qemu-system-x86_64 -m 512 -boot d -cdrom TinyCore-current.iso -hda tinycore.img -display gtk`
+    * See the running GUI
+
+- id: qemu_linuxlite
+  description: |
+    * Download ISO from http://repo.linuxliteos.com/linuxlite/isos/6.6/
+    * Run `qemu-img.exe create linuxlite.img 10G –f raw` to create a virtual file system.
+    * Run `qemu-system-x86_64 -m 1024 -boot d -cdrom linux-lite-6.6-64bit.iso -hda linuxlite.img -display gtk`
+
+- id: qemu_anitx
+  description: |
+    * Download ISO from https://antixlinux.com/download/
+    * Run `qemu-img.exe create anitx.img 10G –f raw` to create a virtual file system.
+    * Run `qemu-system-x86_64 -m 1024 -boot d -cdrom antiX-23_x64-full.iso -hda anitx.img -display gtk`
+    * Choose "Boot from hard disk"
+    * HANGS!
+
+- id: qemu_alpine
+  description: |
+    * Download alpine linux from https://alpinelinux.org/downloads/ choosing "Standard", "x86_64"
+    *
+    `qemu-system-x86_64 -m 512 -nic user -boot d -cdrom alpine-standard-3.18.3-x86_64.iso -hda alpine.qcow2 -display gtk`
+
+
+      * Download the Raspberry Pi OS (formerly called "Raspbian") image (img) file from https://www.raspberrypi.com/software/operating-systems/
+        * For this example, I chose "Raspberry Pi OS Lite"
+      * Download a kernel from https://github.com/dhruvvyas90/qemu-rpi-kernel
+      * Create
+      ```dos
+      qemu-img.exe create rpi.img 20G –f raw
+      ```
+      * GET: `Formatting 'rpi.img', fmt=raw size=21474836480`
+      * Run `qemu-system-arm -kernel kernel-qemu-4.4.34-jessie -cpu arm1176 -m 256 -M versatilepb -no-reboot -serial stdio -append “root=/dev/sda2 panic=1 rootfstype=ext4 rw init=/bin/bash" -drive “file=bullseye.img,index=0,media=disk,format=raw" -redir tcp:2222::22"`
+      * Run `qemu-system-arm -cpu help`

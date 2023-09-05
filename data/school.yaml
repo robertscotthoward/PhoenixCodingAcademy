@@ -138,6 +138,11 @@ subjects:
   title: Operating Systems
   short: General overview of operating systems with emphasis on Windows and Linux
 
+- id: qemu
+  title: Quick Emulator (QEMU)
+  short: Machine Emulator
+  parents: os
+
 - id: linux
   title: Linux
   short: Linux is a free version competitor of Microsoft Windows and Apple iOS. Most web sites run on Linux today.

@@ -8,12 +8,4 @@
 {{ course.includePurposeSection() | safe }}
 {{ course.includeAssignmentsSection() | safe }}
 
-
-<h2>Assignments</h2>
-<ul>
-{% for assignment in course.assignments: %}
-  <li><a href="{{ url_for('_assignment', id=assignment.id) }}">{{assignment.title}}</a></li>
-{% endfor %}
-</ul>
-
 {% endblock %}

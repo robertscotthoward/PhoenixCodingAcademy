@@ -111,6 +111,11 @@ def _assignment(id):
   if not isinstance(assignment, Assignment):
     return render_template('error.html', message=f"Item '{id}' is not a Assignment, but rather a '{type(assignment)}'.")
   title = assignment.title
+  if not isinstance(assignment, Assignment):
+    return render_template('error.html', message=f"Item '{id}' is not an Assignment, but rather a '{type(assignment)}'.", title="ERROR")
+  title = assignment.title
+  return render_template('assignment.html', assignment=assignment, Markdown=Markdown, title=title)
+
   return render_template('assignment.html', assignment=assignment, Markdown=Markdown, title="ERROR")
 
 
@@ -200,7 +205,7 @@ def _default(path):
     path = os.path.join(rootRepo, path)
     return render_template(f'{path}.html', school=school)
   except Exception as e:
-    return render_template("error.html", message=e.message)
+    return render_template("error.html", message=e)
 
 
 
