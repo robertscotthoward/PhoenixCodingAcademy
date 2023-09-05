@@ -68,19 +68,6 @@ subjects:
   title: Cygwin
   short: The Cygwin unix-like environment that runs on Windows.
   parents: installers
-  description: |
-    Unix and Linux have produced so many great tool, like the GCC compiler, X Windows, Emacs, the Bash Shell, and all the free
-    software that comes with it, that Cygwin was invented in the late 1990's to let Windows users capitalize on these tools. The
-    alternative was to dual-boot Linux, or run it on another machine.
-
-    This was so popular that Microsoft later created [WSL](/subjects/wsl) in 2016 to allow Windows users to use Linux while in
-    Windows and without using a third-party hypervisor; e.g. VMWare, VirtualBox, or QEMU.
-  purpose: |
-    * Learn that such a tool exists.
-    * Create an run a Hello World program in C or C++ or Fortran or Ada just to say that you did.
-    * Learn a little about Bash tools, like grep, awk, and sed and why you might call yourself a real hacker if you know them.
-  links:
-  - url: https://en.wikipedia.org/wiki/Cygwin
 
 - id: mingw
   title: MinGW

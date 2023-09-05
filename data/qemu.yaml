@@ -18,6 +18,12 @@ courses:
       * AND I run `qemu-system-x86_64 --machine help`
       * THEN I see a list of machines that the x86_64 system supports.
 
+- id: qemu_rpiemulator
+  description: |
+    * Download from https://sourceforge.net/projects/rpiqemuwindows/
+    * Extract to apps folder; e.g. "qemu"
+    * Perhaps rename "qemu" to "rpi_emulator" to keep is less confusing.
+
 - id: qemu_debianserver
   description: |
     * Download "amd64" from https://www.debian.org/CD/netinst/
