@@ -11,6 +11,14 @@ purpose: |
   * Create an run a Hello World program in C or C++ or Fortran or Ada just to say that you did.
   * Learn a little about Bash tools, like grep, awk, and sed and why you might call yourself a real hacker if you know them.
 
+links:
+- url: https://www.cygwin.com/
+- url: https://en.wikipedia.org/wiki/Cygwin
+- url: https://cygwin.com/packages/
+  text: Search the repository of packages that you can install.
+- url: Installing & Using Cygwin/X
+  text: https://arefiles.ucdavis.edu/uploads/filer_public/a5/5b/a55b1e54-153e-4f6d-802c-4a6787cf32ed/installing__using_cygwinx.pdf
+
 courses:
 - id: cygwin_basics
   title: Install and Use Cygwin
@@ -71,8 +79,50 @@ courses:
         * Type `(quit)` to exit.
         * You can learn more about this language in [LISP](/subjects/lisp)
 
+      Additional commands:
+
+        * Type `apt-cyg show clisp` to see information about the clisp package.
+
+  - id: cygwin_basics_3
+    title: Install apt-cyg tool
+    prerequisites: cygwin_basics_2
+    description: |
+      There is a nice application called [apt-cyg](https://github.com/transcode-open/apt-cyg) that can allow you to install
+      applications (or packages) from the BASH shell. But you need to install it.
+
+      * Start the BASH shell (i.e. run the "Cygwin.bat") program.
+      * Run `wget rawgit.com/transcode-open/apt-cyg/master/apt-cyg`
+      * Run `install apt-cyg /bin`
+
+      At this point, you should be able to install a package from the command line. Let's find out.
+
+      * Suppose you want to install the [nano](https://www.nano-editor.org/) text editor. This editor appears on most Linux distros.
+      * Type `apt-cyg searchall nano` to see all the packages that have some relation to nano.
+      * You can see that `nano` appears in the list.
+      * Type `nano` at the terminal.
+      * If something loads up, then you know it's already installed. Hit CTRL-X to quit.
+      * Otherwise, you could just type `apt-cyg install nano`
+      * Type `nano myfile.txt` at the terminal.
+      * Enter some text, like "Once upon a time..."
+      * Type CTRL-X, Y, ENTER to save this file.
+      * You should be out of the editor and back to the terminal.
+      * Type `ls -la`. You should see something like this below with `myfile.txt` in the list.
+      * You just created a file. Type `nano myfile.txt` to edit it again if you want to make changes and save it.
+
+      ```dos
+      total 1579855
+      drwxr-xr-x 1 rob None          0 Sep  5 16:44 .
+      drwxrwxrwt 1 rob None          0 Sep  5 11:42 ..
+      -rwxr-xr-x 1 rob None       1494 Aug 30  2022 .bash_profile
+      -rwxr-xr-x 1 rob None       5645 Aug 30  2022 .bashrc
+      -rwxr-xr-x 1 rob None       1919 Aug 30  2022 .inputrc
+      -rwxr-xr-x 1 rob None       1236 Aug 30  2022 .profile
+      -rw------- 1 rob None          7 Sep  5 12:33 .python_history
+      -rw-r--r-- 1 rob None        215 Sep  5 13:26 .wget-hsts
+      -rw-r--r-- 1 rob None      13765 Sep  5 13:26 apt-cyg
+      -rwxr-xr-x 1 rob None         17 Sep  5 16:44 myfile.txt
+      ```
+
+      * Type `cat myfile.txt` in the terminal to list out the contents of the file.
 
 
-links:
-- url: https://www.cygwin.com/
-- url: https://en.wikipedia.org/wiki/Cygwin
