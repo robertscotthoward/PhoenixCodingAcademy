@@ -8,7 +8,8 @@ data:
     * [Info](mailto:pca@willo.org)
 
   notebooks:
-    baseUrl: https://colab.research.google.com/github/PhoenixCodingAcademy/PhoenixCodingAcademy/blob/main/projects/notebooks
+    # baseUrl: https://colab.research.google.com/github/PhoenixCodingAcademy/PhoenixCodingAcademy/blob/main/projects/notebooks
+    baseUrl: https://nbviewer.org/github/PhoenixCodingAcademy/PhoenixCodingAcademy/blob/main/projects/notebooks
 
 content:
   subjects: |
@@ -249,6 +250,13 @@ subjects:
     You'll get lots of math in your school, but this club concentrates on using computers to understand and solve problems.
     This subject is less about how to solve math problems and more about what types of problems are there that can make a
     business profitable, and what types of tools exist that can solve them.
+
+- id: octave
+  title: GNU Octave
+  short: Scientific Programming Language
+  parents: math
+  links:
+  - url: https://octave.org/
 
 - id: sagemath
   title: SageMath
