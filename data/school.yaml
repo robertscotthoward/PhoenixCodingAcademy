@@ -8,6 +8,7 @@ data:
     * [Info](mailto:pca@willo.org)
 
   notebooks:
+    # SEE:   https://stackoverflow.com/questions/48481290/a-simple-way-to-view-ipython-notebook
     # baseUrl: https://colab.research.google.com/github/PhoenixCodingAcademy/PhoenixCodingAcademy/blob/main/projects/notebooks
     baseUrl: https://nbviewer.org/github/PhoenixCodingAcademy/PhoenixCodingAcademy/blob/main/projects/notebooks
 
@@ -361,6 +362,82 @@ subjects:
     All science degrees at the university will require basic fluency in data acquisition and generating charts.
     Excel was a popular tool of the past, but Jupyter Notebooks are the current hot thing.
     Basic understanding of statistics and proving one's hypothesis is paramount.
+  links:
+  - url: https://www.analyticsvidhya.com/blog-archive/
+
+- id: datasources
+  title: Data Sources
+  short: A list of places where you can find data sources online. Great for data science projects.
+  parents: datascience
+  description: |
+    Here is a list of places where you can get free data; typically tablular in the form of CSV (comma-separated values),
+    TSV (tab-separated values), or Excel files.
+
+  links:
+  - url: https://data.gov/
+    text: The Home of the U.S. Government's Open Data
+    short: 250K searchable data sets publicly available.
+  - url:
+    text:
+    short: |
+      Kaggle is the world's largest data science and machine learning community.
+      We provide powerful tools and resources like customizable Jupyter notebooks, public datasets and machine learning competitions
+      to help you achieve your data science goals.
+  - url: https://datasetsearch.research.google.com/
+    text: Google Data Search Engine
+    short: Unify tens of thousands of different repositories for datasets and make that data discoverable for everyone.
+  - url: https://data.worldbank.org/
+    text: World Bank Open Data
+    short: Free and open access to global development data. The World Bank funds initiatives in underdeveloped nations on a regular basis, then collects statistics to track their success.
+  - url: https://github.com/awesomedata/awesome-public-datasets
+    text: Awesome Public Datasets
+    short: This is a list of topic-centric public data sources in high quality. They are collected and tidied from blogs, answers, and user responses. Most of the data sets listed below are free, however, some are not.
+  - url: https://academictorrents.com/
+    text: Making over 127.15TB of research data available
+    short: A website dedicated to the distribution of data sets from scholarly studies. It contains a plethora of intriguing data sets.
+  - url: https://archive.ics.uci.edu/datasets
+    text: UC Irvine Machine Learning Repository
+    short: |
+      The UCI Machine Learning Repository is a collection of databases, domain theories, and data generators that are used by the machine learning
+      community for the empirical analysis of machine learning algorithms.
+
+      The archive was created as an ftp archive in 1987 by UCI PhD student David Aha. Since that time,
+      it has been widely used by students, educators, and researchers all over the world as a primary source of
+      machine learning datasets.
+  - url: http://yann.lecun.com/exdb/mnist/
+    text: THE MNIST DATABASE of handwritten digits
+    short: |
+      The MNIST database of handwritten digits, available from this page, has a training set of 60,000 examples,
+      and a test set of 10,000 examples. It is a subset of a larger set available from NIST.
+      The digits have been size-normalized and centered in a fixed-size image.
+      It is a good database for people who want to try learning techniques and pattern recognition methods on real-world data
+      while spending minimal efforts on preprocessing and formatting.
+  - url: http://yann.lecun.com/exdb/mnist/
+    text: The Chars74K dataset - Character Recognition in Natural Images
+    short: |
+      Character recognition is a classic pattern recognition problem for which researchers have worked since the early days of computer vision.
+      With today's omnipresence of cameras, the applications of automatic character recognition are broader than ever.
+      For Latin script, this is largely considered a solved problem in constrained situations,
+      such as images of scanned documents containing common character fonts and uniform background.
+      However, images obtained with popular cameras and hand held devices still pose a formidable challenge for character recognition.
+      The challenging aspects of this problem are evident in this dataset.
+  - url: http://web.mit.edu/emeyers/www/face_databases.html
+    text: Face Databases
+  - url: https://www.kdnuggets.com/datasets/index.html
+    text: KD Nuggets
+    short: Datasets for Data Science, Machine Learning, AI & Analytics
+  - url: http://datacatalogs.org/
+    text: A Comprehensive List of Open Data Portals from Around the World
+    short: |
+      DataPortals.org is the most comprehensive list of open data portals in the world.
+      It is curated by a group of leading open data experts from around the world - including representatives from local,
+      regional and national governments, international organisations such as the World Bank, and numerous NGOs.
+  - url: https://data.sagepub.com/
+    text: Sage Data
+    short: |
+      Billions of multidisciplinary, global statistics for research and instruction
+  - url: https://www.analyticsvidhya.com/blog/2018/03/comprehensive-collection-deep-learning-datasets/
+    text: 25 Open Datasets for Deep Learning Every Data Scientist Must Work With
 
 - id: python_datascience
   title: Python Data Science
