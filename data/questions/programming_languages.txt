@@ -1,0 +1,29 @@
+? What is Homoiconic programming language?
++ A language whose code can be interpreted as data and vice versa.
+-
+
+? Which are homoiconic languages?
++ LISP
+  LISP is the most popular example of a language whose data and code are interchangeable.
+  See https://en.wikipedia.org/wiki/Homoiconicity#In_Lisp
++ Clojure
+  Because it is a derivative of LISP
++ Racket
+  Because it is a derivative of LISP
++ Scheme
+  Because it is a derivative of LISP
++ Prolog
+  The modeling language of Horn Clauses in Prolog make its code and data the same.
+  See https://en.wikipedia.org/wiki/Homoiconicity#In_Prolog
++ Rebol
+  Where LISP uses parenthesis, Rebol uses bracket. But its a similar concept.
+  See https://en.wikipedia.org/wiki/Homoiconicity#In_Rebol
++ Red
+  Red was designed to overcome some difficulties in Rebol.
+  See https://en.wikipedia.org/wiki/Red_(programming_language)
++ Prolog
+- Python
+- Java
+- C
+- C++
+- C#

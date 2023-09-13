@@ -468,8 +468,19 @@ subjects:
   courses:
 
 - id: R
-  short: R is a complete data science toolkit, and pre-dates Python
+  short: R is a complete data science toolkit, and pre-dates Python.
   parents: datascience
+  description: |
+    Although Python is the #1 language in the world, R is now (2023) #16. It was and still is a great language for data science
+    and statistics, but Python has since copied its functionality and made it simpler. Still, some data science / machine learning
+    courses online use R instead of Python.
+
+  links:
+  - url: https://en.wikipedia.org/wiki/R_(programming_language)
+  - url: https://www.coursera.org/learn/data-scientists-tools
+    text: Coursera (Johns Hopkins University) - The Data Scientist’s Toolbox
+  - url: https://www.coursera.org/search?query=data%20science
+    text: Coursera Data Science Online Classes
 
 - id: RStudio
   short: R is a complete data science toolkit, and pre-dates Python
