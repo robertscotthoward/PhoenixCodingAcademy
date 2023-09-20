@@ -1,10 +1,8 @@
 description: |
-  Jupyter Notebooks
+  Jupyter Notebooks are convenient ways to mix code, documentation, and graphs into a single text file - called a notebook.
+  Much like a spreadsheet, a notebook displays the current state of the runtime.
+  If you change an input variable, the entire document changes accordingly.
 
-  A couple examples of some notebooks:
-
-  * [Sympy - Quadratic](https://www.pythonanywhere.com/jupyterhub/user/phoenixcodingacademy/notebooks/PhoenixCodingAcademy/projects/notebooks/sympy1.ipynb)
-  * [Sympy/Numpy - Simultaneous Equations](https://www.pythonanywhere.com/jupyterhub/user/phoenixcodingacademy/notebooks/PhoenixCodingAcademy/projects/notebooks/SimultaneousEquations.ipynb)
 
 purpose: |
   Reproducible Research.

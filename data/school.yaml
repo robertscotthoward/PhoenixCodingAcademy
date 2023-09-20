@@ -451,7 +451,7 @@ subjects:
     Numpy is the python equivalent to BLAS and MATLAB.
 
 - id: jupyter
-  title: Juptyer Notebooks
+  title: Jupyter Notebooks
   short: Fundamentals of reproducible research and data science. Jupyter is a free substitute for R, Knitr, PDF generation, and Mathematica.
   parents: python_datascience
   prerequisites: InstallPython

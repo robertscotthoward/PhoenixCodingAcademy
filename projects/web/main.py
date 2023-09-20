@@ -147,7 +147,7 @@ def _notebooks():
               description = line.split(':')[-1].strip()
               break
 
-    html += f"""<li><a href="{url}">{fn}</a>"""
+    html += f"""<li><a href="{url}">{fn.replace('.ipynb', '')}</a>"""
     if description:
       html += f''' - <i>{description}</i>'''
     html += "</li>\n"
