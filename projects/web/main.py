@@ -128,7 +128,7 @@ def _notebooks():
 
   html = '<ul>'
   sp = os.path.join(notebooksPath, '*.ipynb')
-  for p in glob.glob(sp):
+  for p in sorted(glob.glob(sp), key=lambda x: os.path.split(x)[-1]):
     fn = os.path.split(p)[-1]
     url = os.path.join(baseUrl, fn)
 
