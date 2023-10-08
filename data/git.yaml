@@ -184,3 +184,5 @@ links:
   text: Awesome open-source libraries voted by members
 - url: https://www.brendanschlagel.com/2018/09/28/repos-beyond-code-a-collection-of-creative-uses-of-github/
   text: "Repos Beyond Code: A Collection of Creative Uses of GitHub"
+- url: https://blog.meain.io/2023/what-is-in-dot-git/
+  text: What is in that .git directory?
