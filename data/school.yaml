@@ -10,7 +10,8 @@ data:
   notebooks:
     # SEE:   https://stackoverflow.com/questions/48481290/a-simple-way-to-view-ipython-notebook
     # baseUrl: https://colab.research.google.com/github/PhoenixCodingAcademy/PhoenixCodingAcademy/blob/main/projects/notebooks
-    baseUrl: https://nbviewer.org/github/PhoenixCodingAcademy/PhoenixCodingAcademy/blob/main/projects/notebooks
+    baseUrl: https://github.com/PhoenixCodingAcademy/PhoenixCodingAcademy/blob/main/projects/notebooks
+    baseUrl1: https://nbviewer.org/github/PhoenixCodingAcademy/PhoenixCodingAcademy/blob/main/projects/notebooks
 
 content:
   subjects: |
@@ -89,6 +90,9 @@ subjects:
   links:
   - url: https://www.msys2.org/
     text: Software Distribution and Building Platform for Windows
+
+
+
 
 #================================================================================
 #  DOCUMENTATION
@@ -236,6 +240,63 @@ subjects:
   short: You know, cargo
   parents: programming
 
+- id: dotnet
+  title: .NET Runtime Environment
+  short: |
+    The .NET runtime environment has greatly jumped in popularity since Microsoft made the environment open source in 2016.
+    Practically any programming language can be written to compile to .NET. Your Windows 10 laptop most likely has
+  parents: programming
+  links:
+  - url: https://aristeksystems.com/blog/top-3-dot-net-framework-trends-2021/#what-id-dot-net
+    text: Top 3 .Net Framework Trends to Follow in 2021
+  - url: https://dotnet.microsoft.com/en-us/learn/dotnet/what-is-dotnet
+    text: What is .NET?
+  - url: https://learn.microsoft.com/en-us/dotnet/core/introduction
+    text: What is .NET? Introduction and overview
+  - url: https://en.wikipedia.org/wiki/Category:.NET_programming_languages
+    text: List of .NET Programming Languages
+
+- id: csharp
+  title: C# Programming
+  short: C# is the most popular .NET programming language. The demand for C# programmers has now exceeded Java programmers.
+  parents: dotnet
+
+- id: lisp
+  title: LISP Programming
+  short:
+  parents: programming
+
+
+
+#================================================================================
+#  WEB
+#================================================================================
+- id: web
+  title: Web Development
+  short: All things HTML, CSS, and JavaScript; plus dynamic site generation and hosting.
+
+- id: bootstrap
+  title: Bootstrap CSS and JS web site styles
+  links:
+  - url: https://getbootstrap.com
+    text: Build fast, responsive sites with Bootstrap
+  - url: https://blog.appseed.us/flask-template-bootstrap-open-source-starters/
+    text: Flask Bootstrap Templates - Open-Source Starters
+
+
+
+- id: flask
+  title: Flask
+  short: This python web engine/framework is what this site is running on. Build dynamic web sites quickly with Flask.
+  parents: web
+  prerequisites: InstallPython
+
+
+- id: this_web
+  title: Contributing to this school web site
+  short: Learn how to help evolve this site by creating subjects, courses, assignments, and exams.
+  parents: flask yaml git
+  prerequisites: InstallPython
 
 
 
@@ -295,60 +356,8 @@ subjects:
   - url: https://www.mathworks.com/
     text: MATLAB for Artificial Intelligence
 
-- id: web
-  title: Web Development
-  short: All things HTML, CSS, and JavaScript; plus dynamic site generation and hosting.
-
-- id: bootstrap
-  title: Bootstrap CSS and JS web site styles
-  links:
-  - url: https://getbootstrap.com
-    text: Build fast, responsive sites with Bootstrap
-  - url: https://blog.appseed.us/flask-template-bootstrap-open-source-starters/
-    text: Flask Bootstrap Templates - Open-Source Starters
-
-
-
-- id: flask
-  title: Flask
-  short: This python web engine/framework is what this site is running on. Build dynamic web sites quickly with Flask.
-  parents: web
-  prerequisites: InstallPython
-
-
-- id: this_web
-  title: Contributing to this school web site
-  short: Learn how to help evolve this site by creating subjects, courses, assignments, and exams.
-  parents: flask yaml git
-  prerequisites: InstallPython
-
-
-- id: dotnet
-  title: .NET Runtime Environment
-  short: |
-    The .NET runtime environment has greatly jumped in popularity since Microsoft made the environment open source in 2016.
-    Practically any programming language can be written to compile to .NET. Your Windows 10 laptop most likely has
-  parents: programming
-  links:
-  - url: https://aristeksystems.com/blog/top-3-dot-net-framework-trends-2021/#what-id-dot-net
-    text: Top 3 .Net Framework Trends to Follow in 2021
-  - url: https://dotnet.microsoft.com/en-us/learn/dotnet/what-is-dotnet
-    text: What is .NET?
-  - url: https://learn.microsoft.com/en-us/dotnet/core/introduction
-    text: What is .NET? Introduction and overview
-  - url: https://en.wikipedia.org/wiki/Category:.NET_programming_languages
-    text: List of .NET Programming Languages
-
-- id: csharp
-  title: C# Programming
-  short: C# is the most popular .NET programming language. The demand for C# programmers has now exceeded Java programmers.
-  parents: dotnet
-
-- id: lisp
-  title: LISP Programming
-  short:
-  parents: programming
-
+- id: statistics
+  title: Probability and Statistics
 
 
 
@@ -530,3 +539,39 @@ subjects:
 
 
 
+
+#================================================================================
+#  COMPUTER SCIENCE
+#================================================================================
+
+- id: theory
+  title: Theory of Computation
+  short: How simple can we make a computer that can do everything, given enough time?
+
+- id: turingmachines
+  title: Turing Machines
+  short: What is a Turing Machine, and why do we care?
+  parents: theory
+
+
+
+
+
+
+#================================================================================
+#  ARTIFICIAL INTELLIGENCE
+#================================================================================
+
+- id: ai
+  title: Artificial Intelligence
+  short: What are the methods of artificial intelligence and machine learning?
+
+
+
+#================================================================================
+#  EXAMPLES
+#================================================================================
+
+- id: mysubject
+  title: My Subject
+  short: Just an example of a subject

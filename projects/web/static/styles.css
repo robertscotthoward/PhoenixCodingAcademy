@@ -8,9 +8,15 @@ blockquote {
   font-size: larger;
 }
 
-pre {
-  background-color: gainsboro;
+pretitle {
+  background-color: cadetblue;
   /*background-color: ghostwhite;*/
+  padding: 10px;
+  color: whitesmoke;
+}
+
+pre {
+  background-color: oldlace;
   padding: 10px;
   color: black;
 }

@@ -16,7 +16,7 @@ courses:
     * Follow the instructions here: https://www.liquidweb.com/kb/how-to-install-chocolatey-on-windows/
 
     ### Method 2
-    * In your apps folder, download [chocolatey.zip](/zips/chocolatey.zip) and "Extract here".
+    * In your apps folder, download [chocolatey.zip](/zips/chocolatey1.zip) (but remove the "1" from the URL. Google indexer doesn't like this file.) and "Extract here".
     * You should have a new folder called "chocolatey".
     * Set a user environment variable `ChocolateyInstall` to point to this new chocolatey folder.
 

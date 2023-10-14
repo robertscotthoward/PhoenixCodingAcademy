@@ -1,0 +1,26 @@
+id: test1
+cat: mysubject
+?Which of the following are nice letters?
++A
+  Because I like A.
+  links:
+  - https://en.wikipedia.org/wiki/A
++B
+  Because I like B.
++C
+  Because I like C.
++D
+  Because I like D.
++E
+  Because I like E.
+-F
+  explanation: Because I don't like F.
+-G
+  explanation: Because I don't like G.
+-H, I and J
+  Because I don't like those letters either.
+  links:
+  - https://en.wikipedia.org/wiki/H
+  - https://en.wikipedia.org/wiki/I
+  - https://en.wikipedia.org/wiki/J
+
