@@ -1,0 +1,247 @@
+id: cshistory
+text: Pioneers and historical events in the Computer Field
+
+? Who invented the COBOL programming language?
++ Grace Hopper
+cat: pioneers in the computer field
+
+? Who discovered the first computer bug?
++ Grace Hopper
+cat: pioneers in the computer field
+
+? Who invented the LISP language?
++ John McCarthy
+cat: pioneers in the computer field
+
+? Who originated the concept of a programmable general-purpose computer; designed the Analytical Engine and built a prototype for a less powerful mechanical calculator?
++ Charles Babbage
+cat: pioneers in the computer field
+
+? Who lead the team that created the FORTRAN programming language?
++ John Backus
+cat: pioneers in the computer field
+
+? Who invented the World Wide Web
++ Tim Berners-Lee
+cat: pioneers in the computer field
+
+? Who created the mathematics that lead to the digital computer?
++ George Boole
+cat: pioneers in the computer field
+
+? Who invented the first assembly language?
++ Kathleen Booth
+cat: pioneers in the computer field
+
+? Who was an American engineer, inventor, and science administrator who made significant contributions to radar technology and the development of the atomic bomb during World War II, and is also known for his work on analog computers; also known for developing Memex, which lead to hypertext, and helped create the National Science Foundation.
++ Vannevar Bush
+cat: pioneers in the computer field
+
+? Who invented Lambda Calculus and worked with Alan Turing
++ Alonzo Church
+cat: pioneers in the computer field
+
+? Who in the first person associated with theoretical computer science and artificial intelligence?
++ Alan Turing
+cat: pioneers in the computer field
+
+? Who proved that the halting problem is undecidable?
++ Alan Turing
+cat: pioneers in the computer field
+
+? Who built a computer (called the bombe) that helped crack the WWII German enigma cryptography machine?
++ Alan Turing
+cat: pioneers in the computer field
+
+? Who invented "relational algebra" which lead to relational databases.
++ Ed Codd
+cat: pioneers in the computer field
+
+? Who coined the term structured programming; invented the semaphore; famously suggested that the GOTO statement should be considered harmful.
++ Edsger Dijkstra
+cat: pioneers in the computer field
+
+? Who invented the computer mouse, pioneered of human–computer interaction whose Augment team developed hypertext, networked computers, and precursors to GUIs
++ Doug Engelbart
+cat: pioneers in the computer field
+
+? Who designed the first commercial microprocessor, Intel 4004
++ Federico Faggin
+cat: pioneers in the computer field
+
+? When was the first commercial microprocessor, Intel 4004, created?
++ 1971
+- 1955
+- 1958
+- 1963
+- 1969
+- 1978
+
+? Who proved that Peano arithmetic could not be both logically consistent and complete in first-order predicate calculus.
++ Kurt Gödel
+cat: pioneers in the computer field
+
+? Who developed the field of error correction and perfect code?
++ Richard Hamming
+cat: pioneers in the computer field
+
+? Who created Turbo Pascal and C# programming language?
++ Anders Hejlsberg
+cat: pioneers in the computer field
+
+? Who was the founder of modern machine data processing, his invention of the punched card tabulating machine marked the beginning of the era of semiautomatic data processing systems?
++ Herman Hollerith
+cat: pioneers in the computer field
+
+? Who helped establish and taught the first graduate course in computer science (at Harvard); invented the APL programming language; contributions to interactive computing?
++ Kenneth Iverson
+cat: pioneers in the computer field
+
+? Who built a programmable mechanized loom controlled by a tape constructed from punched cards
++ Joseph Marie Jacquard
+cat: pioneers in the computer field
+
+? Who (in 1206)  invented programmable machines, including programmable humanoid robots, and the castle clock, an astronomical clock considered the first programmable analog computer?
++ Al-Jazari
+cat: pioneers in the computer field
+
+? Who (in 1978) designed the TCP/IP protocol?
++ Bob Kahn
+cat: pioneers in the computer field
+
+? Who spearheaded object-oriented programming languages; led the team that developed Smalltalk?
++ Alan Kay
+cat: pioneers in the computer field
+
+? Who wrote "The Art of Computer Programming" and created TeX. Coined the term "analysis of algorithms" and made major contributions to that field, including popularizing Big O notation?
++ Donald Knuth
+cat: pioneers in the computer field
+
+? Who invented Calculus?
++ Gottfried Wilhelm Leibniz
++ Isaac Newton
+cat: pioneers in the computer field
+
+? Who was the first to recognize that the machine had applications beyond pure calculation, and created the first algorithm intended to be carried out by such a machine.
++ Ada Lovelace
+cat: pioneers in the computer field
+
+? Who was the first computer programmer.
++ Ada Lovelace
+cat: pioneers in the computer field
+
+? Who was a co-founder of Artificial Intelligence Lab at Massachusetts Institute of Technology, author of several texts on AI and philosophy; critic of the perceptron?
++ Marvin Minsky
+cat: pioneers in the computer field
+
+? Who was the anonymous created of Bitcoin?
++ Satoshi Nakamoto
+cat: pioneers in the computer field
+
+? Who formulated the architecture upon which most modern computers are based.
++ John von Neumann
+cat: pioneers in the computer field
+
+? Who invented the mechanical calculator.
++ Blaise Pascal
+cat: pioneers in the computer field
+
+? Who pioneered the C programming language and the Unix computer operating system at Bell Labs?
++ Dennis Ritchie
++ Ken Thompson
+cat: pioneers in the computer field
+
+? Who wrote "Principia Mathematica?"
++ Bertrand Russell
+cat: pioneers in the computer field
+
+? Who founded Information Theory?
++ Claude Shannon
+cat: pioneers in the computer field
+
+? Who launched the GNU Project in September 1983 to create a Unix-like computer operating system composed entirely of free software. With this, he also launched the free software movement.
++ Richard Stallman
+cat: pioneers in the computer field
+
+? Who invented C++ at Bell Labs?
++ Bjarne Stroustrup
+cat: pioneers in the computer field
+
+? Who
++
+cat: pioneers in the computer field
+
+
+? Who
++
+cat: pioneers in the computer field
+
+
+? Who
++
+cat: pioneers in the computer field
+
+
+? Who created the Unix operating system?
++ Ken Thompson
+cat: pioneers in the computer field
+
+? Who created the first machine to achieve a Master rating in chess?
++ Ken Thompson
+cat: pioneers in the computer field
+
+? Who created the UTF-8 encoding at Bell Labs and the Go programming language at Google.
++ Ken Thompson
+cat: pioneers in the computer field
+
+? Who created the first version of the Linux kernel?
++ Linus Torvalds
+cat: pioneers in the computer field
+
+? Who invented Git?
++ Linus Torvalds
+cat: pioneers in the computer field
+
+? Who created the Pascal programming language?
++ Niklaus Wirth
+- Blaise Pascal
+cat: pioneers in the computer field
+
+? Who runs the MIT Computer Science and Artificial Intelligence Laboratory; and is a founder and former CTO of iRobot and invented the Rumba?
++ Rodney Brooks
+cat: pioneers in the computer field
+
+
+
+
+? Who founded Microsoft?
++ Bill Gates
++ Paul Allen
+- Steve Ballmer
+  Ballmer was CEO later who replaced Bill Gates in 2000.
+cat: entrepreneurs
+
+? Who founded Google?
++ Sergey Brin
++ Larry Page
+- Jeff Bezos
+- Mark Zuckerberg
+cat: entrepreneurs
+
+? Who founded Apple Computers?
++ Steve Jobs
++ Steve Wozniak
+- Sergey Brin
+- Larry Page
+- Jeff Bezos
+- Mark Zuckerberg
+cat: entrepreneurs
+
+? Who founded Apple Computers?
++ Steve Jobs
++ Steve Wozniak
+- Sergey Brin
+- Larry Page
+- Jeff Bezos
+- Mark Zuckerberg
+cat: entrepreneurs

@@ -1,6 +1,8 @@
 ? What is Homoiconic programming language?
 + A language whose code can be interpreted as data and vice versa.
--
+- One that is similar to natural spoken language, like English.
+- One whose structures are commonly known by many programmers.
+- One that strives to be a universal language.
 
 ? Which are homoiconic languages?
 + LISP
