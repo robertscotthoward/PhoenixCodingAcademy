@@ -1,0 +1,64 @@
+description: |
+  Alan Turing (1912-1954) was a British mathematician, logician, and a major contributor to mathematics, cryptanalysis,
+  computer science, and artificial intelligence1.
+  He invented the universal Turing machine, an abstract computing machine that encapsulates the fundamental logical principles
+  of the digital computer.
+  Turing played a crucial role in cracking intercepted coded messages during World War II, enabling the Allies to defeat the Axis powers in many crucial engagements.
+
+  Alan invented the concept of a "Turing Machine", which is an abstract definition of computation.
+  A machine or programming language is said to be **Turing Complete** (or a **Universal Turing Machine**) if every possible programming language or application can be written
+  in it.
+
+  Some interesting Turing Complete machines:
+
+  * [Conway's Game of Life](https://conwaylife.com/)
+  * [Magic the Gathering Card Game](https://arstechnica.com/science/2019/06/its-possible-to-build-a-turing-machine-within-magic-the-gathering/)
+  * The [NAND Gate](https://en.wikipedia.org/wiki/NAND_gate). By repeating this simple logical gate,
+    you can create any other logic gate, and thus any computer in the world.
+    In fact, [NAND to TETRIS](https://www.nand2tetris.org/) is a complete online
+    digital computer class where you create a working computer that plays TETRIS from just composing NAND gates.
+    There is a free [Coursera](https://www.coursera.org/learn/nand2tetris2) class on it as well as on
+    [YouTube](https://www.youtube.com/watch?v=Mzy0RG9Z1Ak).
+* The [Busy Beaver](https://en.wikipedia.org/wiki/Busy_beaver) is turing complete.
+
+links:
+- url: https://en.wikipedia.org/wiki/Alan_Turing
+  text: Alan Turing (Wikipedia)
+- url: https://en.wikipedia.org/wiki/Turing_completeness
+  text: Turing Completeness (Wiki)
+- url: https://gwern.net/turing-complete
+  text: Surprisingly Turing-Complete (Wiki)
+- url: https://en.wikipedia.org/wiki/Brainfuck
+  text: BrainF  (Wiki)
+  short: |
+    Not the most politely named programming language, but it does exist in Repl.it and you can quickly get an idea of what
+    such a programming language looks like.
+- url: https://en.wikipedia.org/wiki/One-instruction_set_computer
+  text: One Instruction Set Computers (Wiki)
+  short: |
+    It is possible to build a computer with just one instruction, typically with three parameters.
+    Here is a list of many such computers that have been proven to be Turing Complete.
+- url: https://esolangs.org/wiki/Subleq
+  text: SUBtract and branch if Less-than or EQual to zero
+  short: An example of a language that prints "HI" on the screen.
+- url: https://cs.stackexchange.com/questions/51220/connection-between-nand-gates-and-turing-completeness
+  text: Connection between NAND gates and Turing completeness
+- url: https://www.sccs.swarthmore.edu/users/06/adem/engin/e25/finale/
+  text: One Instruction Set Computer (OISC) Compiler
+  short: An actual implementation of a OISC machine.
+- url: http://mazonka.com/subleq/hsq.html
+  text: HIGHER SUBLEQ - Compiler into OISC language
+  short: Talk about students with too much free time on their hand. This is definitely academic.
+- url: https://short-informer.com/is-the-nand-gate-logical-complete/
+  text: Is the NAND gate logical complete?
+  short: |
+    The NAND gate has the property of functional completeness, which it shares with the NOR gate.
+    That is, any other logic function (AND, OR, etc.) can be implemented using only NAND gates.
+    NAND and NOR are called a "Universal Gate" for just this reason.
+- url: https://plato.stanford.edu/entries/turing-machine/
+  text: Turing Machines - Stanford Encyclopedia of Philosophy
+- url: https://en.wikipedia.org/wiki/Oracle_machine
+  text: Oracle (Wiki)
+  short: |
+    An Oracle is a mythical, hypothetical computer that can instantly answer a YES or NO question in any context.
+    It is used in proofs of certain types of theoretical computing; e.g. cryptography.
