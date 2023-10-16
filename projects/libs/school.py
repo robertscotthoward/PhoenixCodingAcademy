@@ -72,8 +72,15 @@ def getRootYaml(path):
       try:
         yo = tools.readYaml(fn)
       except Exception as e:
-        print("Cannot read", fn, "\n", e)
-        return
+        s = f"""
+Error in YAML file:
+  FILE: {fn}
+  PROBLEM: {e.problem}
+  LINE: {e.context_mark.line}
+  INDEX: {e.context_mark.index}
+"""
+        print(s)
+        raise Exception(s)
       for key, value in yo.items():
         if not key in item:
           item[key] = value
