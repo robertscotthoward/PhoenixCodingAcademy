@@ -8,9 +8,8 @@ blockquote {
   font-size: larger;
 }
 
-pretitle {
+.pretitle {
   background-color: cadetblue;
-  /*background-color: ghostwhite;*/
   padding: 10px;
   color: whitesmoke;
 }
