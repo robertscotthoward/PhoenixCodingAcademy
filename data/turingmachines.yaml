@@ -7,7 +7,7 @@ description: |
 
   Alan invented the concept of a "Turing Machine", which is an abstract definition of computation.
   A machine or programming language is said to be **Turing Complete** (or a **Universal Turing Machine**) if every possible programming language or application can be written
-  in it.
+  in it. NOTE: Not every machine that is Turing Complete is a Universal Turing Machine.
 
   Some interesting Turing Complete machines:
 
@@ -19,7 +19,28 @@ description: |
     digital computer class where you create a working computer that plays TETRIS from just composing NAND gates.
     There is a free [Coursera](https://www.coursera.org/learn/nand2tetris2) class on it as well as on
     [YouTube](https://www.youtube.com/watch?v=Mzy0RG9Z1Ak).
-* The [Busy Beaver](https://en.wikipedia.org/wiki/Busy_beaver) is turing complete.
+  * [Langton's ant](https://en.wikipedia.org/wiki/Langton%27s_ant)
+  * [Minecraft](https://en.wikipedia.org/wiki/Minecraft) - with "redstone" some people (with too much time on their hands) have implemented actual CPUs in a world.
+    * [Here is an 8-bit processor that runs in Minecraft](https://www.pcworld.com/article/559794/8-bit-computer-processor-built-in-minecraft-can-run-its-own-games.html) -
+      8-bit processors were the first micro computers to come out about in the later 1970's. Pacman and Space Invaders used them, as well as
+      the TRS-80 and the first Apple computer.
+    * [Minecraft in Minecraft](https://www.youtube.com/watch?v=-BP7DhHTU-I) - to add insult to injury, someone created the game of
+      Minecraft that was running in the CPU created in Minecraft. I'm dumbfounded. It runs very slowly (obviously) so it had to run
+      on a server to make the video one frame at a time. There is nothing in "Turing Completeness" that says something has to run fast.
+      I will introduce the acronym TMFTOOH to mean "Too Much Free Time on one's Hand" since I will likely use it again.
+  * [Programmable 4-Way Flying Machine in Minecraft (Full Explanation)](https://www.youtube.com/watch?v=p4bmrlo6yqE) - another programmable
+    thingy in Minecraft.
+  * The [Busy Beaver](https://en.wikipedia.org/wiki/Busy_beaver) is turing complete.
+  * [Wang Tiles](https://en.wikipedia.org/wiki/Wang_tile)
+  * [x86 MOV Instruction](https://drwho.virtadpt.net/files/mov.pdf) - interesting that a single instruction in the
+    Intel chip (which we all use) is Turing Complete. That means you can write a compiler for all programming languages
+    that compiles to a string of MOV commands.
+  * [](https://medium.com/@balidani/cities-skylines-is-turing-complete-e5ccf75d1c3a) - Cities: Skylines is a city simulation game that is
+    complex enough to build universal logic gates in it. Using universal logic gates it is possible to construct any circuit including
+    Turing complete machines. So, just like in Minecraft one can build a computer inside Cities: Skylines.
+  * [Chemical Computers](https://en.wikipedia.org/wiki/Chemical_computer) - Chemical reactions were seen as a simple move towards a
+    stable equilibrium which was not very promising for computation; until now.
+  * [DNA Computing](https://en.wikipedia.org/wiki/DNA_computing)
 
 links:
 - url: https://en.wikipedia.org/wiki/Alan_Turing
@@ -28,6 +49,9 @@ links:
   text: Turing Completeness (Wiki)
 - url: https://gwern.net/turing-complete
   text: Surprisingly Turing-Complete (Wiki)
+- url: https://esolangs.org/wiki/Turing_tarpit
+  text: Turing Tarpit
+  short: a language that aims for Turing-completeness in an arbitrarily small number of linguistic elements - ideally, as few as possible.
 - url: https://en.wikipedia.org/wiki/Brainfuck
   text: BrainF  (Wiki)
   short: |
@@ -62,3 +86,6 @@ links:
   short: |
     An Oracle is a mythical, hypothetical computer that can instantly answer a YES or NO question in any context.
     It is used in proofs of certain types of theoretical computing; e.g. cryptography.
+- url: http://wiki.c2.com/?TuringComplete
+  text: C2's definition.
+  short: C2 was the original computer wiki site.
