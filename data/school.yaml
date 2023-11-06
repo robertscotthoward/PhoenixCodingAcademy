@@ -21,13 +21,19 @@ content:
 
 
 subjects:
+- id: tools
+  title: Tools
+  short: Popular software applications
+
 - id: powershell
-  title: A scripting command environment
+  title: PowerShell
   short: Microsoft's newest replacement of DOS; competitor with Bash
+  parents: tools
 
 - id: git
   title: Git Version Control
   short: Use Git to help contribute to the club, and build collaborative project.
+  parents: tools
 
 - id: environments
   title: Frameworks and Runtime Environments
@@ -90,36 +96,6 @@ subjects:
   links:
   - url: https://www.msys2.org/
     text: Software Distribution and Building Platform for Windows
-
-
-
-
-#================================================================================
-#  DOCUMENTATION
-#================================================================================
-- id: documentation
-  title: Documentation and Technical Writing
-  short: Tools for creating documentation.
-
-- id: markdown
-  parents: documentation
-  title: Markdown Language for Documentation
-  short: Use a text editor to easily create web page content without dealing with HTML.
-  description: |
-    Much of the content on this web site is encoded in Markdown, including this description paragraph here.
-    All documentation on Github and Wikipedia is down with Markdown.
-    See the [Markdown Page](/pages/Markdown.md) for a demonstration of what can be done with Markdown.
-
-- id: mermaid
-  parents: documentation
-  title: Create diagrams with just text.
-  short: Include diagrams in your Markdown files with Mermaid
-  links:
-  - url: https://mermaid.js.org/intro/
-    text: Mermaid Home
-  - url: https://github.blog/2022-02-14-include-diagrams-markdown-files-mermaid/
-    text: Include diagrams in your Markdown files with Mermaid
-
 
 
 
@@ -358,7 +334,22 @@ subjects:
 
 - id: statistics
   title: Probability and Statistics
+  parents: math
 
+- id: fem
+  title: Finite Element Methods
+  short: |
+    Engineers and scientists use this mathematical method to break down complicated physical systems into many (but finite)
+    smaller simpler parts (or elements) where each element acts the same way.
+  parents: math
+  links:
+  - url: https://en.wikipedia.org/wiki/Finite_element_method
+    text: Main Wiki Page
+  - url: https://en.wikipedia.org/wiki/List_of_finite_element_software_packages
+    text: List of software packages
+  - url: http://sfepy.org/doc-devel/documentation.html
+    text: Simple Finite Element Python
+    short: Still complex, but the general overview is interesting.
 
 
 
@@ -526,6 +517,36 @@ subjects:
 
 
 #================================================================================
+#  DOCUMENTATION
+#================================================================================
+- id: documentation
+  title: Documentation and Technical Writing
+  short: Tools for creating documentation.
+
+- id: markdown
+  parents: documentation
+  title: Markdown Language for Documentation
+  short: Use a text editor to easily create web page content without dealing with HTML.
+  description: |
+    Much of the content on this web site is encoded in Markdown, including this description paragraph here.
+    All documentation on Github and Wikipedia is down with Markdown.
+    See the [Markdown Page](/pages/Markdown.md) for a demonstration of what can be done with Markdown.
+
+- id: mermaid
+  parents: documentation
+  title: Create diagrams with just text.
+  short: Include diagrams in your Markdown files with Mermaid
+  links:
+  - url: https://mermaid.js.org/intro/
+    text: Mermaid Home
+  - url: https://github.blog/2022-02-14-include-diagrams-markdown-files-mermaid/
+    text: Include diagrams in your Markdown files with Mermaid
+
+
+
+
+
+#================================================================================
 #  SOFTWARE ENGINEERING
 #================================================================================
 - id: softeng
@@ -562,6 +583,196 @@ subjects:
 - id: ai
   title: Artificial Intelligence
   short: What are the methods of artificial intelligence and machine learning?
+
+
+
+#================================================================================
+#  HISTORY
+#================================================================================
+
+- id: history
+  title: Computer History
+  short: Always intellectual to know how computer technology was invented and how it evolved.
+
+- id: cpus
+  title: Central Processing Units
+  short: Always intellectual to know how computer technology was invented and how it evolved.
+  parents: history
+
+- id: computers
+  title: Computers
+  short: History of computers
+  parents: history
+  description: |
+    ## Timeline
+    Some important (author's choice) relevant dates in the history of computers and software.
+
+    * **2nd century BC** - [Antikythera mechanism](https://en.wikipedia.org/wiki/Antikythera_mechanism) - first indication of
+    and analog computer.
+    * **1642** - Blaise Pascal (France) invented the [mechanical calculator](https://en.wikipedia.org/wiki/Pascal%27s_calculator).
+    * **1672** - Gottfried Leibniz (Germany) started designing a machine which multiplied, the [Stepped Reckoner](https://en.wikipedia.org/wiki/Stepped_reckoner).
+    * **1685** - Gottfried Leibniz (Germany) 4-function calculator.
+    * **1822** - Charles Babbage builds first prototype of the [decimal difference engine](https://en.wikipedia.org/wiki/Difference_engine) for tabulating polynomials.
+    * **1832** - Semen Korsakov (Russia) proposed the usage of punch cards to store information.
+    * **1839** - Jacquard Loom (England) required 24,000 punched cards to create an intricate woven pattern.
+    * **1847** - British Mathematician George Boole developed binary algebra (Boolean algebra).
+    * **1886** - Herman Hollerith (USA) proposed punch cards (or [Hollerith Cards](https://en.wikipedia.org/wiki/Punched_card)) for
+      tabulating data.
+    * **1890** - IBM founded to tabulate the 1980 Census Data.
+    * **1990** - First [flip-flop circuit](https://en.wikipedia.org/wiki/Flip-flop_(electronics)) design in England; later to become the main circuit in RAM.
+    * **1930** - Vannevar Bush built a partly electronic differential analyzer capable of solving differential equations.
+    * **1931** - Kurt Gödel (Austria) publishes Gödel Theorem about the incompleteness of mathematics.
+    * **1936** - Alan Turing (Cambridge University, England), published papers on theoretical computation; Turing Incompleteness Theorem.
+    * **1937** - George Stibitz (Bell Labs, New York City) builds first binary computer.
+    * **1937** - Claude E. Shannon published a paper on the implementation of symbolic logic using relays as his MIT Master's thesis.
+    * **1938** - Konrad Zuse (Berlin), completed the 'Z1', the first mechanical binary programmable computer.
+    * **1939** - William Hewlett and David Packard (Palo Alto, California) established the Hewlett-Packard Company in Packard's garage.
+    * **1943** - Mark 1 Colossus (UK) computer to crack German codes. It had 2400 vacuum tubes and could process 25,000 characters a second
+    * **1944** - Harvard [Mark I](https://en.wikipedia.org/wiki/Harvard_Mark_I) (US) computer by IBM.
+    * **1945** - [Vannevar Bush](https://en.wikipedia.org/wiki/Vannevar_Bush) developed memex theory, a hypertext systems, eventually leading to the creation of the World Wide Web.
+    * **1945** - [John Von Neumann](https://en.wikipedia.org/wiki/John_von_Neumann) designs the Von Neumann architecture, which the Intel chips are based on.
+    * **1947** - Kathleen Booth (University of London) invents first assembly language.
+    * **1947** - William B. Shockley (Bell Labs, USA) invents the transistor.
+    * **1949** - Cambridge University executed the first stored program on the EDSAC computer.
+    * **1950** - Alan Turing published a paper describing the potential development of human and computer intelligence and communication - the Turing Test.
+    * **1951** - First computer generated music
+    * **1951** - US builds EDVAC (electronic discrete variable computer) to load programs from [paper tape](https://en.wikipedia.org/wiki/Punched_tape).
+    * **1951** - Grace Murray Hopper invents A-0, the first high-level compiler.
+    * **1955** - John Backus (IBM) invents [FORTRAN](https://en.wikipedia.org/wiki/Fortran)
+    * **1956** - Dartmouth College (New Hampshire) holds first conference on AI.
+    * **1957** - IBM first dot matrix printer.
+    * **1958** - John McCarthy (MIT) invents [LISP](https://en.wikipedia.org/wiki/Lisp_(programming_language)) language.
+    * **1958** - Jack Kilby (Texas Instruments) invents the first integrated circuit.
+    * **1959** - **Second Generation computers** based on transistors.
+    * **1959** - Robert Noyce (Fairchild Semiconductor) develops silicon integrated circuit.
+    * **1960** - [ALGOL](https://en.wikipedia.org/wiki/ALGOL) programming language, first to use code blocks; e.g. BEGIN and END
+    * **1961** - Kenneth Iverson (IBM) invents APL programming language.
+    * **1962** - England (University of Manchester) build most powerful computer, the ATLAS, having modern architectural concepts:
+     spooling, interrupts, pipelining, interleaved memory, virtual memory and paging.
+    * **1963** - Douglas Engelbart conceived of the Mouse, later popularized by Apple Lisa.
+    * **1963** - J. C. R. Licklider (IBM) kicks off [Project MAC](https://en.wikipedia.org/wiki/MIT_Computer_Science_and_Artificial_Intelligence_Laboratory#Project_MAC),
+      DARPA funded, to start networking computers. First Internet.
+    * **1964** - **Third-generation computers** based on integrated circuits
+    * **1964** - IBM releases [PL/1](https://en.wikipedia.org/wiki/PL/I) programming language.
+    * **1964** - IBM releases IBM System/360, first standard computer.
+    * **1965** - Digital Equipment Corporation (DEC) releases the first minicomputer: [PDP-8](https://en.wikipedia.org/wiki/PDP-8)
+    * **1965** - Moore's Law, by Gordon Moore.
+    * **1965** - Fuzzy logic designed by Lotfi Zadeh (University of California, Berkeley)
+    * **1965** - Dartmouth College releases BASIC (Beginners All Purpose Symbolic Instruction Code) programming language
+    * **1965** - Donald Davies invent "packet switching", used by ARPANET, the precursor of the Internet.
+    * **1967** - Niklaus Wirth created Pascal programming language; to become the academic language. Python took that title around 2010.
+    * **1968** - Robert Noyce founded Intel
+    * **1968** - HP creates first programmable calculator - the [HP 9100A](https://en.wikipedia.org/wiki/Hewlett-Packard_9100A).
+    * **1968** - Douglas Engelbart discusses GUI and hypertext documents.
+    * **1969-11-29** - First computer-to-computer login occurred between Stanford and UCLA
+    * **1969** - Start of UNIX OS
+    * **1969** - [RS-232](https://en.wikipedia.org/wiki/RS-232) interface created
+    * **1969** - Data General sells 8000 [Nova Computers](https://en.wikipedia.org/wiki/Data_General_Nova) - the first 16-bit minicomputer.
+    * **1970** - [FORTH](https://en.wikipedia.org/wiki/Forth_(programming_language)) programming language.
+    * **1971** - First email sent.
+    * **1971-11-15** - Intel develops the first commercially available 4-bit [4004](https://en.wikipedia.org/wiki/Intel_4004) microprocessor.
+    * **1971** - 8-inch floppy disk.
+    * **1972** - [Pong](https://en.wikipedia.org/wiki/Pong) game released.
+    * **1972** - **Fourth-generation computers** based on LSI (Large Scale Integration) circuits.
+    * **1972** - Dennis Ritchie (Bell Labs) develops C language - to introduce "structured programming" paradigm.
+    * **1972** - HP creates first hand-held calculator - renders slide rules obsolete.
+    * **1972-04-01** - Intel [8008](https://en.wikipedia.org/wiki/Intel_8008) microprocessor.
+    * **1972** - ARPANET makes first international connection. Becomes the Internet.
+    * **1973** - The first personal computer - the [SCAMP](https://en.wikipedia.org/wiki/Portable_computer#SCAMP) to run [APL](https://en.wikipedia.org/wiki/APL_(programming_language)).
+    * **1973** - [Clifford Cocks](https://en.wikipedia.org/wiki/Clifford_Cocks) (UK) mathematician invents prime number factorization cryptography to become the first public key encryption.
+    * **1973** - Vint Cerf and Robert Kahn develop [TCP/IP](https://en.wikipedia.org/wiki/Internet_protocol_suite).
+    * **1973** - [Prolog](https://en.wikipedia.org/wiki/Prolog) programming language invented in France.
+    * **1973** - Don Lancaster displayed alphanumeric information on an ordinary television set.
+    * **1973** - [Ethernet](https://en.wikipedia.org/wiki/Ethernet) invented.
+    * **1974-04-01** - [Intel 8080](https://en.wikipedia.org/wiki/Intel_8080) 8-bit microprocessor released.
+    * **1974** - Motorola [MC6800](https://en.wikipedia.org/wiki/Motorola_6800) 8-bit microprocessor released
+    * **1975** - Italy [Olivetti P6060](https://en.wikipedia.org/wiki/Olivetti_P6060) first personal computer with a floppy drive.
+    * **1975** - Bill Gates and Paul Allen create first BASIC implementation on a microcomputer; the MITS Altair. This lead to the creation of Microsoft.
+    * **1975** - MOS Technology released [6502](https://en.wikipedia.org/wiki/MOS_Technology_6502) microprocessor; used in the Apple I and II, Atari, Commodore Pet, and VIC-20.
+    * **1975-11** - [Zilog](https://en.wikipedia.org/wiki/Zilog) founded by ex-Intel employees.
+    * **1976-04-01** - Steve Wozniak and Steve Jobs founded Apple Computers.
+    * **1976** - IBM makes first laser printer.
+    * **1976** - Zilog releases [Z80](https://en.wikipedia.org/wiki/Zilog_Z80) microprocessor, compatible with the Intel 8080, and popularized by the [TRS-80](https://en.wikipedia.org/wiki/TRS-80_Model_II#Model_16).
+    * **1976** - Seymour Cray invents the Cray-1 supercomputer - the first super computer.
+    * **1976** - Guy Steele invents EMACS.
+    * **1978-06-08** - Intel 16-bit 8086 microprocessor; the first x86 chip.
+    * **1978** - Japan releases the Space Invaders game.
+    * **1979** - ADA programming language invented for the DoD.
+    * **1979** - Intel 8088 microprocessor invented (a cheaper version of the 8086) for the IBM PC.
+    * **1979** - Japan invents the compact disc.
+    * **1979** - Motorola releases the 32-bit [68000](https://en.wikipedia.org/wiki/Motorola_68000).
+    * **1979** - [VisiCalc](https://en.wikipedia.org/wiki/VisiCalc) released as the first spreadsheet, thanks to Dan Bricklin.
+    * **1979** - WordStar released.
+    * **1980** - Japan releases PacMan
+    * **1980** - Microsoft creates DOS.
+    * **1981** - IBM announces the IBM-PC.
+    * **1981** - IBM announces the IBM-PC with MS-DOS 1.0
+    * **1981** - TCP/IP established.
+    * **1981** - Richard Feynman proposed quantum computers.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  links:
+  - url: https://en.wikipedia.org/wiki/History_of_computing
+    text: Wikipedia - History of Computers
+  - url: https://blog.archive.org/2023/09/20/a-quarter-in-a-quarter-million-out-10-years-of-emulation-at-internet-archive/
+    text: "A Quarter In, A Quarter-Million Out: 10 Years of Emulation at Internet Archive"
+    short: |
+      With the goal to keep a history of old software (especially those that read documents) the solution is to emulate the
+      machines and operating systems that these old software run on. Machines back then ran in the MHz. Today's computers are
+      1000x faster.
+  - url: http://dunfield.classiccmp.org/
+    short: List of home computers since 1976
+    text: Dave's Old Computers
+  - url: https://www.usg.edu/galileo/skills/unit07/internet07_02.phtml
+    text: A Brief History of the Internet
+
+- id: www
+  title: World Wide Web
+  short: History of the World Wide Web
+  parents: history
+  description: |
+    ## Timeline
+    Some important relevant dates in the history of the WWW..
+
+    * **1983-01-01** - The official birthday of the Internet.
+      Prior to this, the various computer networks did not have a standard way to communicate with each other.
+      ARPANET changed its standard to TCP/IP
+    * **1985-10** Intel introduced the [80386](https://www.xtof.info/intel80386.html) with Memory Management Unit (MMU) that allows
+      virtual memory and disk swapping. It was Intel's first 32-bit CPU.
+    * **1989-03-12** - Tim Berners-Lee proposes the World Wide Web
+    * **1990-12** - First web browser and web site. WWW goes live.
+    * **1992-08** Linus Torvalds release the first Linux. It ran on the 80386
+    * **1993-01** - First release of Mosaic Browser.
+    * **1993-07** - Microsoft Windows NT
+    * **1994-12** - 10,000 web servers around the world.
+
+  links:
+  - url: https://en.wikipedia.org/wiki/History_of_the_World_Wide_Web
+    text: Wikipedia - History of the World Wide Web
+  - url: https://blog.archive.org/2023/09/20/a-quarter-in-a-quarter-million-out-10-years-of-emulation-at-internet-archive/
+    text: "A Quarter In, A Quarter-Million Out: 10 Years of Emulation at Internet Archive"
+    short: |
+      With the goal to keep a history of old software (especially those that read documents) the solution is to emulate the
+      machines and operating systems that these old software run on. Machines back then ran in the MHz. Today's computers are
+      1000x faster.
+  - url: https://www.visualcapitalist.com/30-year-timeline-world-wide-web/
+    text: "Timeline: The 30-Year History of the World Wide Web"
+
 
 
 

@@ -41,6 +41,10 @@ description: |
   * [Chemical Computers](https://en.wikipedia.org/wiki/Chemical_computer) - Chemical reactions were seen as a simple move towards a
     stable equilibrium which was not very promising for computation; until now.
   * [DNA Computing](https://en.wikipedia.org/wiki/DNA_computing)
+  * [Breaking news: HTML+CSS is Turing complete](https://lemire.me/blog/2011/03/08/breaking-news-htmlcss-is-turing-complete) - because
+    it can be used to program a [Rule 110](https://en.wikipedia.org/wiki/Rule_110) automaton.
+    Rule 110 is arguably the simplest known Turing complete system. It is one algorithm of many described in Stephen Wolfram's
+    [A New Kind of Science](https://www.wolframscience.com/nks/) book, which is online for free.
 
 links:
 - url: https://en.wikipedia.org/wiki/Alan_Turing
