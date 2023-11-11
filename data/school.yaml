@@ -289,16 +289,21 @@ subjects:
     This subject is less about how to solve math problems and more about what types of problems are there that can make a
     business profitable, and what types of tools exist that can solve them.
 
+- id: mathapps
+  title: Mathematical Software and Applications
+  short: A list of popular math tools.
+  parents: math
+
 - id: octave
   title: GNU Octave
   short: Scientific Programming Language
-  parents: math
+  parents: mathapps
   links:
   - url: https://octave.org/
 
 - id: sagemath
   title: SageMath
-  parents: math
+  parents: mathapps
   short: |
     System for Algebra and Geometry Experimentation is a free application that can solve problems as well as Mathematica.
     No only can it give you the number to a solution, it can give your function that solves a Calculus problem.
@@ -308,7 +313,7 @@ subjects:
 
 - id: BLAS
   title: Basic Linear Algebra Subprograms
-  parents: math
+  parents: mathapps
   short: |
     BLAS is used for high-speed computations and A.I. We'll see where this course goes in depth,
     but a 30-minute understanding of this tool is important for future engineers.
@@ -317,7 +322,7 @@ subjects:
 
 - id: matlab
   title: MATLAB
-  parents: math
+  parents: mathapps
   short: |
     MATLAB is a programming platform designed specifically for engineers and scientists to analyze and design systems and products.
     The heart of MATLAB is the MATLAB language, which is a matrix-based language that allows for the most natural expression
@@ -335,6 +340,12 @@ subjects:
 - id: statistics
   title: Probability and Statistics
   parents: math
+  description: |
+    With all the great tools today (Python, R, Mathematica, SageMath) prob and stats are much easier to use.
+  links:
+  - url: https://seeing-theory.brown.edu/index.html
+    text: A visual introduction to probability and statistics
+    short: I found this site well done.
 
 - id: fem
   title: Finite Element Methods
@@ -547,11 +558,41 @@ subjects:
 
 
 #================================================================================
+#  ENGINEERING
+#================================================================================
+- id: eng
+  title: Engineering
+  short: What are different engineering professions and articles pertaining to it?
+  description: |
+    I've once heard that an "Engineer" is a "Scientist" plus an "Economist".
+    $$Engineer = Scientist + Economist$$
+    As a scientist, you find solutions to physical problems.
+    As an economist, you optimize the solutions to minimize cost.
+
+  links:
+  - url: https://en.wikipedia.org/wiki/List_of_engineering_branches
+    text: Wikipedia - List of engineering branches
+    short: Some blogs worth reading to improve your system design.
+  - url: https://www.nu.edu/blog/types-of-engineering/
+    text: "Types of Engineering: What Are They? Everything Explained"
+    short: What is an engineer? Types of engineering.
+  - url: https://blog.prepscholar.com/different-types-of-engineering
+    text: "50+ Types of Engineering Degrees: Which Is Right for You?"
+    short: What types of engineering can you choose from? And how do they differ from one another?
+  - url: https://www.forbes.com/sites/andrewdepietro/2023/01/31/highest-paying-engineering-jobs-of-2023/?sh=2eb31f21768e
+    text: "Highest Paying Engineering Jobs Of 2023"
+    short: Petroleum, Computer Hardware, and Aerospace being the top 3.
+  - url: https://github.com/JohnCrickett/SystemDesign/blob/main/engineering-blogs/README.md
+    text: Tech Company Engineering Blogs
+    short: Some blogs worth reading to improve your system design.
+
+#================================================================================
 #  SOFTWARE ENGINEERING
 #================================================================================
 - id: softeng
   title: Software Engineering
   short: What is software engineering? What are the major topics of it? How can you use it to help build this site?
+  parents: eng
 
 - id: softeng_specification
   title: Writing a Software Product Specification (SPS)
@@ -709,6 +750,54 @@ subjects:
     * **1981** - IBM announces the IBM-PC with MS-DOS 1.0
     * **1981** - TCP/IP established.
     * **1981** - Richard Feynman proposed quantum computers.
+    * **1982-02** - 80286 released.
+    * **1982-05** - IBM launch the double-sided 320 KB floppy disk drive.
+    * **1982-07** - Timex/Sinclair announces the [Sinclair 1000](https://en.wikipedia.org/wiki/Timex_Sinclair_1000) personal computer - the first under $100.
+    * **1982-08** - [Commodore 64](https://en.wikipedia.org/wiki/Commodore_64) released - the highest-selling single computer model of all time.
+    * **1982-12** - IBM bought 12% of Intel.
+    * **1983-01** - Apple introduces the [Lisa](https://en.wikipedia.org/wiki/Apple_Lisa) computer.
+    * **1983-01** - [Lotus 1-2-3](https://en.wikipedia.org/wiki/Lotus_1-2-3) - the "killer" application for the IBM-PC
+    * **1983-09** - Richard Stallman announces the GNU Project, to create a free software - eventually led to Linux.
+    * **1983-10** - Microsoft Word.
+    * **1983-11** - DNS introduced to the Internet
+    * **1983** - Philippe Kahn founded [Borland](https://en.wikipedia.org/wiki/Borland) company - creator of Turbo Pascal by Anders Hejlsberg, who also later created C# programming language.
+    * **1984-05** - HP LaserJet released. 20 million sold.
+    * **1984** - Borland releases [Turbo Pascal](https://en.wikipedia.org/wiki/Turbo_Pascal) - the first programming language sold with an integrated development environment (IDE)
+      containing the compiler, editor, linker, and debugger. Sold for $49.99 and sold more than 400K copies. It became one of the most
+      popular programming languages of the time.
+    * **1985-03** - MS-DOS 3.1
+    * **1985-03** - Symbolics registered the symbolics.com domain, the first .com domain in the world.
+    * **1985-06** - Commodore 128 was Commodore's last 8-bit computer. $299.95
+    * **1985-07** - Commodore released the Amiga
+    * **1985-10** - Intel 80386 DX released - 33 MHz and can address up to 4 GB of RAM.
+    * **1985-11** - Microsoft Windows
+    * **1985** - Philips (Japan) invents the CD-ROM
+    * **1985** - Enhanced Graphics Adapter (EGA) released.
+    * **1986-06** - Eric Thomas invents LISTSERV, the first automated mailing list management application
+    * **1986-10** - [Compaq DeskPro](https://en.wikipedia.org/wiki/Compaq_Deskpro_386) released.
+    * **1987-04** - IBM introduces the PS/2 Computer Systems.
+    * **1987-04** - IBM introduces the PS/2 Computer Systems.
+    * **1987-12** - Microsoft Windows 2
+    * **1987** - [HyperCard](https://en.wikipedia.org/wiki/HyperCard) released.
+    * **1987** - IBM VGA
+    * **1988** - WORM (Write Once Read Many times) – disks marketed for first time by IBM.
+    * **1988** - Adobe Photoshop
+    * **1989-04** - Intel 80486
+    * **1989** - Tim Berners-Lee invents the World Wide Web
+    * **1990-05** - Microsoft Windows 3.0
+    * **1990-11** - Microsoft Office
+    * **1991** - Phil Zimmermann releases public key encryption program PGP and source code.
+    * **1991** - Linus Torvalds (Finland) releases Linux Kernel.
+    * **1992** - MIPS releases first 64-bit microprocessors, the MIPS R4000.
+    * **1992** - IBM PowerPC
+    * **1992** - Wolfenstein 3D Game
+    * **1993** - Mosaic graphical web browser launched
+    * **1993** - MP3
+
+
+
+
+
 
 
 
