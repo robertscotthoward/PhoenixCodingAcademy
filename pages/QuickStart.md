@@ -10,7 +10,7 @@ Steps:
 * You should see a new folder called `C:\mystuff\PhoenixCodingAcademy`
 * Change to that folder.
 * --> Optionally, you can also go to [the Github repo](https://github.com/PhoenixCodingAcademy/PhoenixCodingAcademy) and download the zip file of the entire repo, but you won't have a local repo to which you can commit changes.
-* Run `python projects/web/main.py --debug run` or just run the `StartWebServer.bat` there.
+* Run `python projects/web/main.py --debug run` or just run the `StartWebServer.bat` there. You'll need [Python installed](#Installation).
 * You should see the following:
 ```
 WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
@@ -30,3 +30,13 @@ See [Git](/subjects/git) to learn how to:
 * Commit your changes
 * Push your changes
 * Create a pull request
+
+
+# Installation
+
+Install Python 3.9 or higher.
+
+From the `PhoenixCodingAcademy\projects\web` folder, run:
+```
+pip install -r requirements.txt
+```
