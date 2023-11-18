@@ -4,7 +4,7 @@ import glob
 thisFile = os.path.abspath(sys.argv[0])
 thisPath = os.path.dirname(thisFile)
 root = os.path.abspath(os.path.join(thisPath, os.path.relpath('..')))
-sys.path.append(root)
+sys.path.insert(0, root)
 
 import markdown
 import yaml

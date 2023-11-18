@@ -12,6 +12,77 @@ data:
     # baseUrl: https://colab.research.google.com/github/PhoenixCodingAcademy/PhoenixCodingAcademy/blob/main/projects/notebooks
     baseUrl1: https://github.com/PhoenixCodingAcademy/PhoenixCodingAcademy/blob/main/projects/notebooks
     baseUrl: https://nbviewer.org/github/PhoenixCodingAcademy/PhoenixCodingAcademy/blob/main/projects/notebooks
+    meta:
+    - id: Calculus
+      short: Introduction to using Python to solve some calculus problems.
+      cat: Math
+
+    - id: DiffEq0
+      short: Template for Differential Equations
+      cat: Math
+    - id: DiffEq1
+      short: Template for Differential Equations
+      cat: Math
+    - id: DiffEq2
+      short: Template for Differential Equations
+      cat: Math
+    - id: DiffEq3
+      short: Template for Differential Equations
+      cat: Math
+    - id: Linear Algebra
+      short: Some linear algebra
+      cat: Math
+    - id: Linear Regression
+      short: Create a set of points and find the best line that fits those points.
+      cat: Math
+    - id: Lotka–Volterra Equations
+      short: Systems of linear differential equations that model predator/prey population relationships.
+      cat: Math
+    - id: SIR Model
+      short: Epidemiology and the SIR Model. Systems of linear differential equations.
+      cat: Math
+    - id: sympy1
+      short: use Sympy to symbolically solve this quadratic equation.
+      cat: Math
+
+    - id: Plot Graphs
+      short: Use matplotlib to plot some functions
+      cat: Data Science
+    - id: DataScience1
+      short: Basic Reproducible Research and Data Science
+      cat: Data Science
+
+    - id: Py3dMol
+      short: Model a molecule in 3D
+      cat: Chemistry
+    - id: PyMol
+      short: Model a molecule in 3D
+      cat: Chemistry
+    - id: PyMolPy3
+      short: Model a molecule in 3D
+      cat: Chemistry
+
+    - id: PythonLists
+      short: Examples of manipulating lists, playing cards, and dealing hand.
+      cat: Python
+
+    - id: SimultaneousEquations
+      short: Solve a three-variable simultaneous equation with numpy linear algebra.
+      cat: Math
+    - id: Wolfram Automata
+      short: From Stephen Wolfram's New Kind of Science
+      cat: Computer Science
+
+    - id: Bitcoin and Blockchain Mining
+      short: SHA-256 Hashing and Bitcoin Mining
+      cat: Other
+    - id: Cadquery Legos
+      short: Use CadQuery to show shapes on a 3D screen
+      cat: Other
+    - id: Demographics
+      short: Run population estimations of a country based on various assumptions.
+      cat: Other
+
 
 content:
   subjects: |

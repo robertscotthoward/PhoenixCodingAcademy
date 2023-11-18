@@ -1,2 +1,4 @@
 set FLASK_DEBUG=true
-python projects/web/main.py --debug run
+pushd projects\web
+python main.py --debug run
+popd

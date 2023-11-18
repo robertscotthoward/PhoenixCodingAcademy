@@ -11,8 +11,10 @@ import yaml
 thisFile = os.path.abspath(sys.argv[0])
 thisPath = os.path.dirname(thisFile)
 root = os.path.abspath(os.path.join(thisPath, os.path.relpath('..')))
+sys.path.insert(0, root)
+# print("root", root)
+# print("sys.path", sys.path)
 
-sys.path.append(root)
 
 import libs.tools as tools
 from libs.school import *
@@ -125,33 +127,31 @@ def _notebooks():
   school = getSchool()
   baseUrl = school.yo['data']['notebooks']['baseUrl']
   notebooksPath = tools.GetAncestorPath('projects/notebooks')
+  meta = school.yo['data']['notebooks']['meta']
 
-  html = '<ul>'
-  sp = os.path.join(notebooksPath, '*.ipynb')
-  for p in sorted(glob.glob(sp), key=lambda x: os.path.split(x)[-1]):
-    fn = os.path.split(p)[-1]
-    url = os.path.join(baseUrl, fn)
+  cats = []
+  for notebook in meta:
+    cat = notebook['cat']
+    if not cat in cats:
+      cats.append(cat)
 
-    nbPath = os.path.join(notebooksPath, fn)
-    jo = tools.readJson(nbPath)
-    description = ''
-    if jo:
-      cells = jo['cells']
+  html = ''
 
-      # Scan all cells for a line that starts with 'DESCRIPTION:'. That will define description of our notebook.
-      for cell in cells:
-        if cell["cell_type"] == "markdown":
-          lines = cell["source"]
-          for line in lines:
-            if line.startswith('DESCRIPTION:'):
-              description = line.split(':')[-1].strip()
-              break
+  for cat in cats:
+    html += f'<h2>{cat}</h2>'
+    html += '\n<ul>\n'
+    for notebook in meta:
+      thisCat = notebook['cat'] or 'Other'
+      if thisCat != cat: continue
+      fn = notebook['id']
+      url = os.path.join(baseUrl, fn)
+      description = notebook['short']
 
-    html += f"""<li><a href="{url}">{fn.replace('.ipynb', '')}</a>"""
-    if description:
-      html += f''' - <i>{description}</i>'''
-    html += "</li>\n"
-  html += '</ul>'
+      html += f"""<li><a href="{url}">{fn.replace('.ipynb', '')}</a>"""
+      if description:
+        html += f''' - <i>{description}</i>'''
+      html += "</li>\n"
+    html += '</ul>'
 
   model = {
     "path": notebooksPath,
