@@ -73,11 +73,17 @@ courses:
     title: Install Git
     description: |
       You'll need to have git installed on your machine before you can use it.
+      In this assignment, you will install Git on your local machine.
+      Follow the steps in the parent course.
+    goal: Install Git on your local machine
+    acceptance: |
+      * GIVEN I run `git --version` at the command prompt
+      * THEN I see something like `git version 2.34.1.windows.1`
 
-      *
 
 - id: Git_CloneWebRepo
   title: Clone the web repo to a local folder and run the site.
+  parents: Git_Install_1
   description: |
     You don't need a GitHub account to clone a repo from Github, but you do need an account to push your changes back.
   purpose: |

@@ -39,7 +39,7 @@ def RepoRoot():
 @app.route('/')
 def hello():
   school = getSchool()
-  return render_template('main.html', school=school, FileMarkdown=FileMarkdown)
+  return render_template('main.html', school=school, FileMarkdown=FileMarkdown, title='PCA')
 
 
 @app.route('/info')
@@ -60,7 +60,7 @@ Repo Root:                    {os.path.abspath(root)}
 @app.route('/yaml')
 def _yaml():
   school = getSchool()
-  return render_template('yaml.html', school=school)
+  return render_template('yaml.html', school=school, title='YAML')
   return f'''
 <pre>
 PATH: {os.path.abspath('.')}
@@ -71,7 +71,7 @@ PATH: {os.path.abspath('.')}
 @app.route('/subjects')
 def _subjects():
   school = getSchool()
-  return render_template('subjects.html', school=school)
+  return render_template('subjects.html', school=school, title='Subjects')
 
 
 @app.route('/subjects/<id>')
@@ -157,7 +157,7 @@ def _notebooks():
     "path": notebooksPath,
     "html": html
   }
-  return render_template('notebooks.html', model=model)
+  return render_template('notebooks.html', model=model, title='Notebooks')
 
 @app.route('/notebooks/<id>')
 def _notebook(id):
@@ -183,11 +183,12 @@ def _default(path):
     school = getSchool()
     rootRepo = RepoRoot()
     webPath = os.path.join(rootRepo, 'projects', 'web')
+    title = path.split('/')[-1]
 
     if path.lower().endswith('.md'):
       path = os.path.join(rootRepo, path)
       data = tools.readFile(path)
-      return render_template('markdown.html', data=data, Markdown=Markdown)
+      return render_template('markdown.html', data=data, Markdown=Markdown, title=title)
 
     p = os.path.join(webPath, 'static', path)
     if os.path.exists(p):
@@ -195,17 +196,17 @@ def _default(path):
 
     p = os.path.join(webPath, 'templates', path)
     if os.path.exists(p):
-      return render_template(path)
+      return render_template(path, title=title)
 
     p = os.path.join(webPath, 'templates', path + ".html")
     if os.path.exists(p):
-      return render_template(path + ".html", school=school)
+      return render_template(path + ".html", school=school, title=title)
 
     dp = os.path.join(rootRepo, 'data')
     path = os.path.join(rootRepo, path)
-    return render_template(f'{path}.html', school=school)
+    return render_template(f'{path}.html', school=school, title=title)
   except Exception as e:
-    return render_template("error.html", message=e)
+    return render_template("error.html", message=e, title=title)
 
 
 
