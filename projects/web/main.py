@@ -144,7 +144,7 @@ def _notebooks():
       thisCat = notebook['cat'] or 'Other'
       if thisCat != cat: continue
       fn = notebook['id']
-      url = os.path.join(baseUrl, fn)
+      url = os.path.join(baseUrl, fn) + '.ipynb'
       description = notebook['short']
 
       html += f"""<li><a href="{url}">{fn.replace('.ipynb', '')}</a>"""
