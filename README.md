@@ -10,6 +10,7 @@
 - [Testing](#testing)
 
 # Quick Links
+* [Membership](/pages/Membership.md) - *how to join this club.*
 * [Quick Start](/pages/QuickStart.md) - *how to pull the code for this site and run it locally on you machine.*
 * [How this site works](/pages/Architecture.md) - *general architecture and requirements choices.*
 
