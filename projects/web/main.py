@@ -126,6 +126,7 @@ def _assignment(id):
 def _notebooks():
   school = getSchool()
   baseUrl = school.yo['data']['notebooks']['baseUrl']
+  gitUrl = school.yo['data']['notebooks']['gitUrl']
   notebooksPath = tools.GetAncestorPath('projects/notebooks')
   meta = school.yo['data']['notebooks']['meta']
 
@@ -145,9 +146,10 @@ def _notebooks():
       if thisCat != cat: continue
       fn = notebook['id']
       url = os.path.join(baseUrl, fn) + '.ipynb'
+      giturl = os.path.join(gitUrl, fn) + '.ipynb'
       description = notebook['short']
 
-      html += f"""<li><a href="{url}">{fn.replace('.ipynb', '')}</a>"""
+      html += f"""<li><a href="{url}">{fn.replace('.ipynb', '')}</a> &nbsp; <a href="{giturl}">GIT</a>"""
       if description:
         html += f''' - <i>{description}</i>'''
       html += "</li>\n"

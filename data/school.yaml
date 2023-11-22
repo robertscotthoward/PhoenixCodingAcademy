@@ -12,6 +12,7 @@ data:
     # baseUrl: https://colab.research.google.com/github/PhoenixCodingAcademy/PhoenixCodingAcademy/blob/main/projects/notebooks
     baseUrl1: https://github.com/PhoenixCodingAcademy/PhoenixCodingAcademy/blob/main/projects/notebooks
     baseUrl: https://nbviewer.org/github/PhoenixCodingAcademy/PhoenixCodingAcademy/blob/main/projects/notebooks
+    gitUrl: https://github.com/PhoenixCodingAcademy/PhoenixCodingAcademy/blob/main/projects/notebooks
     meta:
     - id: Calculus
       short: Introduction to using Python to solve some calculus problems.
