@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<script>
+  $(async () => {
+    response = await fetch('/api/random?n=10')
+    list = await response.json()
+    ul = $('<ul></ul>')
+    list.sort()
+    list.forEach(element => {
+      li = $(`<li>${element}</li>`)
+      ul.append(li)
+      console.log(element)
+      if (element.toString().startsWith('3')) {
+        li.css("color", "red")
+      }
+    });
+    $('#output').html(ul)
+  })
+</script>
+
+
+<div id="output">Loading...</div>
+
+{% endblock %}

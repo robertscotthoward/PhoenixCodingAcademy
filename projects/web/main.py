@@ -21,6 +21,8 @@ from libs.school import *
 from libs.exam import *
 from flask import Flask, Blueprint, render_template, request, send_file, redirect, send_from_directory
 
+from api import *
+
 #fnStartup = tools.GetAncestorPath('startup.yaml')
 #startup = tools.readYaml(fnStartup)
 
@@ -28,6 +30,7 @@ from flask import Flask, Blueprint, render_template, request, send_file, redirec
 site = Blueprint('PCA', __name__, template_folder='templates')
 app = Flask(__name__)
 
+app.register_blueprint(get_name)
 
 def RepoRoot():
   'Get the absolute folder path that contains the .git folder.'
@@ -118,7 +121,7 @@ def _assignment(id):
   title = assignment.title
   return render_template('assignment.html', assignment=assignment, Markdown=Markdown, title=title)
 
-  return render_template('assignment.html', assignment=assignment, Markdown=Markdown, title="ERROR")
+
 
 
 
@@ -170,6 +173,16 @@ def _notebook(id):
   baseUrl = school.yo['data']['notebooks']['baseUrl']
   path = os.path.join(baseUrl, 'tree')
   return redirect(path, code=302)
+
+
+
+
+@app.route('/client_example')
+def _client_example():
+  '''
+  Example page that calls an API
+  '''
+  return render_template('client_example.html')
 
 
 
