@@ -19,6 +19,6 @@ Then you'll be able to see the [project board](https://github.com/orgs/PhoenixCo
 
 # Who can be a member
 
-This club was specifically designed for PCA High School students, teachers, and volunteers but the club is not exclusive.
+Anyone with a Github account. Although this club was specifically designed for PCA High School students, teachers, and volunteers, the club is not exclusive.
 If you are interested in learning or teaching, then request to become a member. To be physically present in the PCA classroom, you must be officially affiliated with PCA; else, be a remote member. For example, teachers and students of other high schools, parents and friends of students, or professionals who just want to be part of the club and help out.
 
