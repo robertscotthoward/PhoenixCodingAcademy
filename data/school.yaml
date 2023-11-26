@@ -625,6 +625,12 @@ subjects:
   - url: https://github.blog/2022-02-14-include-diagrams-markdown-files-mermaid/
     text: Include diagrams in your Markdown files with Mermaid
 
+- id: latex
+  parents: documentation
+  title: LaTeX
+  short: Include diagrams in your Markdown files with Mermaid
+  description: |
+    See [LaTeX](/pages/latex.md)
 
 
 
