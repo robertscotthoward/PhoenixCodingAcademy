@@ -32,6 +32,8 @@ The use of the backslash is an indication that LaTeX is driving the layout.
 
 # Symbols
 
+Cool site [Detexify](http://detexify.kirelabs.org/classify.html). Draw a symbol with your mouse and get the Tex result.
+
 ## Greek Letters
 ```
 \alpha, \beta, \gamma, \delta, \epsilon, \varepsilon, \zeta, \eta, \theta, \vartheta, \iota, \kappa, \lambda, \mu, \nu, \xi, \omicron, \pi, \varpi, \rho, \varrho, \sigma, \varsigma, \tau, \upsilon, \phi, \varphi, \chi, \psi, \omega
@@ -46,6 +48,14 @@ $$
 $$
 \Alpha, \Beta, \Gamma, \Delta, \Epsilon, \Zeta, \Eta, \Theta, \Iota, \Kappa, \Lambda, \Mu, \Nu, \Xi, \Omicron, \Pi, \Rho, \Sigma, \Tau, \Upsilon, \Phi, \Chi, \Psi, \Omega
 $$
+
+## Spaces
+
+* Thin space: `$A \ B$` = $A \ B$
+* Normal space: `$A \; B$` = $A \; B$
+* Big space: `$A \quad B$` = $A \quad B$
+* Bigger space: `$A \qquad B$` = $A \qquad B$
+
 
 # Expressions
 
@@ -145,6 +155,9 @@ $$
 
 ```
 
+# Vectors
+
+See [Machine Learning](/pages/ML.md)
 
 
 

@@ -12,12 +12,12 @@
       loader: {
         load: [
           'input/tex-base', '[tex]/newcommand', '[tex]/action',
-          'output/chtml'
+          'output/chtml', '[tex]/ams'
         ]
       },
       tex: {
         inlineMath: [['$', '$'], ['\\(', '\\)']],
-        packages: ['base', 'newcommand', 'action']
+        packages: ['ams', 'base', 'newcommand', 'action']
       }
     };
   </script>
@@ -25,6 +25,14 @@
 </head>
 
 <body>
+
+  \begin{align}
+  \vec{a} &= (1, 2, 3) \\
+  \vec{b} &= [1, 2, 3] \\
+  \vec{c} &= \langle 1, 2, 3 \rangle
+  \end{align}
+
+
   <h1>MATH1</h1>
   <p>
     When \(a \ne 0\), there are two solutions to \(ax^2 + bx + c = 0\) and they are
@@ -40,6 +48,32 @@
   <p>
     When $a \ne 0$, there are two solutions to \(ax^2 + bx + c = 0\) and they are
     $$x = {-b \pm \sqrt{\texttip{b^2-4ac}{descriminant}} \over 2a}.$$
+  </p>
+
+
+  <h1>MATH4</h1>
+  <p>
+    $$
+    \begin{equation}
+    \begin{split}
+    A & = \frac{\pi r^2}{2} \\
+     & = \frac{1}{2} \pi r^2
+    \end{split}
+    \end{equation}
+    $$
+
+    $$
+    \begin{array}{cc}
+      a & b \\
+      c & d
+    \end{array}
+    $$
+
+    $$
+    \begin{align}
+    x = {-b \pm \sqrt{\texttip{b^2-4ac}{descriminant}} \over 2a}
+    \begin{align}
+    $$
   </p>
 
 
