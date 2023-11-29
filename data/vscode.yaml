@@ -1,7 +1,7 @@
 description: |
   I love using Visual Studio 2002 for .NET Development and C++, but if I had to choose exactly one editor to use for the rest of my life,
-  it would be Visual Code (or VS Code or just Code). With this tool, I can literally do everything. It is practically it's own operating system,
-  much like Emacs use to claim decades ago. This entire site was built solely in VS Code - the Python Flask web site, HTML, CSS, (not much JavaScript),
+  it would be Visual Code (or VS Code or just Code). With this tool, I can literally do everything. It is practically its own operating system,
+  much like Emacs used to claim decades ago. This entire site was built solely in VS Code - the Python Flask web site, HTML, CSS, (not much JavaScript),
   Markdown, YAML, and Git.
 
   It has these modern features:
@@ -11,7 +11,7 @@ description: |
   * Support for all languages; Python, Go, C, C++, C#, Ruby, HTML, CSS, JavaScript, LaTeX, Markdown, ... you name it.
   * Built-in debugging hooks; run and hit breakpoints.
   * Built-in Git workflow. Commit, Push, create Pull Requests, Rebase, ...
-  * Free and Open-Source. Tons of code on GitHub.
+  * Free and Open-Source. Tons of code on GitHub. Incredible documentation. ChatGPT knows it well.
   * Can install in user mode, without admin permissions.
   * Cross platform: Windows, Linux, Max, Raspberry Pi
 

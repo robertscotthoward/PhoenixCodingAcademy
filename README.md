@@ -13,6 +13,10 @@
 * [Membership](/pages/Membership.md) - *how to join this club.*
 * [Quick Start](/pages/QuickStart.md) - *how to pull the code for this site and run it locally on you machine.*
 * [How this site works](/pages/Architecture.md) - *general architecture and requirements choices.*
+* [Github Organization](https://github.com/PhoenixCodingAcademy)
+    * [Main Repo](https://github.com/PhoenixCodingAcademy/PhoenixCodingAcademy)
+* For members:
+    * [Project Board](https://github.com/orgs/PhoenixCodingAcademy/projects/2/views/1)
 
 # Summary Goals
 * Learn by teaching. Help create class content and tests.

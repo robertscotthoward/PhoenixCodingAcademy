@@ -110,7 +110,9 @@ courses:
         Here you install those libraries and then verify they work.
       steps: |
         ```
-        pip install these libraries: jupyter scipy numpy pandas matplotlib
+        python -m pip install --upgrade pip
+          -> Python 3.11.0
+        pip install jupyter scipy numpy pandas matplotlib gmpy2 pyyaml flask markdown
         ```
       acceptance:
       - do: |
