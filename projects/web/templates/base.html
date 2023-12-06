@@ -24,10 +24,12 @@
   <script>
     mermaid.initialize({ startOnLoad: true });
 
+    // See https://docs.mathjax.org/en/latest/input/tex/extensions/index.html
     MathJax = {
       loader: {
         load: [
           'input/tex-base', '[tex]/newcommand', '[tex]/action',
+          '[tex]/physics',
           'output/chtml', '[tex]/ams'
         ]
       },
@@ -36,7 +38,7 @@
       },
       tex: {
         inlineMath: [['$', '$'], ['\\(', '\\)']],
-        packages: ['ams', 'unicode-math', 'base', 'newcommand', 'action']
+        packages: ['ams', 'base', 'newcommand', 'action', 'physics']
       }
     };
   </script>

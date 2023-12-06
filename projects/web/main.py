@@ -221,7 +221,9 @@ def _default(path):
     path = os.path.join(rootRepo, path)
     return render_template(f'{path}.html', school=school, title=title)
   except Exception as e:
-    return render_template("error.html", message=e, title=title)
+    title=f'''{type(e).__name__}'''
+    message=f'''{type(e).__name__}: {e}'''
+    return render_template("error.html", message=message, title=title)
 
 
 

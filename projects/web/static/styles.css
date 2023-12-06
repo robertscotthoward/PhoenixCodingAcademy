@@ -19,3 +19,18 @@ pre {
   padding: 10px;
   color: black;
 }
+
+table, th, td {
+  border: 1px solid gray;
+  border-collapse: collapse;
+  padding: 5px 30px;
+  text-align: right;
+}
+
+table {
+  margin: 10px 0px;
+}
+
+th {
+  font-size: larger;
+}

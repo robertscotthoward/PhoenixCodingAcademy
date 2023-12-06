@@ -107,6 +107,11 @@ subjects:
   short: Use Git to help contribute to the club, and build collaborative project.
   parents: tools
 
+- id: github
+  title: Github
+  short: Use Github to share your projects in the cloud.
+  parents: git
+
 - id: environments
   title: Frameworks and Runtime Environments
   short: General overview of operating systems with emphasis on Windows and Linux
@@ -323,8 +328,13 @@ subjects:
   title: Web Development
   short: All things HTML, CSS, and JavaScript; plus dynamic site generation and hosting.
 
+- id: stackblitz
+  title: StackBlitz Online Dev Site
+  parents: web
+
 - id: bootstrap
   title: Bootstrap CSS and JS web site styles
+  parents: web
   links:
   - url: https://getbootstrap.com
     text: Build fast, responsive sites with Bootstrap
@@ -343,7 +353,7 @@ subjects:
 - id: this_web
   title: Contributing to this school web site
   short: Learn how to help evolve this site by creating subjects, courses, assignments, and exams.
-  parents: flask yaml git
+  parents: flask yaml github
   prerequisites: InstallPython
 
 

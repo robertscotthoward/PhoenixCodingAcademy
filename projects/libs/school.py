@@ -30,14 +30,15 @@ def Markdown(md):
   if not md: return ''
   try:
     html = markdown.markdown(md, extensions=[
-      'fenced_code', # triple backticks
       'md_mermaid',
+      'fenced_code', # triple backticks
+      'tables',
       TocExtension(toc_depth=2)
       ])
     return html
   except Exception as e:
-    print(e)
-    html = markdown.markdown(md, extensions=['fenced_code','toc'])
+    print(f'''\nERROR:\n{e}\n''')
+    html = markdown.markdown(md, extensions=['fenced_code','md_mermaid','tables','toc'])
     #{'text.latex.preamble' : r'\usepackage{amsmath}'}
     return html
 
