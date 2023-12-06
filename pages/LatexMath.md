@@ -52,6 +52,70 @@ $$
 
 NOTE: "\Alpha" is not rendered in every engine. Capital ALPHA in Greek is the same letter as the Roman letter A, among others.
 
+## Physics
+```
+\abs{-57}, \absolutevalue{2x+3}, \acomm{x}, \acos{x}, \acosecant{x}, \acosine{x}, \acot{x}, \acotangent{x}, \acsc{x}, \admat{x}, \anticommutator{x}, \antidiagonalmatrix{x}
+\arccos{x}, \arccosecant{x}, \arccosine{x}, \arccot{x}, \arccotangent{x}, \arccsc{x}, \arcsec{x}, \arcsecant{x}, \arcsin{x}, \arcsine{x}, \arctan{x}, \arctangent{x}, \asec{x}, \asecant{x}, \asin{x}, \asine{x}, \atan{x}, \atangent{x}
+\bmqty{x}, \bqty{x}, \Bqty{x}, \bra{x}, \braket{x}, \comm{x}, \commutator{x}, \cos{x}, \cosecant{x}, \cosh{x}, \cosine{x}, \cot{x}, \cotangent{x}, \coth{x}, \cp{x}, \cross{x}, \crossproduct{x}
+\csc{x}, \csch{x}, \curl{x}, \dd{x}, \derivative{x}, \det{x}, \determinant{x}, \diagonalmatrix{x}, \diffd{x}, \differential{x}, \div{x}, \divergence{x}, \dmat{x}, \dotproduct{x}, \dv{x}, \dyad{x}, \erf{x}, \ev{x}, \eval{x}, \evaluated{x}, \exp{x}, \expectationvalue{x}, \exponential{x}, \expval{x}, \fderivative{x}, \fdv{x}, \flatfrac{x},\functionalderivative{x}, \grad{x}, \gradient{x}, \gradientnabla{x}
+\hypcosecant{x}, \hypcosine{x}, \hypcotangent{x}, \hypsecant{x}, \hypsine{x}, \hyptangent{x}
+\mdet{x}, \matrixdeterminant{x}, \matrixdeterminant{x}, \matrixel{n}{A}{m}, \matrixelement{n}{A}{m}, \matrixquantity{x}
+\Im{x}, \imaginary{x}, \innerproduct{x}
+\ip{x}, \ket{x}, \ketbra{x}, \laplacian{x}, \ln{x}, \log{x}, \logarithm{x}
+\mel{x}, \mqty{x}, \naturallogarithm{x}, \norm{x}, \op{x}, \order{x}, \qotherwise{x}, \qq{x}, \qqtext{x}, \qsince{x}, \qthen{x}, \qty{x}, \quantity{x}, \qunless{x}, \qusing{x}
+\rank{x}, \Re{x}, \real{x}, \Res{x}, \Residue{x}, \sbmqty{x}, \sec{x}, \secant{x}, \sech{x}, \sin{x}, \sine{x}, \sinh{x}, \smallmatrixquantity{x}, \smdet{x}, \smqty{x}, \spmqty{x}
+\sPmqty{x}, \svmqty{x}, \tan{x}, \tangent{x}, \tanh{x}, \tr{x}, \Tr{x}, \trace{x}, \Trace{x}, \va{x}, \var{x}, \variation{x}, \vb{x}, \vdot{x}, \vectorarrow{x}, \vectorbold{x}, \vectorunit{x}, \vmqty{x}, \vnabla{x}, \vqty{x}, \vu{x}
+```
+
+$$
+\abs{-57}, \absolutevalue{2x+3}, \acomm{x}, \acos{x}, \acosecant{x}, \acosine{x}, \acot{x}, \acotangent{x}, \acsc{x}, \admat{x}, \anticommutator{x}, \antidiagonalmatrix{x}
+$$
+
+$$
+\arccos{x}, \arccosecant{x}, \arccosine{x}, \arccot{x}, \arccotangent{x}, \arccsc{x}, \arcsec{x}, \arcsecant{x}, \arcsin{x}, \arcsine{x}, \arctan{x}, \arctangent{x}, \asec{x}, \asecant{x}, \asin{x}, \asine{x}, \atan{x}, \atangent{x}
+$$
+
+$$
+\bmqty{x}, \bqty{x}, \Bqty{x}, \bra{x}, \braket{x}, \comm{x}, \commutator{x}, \cos{x}, \cosecant{x}, \cosh{x}, \cosine{x}, \cot{x}, \cotangent{x}, \coth{x}, \cp{x}, \cross{x}, \crossproduct{x}
+$$
+
+$$
+\csc{x}, \csch{x}, \curl{x}, \dd{x}, \derivative{x}, \det{x}, \determinant{x}, \diagonalmatrix{x}, \diffd{x}, \differential{x}, \div{x}, \divergence{x}, \dmat{x}, \dotproduct{x}, \dv{x}, \dyad{x}, \erf{x}, \ev{x}, \eval{x}, \evaluated{x}, \exp{x}, \expectationvalue{x}, \exponential{x}, \expval{x}, \fderivative{x}, \fdv{x}, \flatfrac{x},\functionalderivative{x}, \grad{x}, \gradient{x}, \gradientnabla{x}
+$$
+
+$$
+\hypcosecant{x}, \hypcosine{x}, \hypcotangent{x}, \hypsecant{x}, \hypsine{x}, \hyptangent{x}
+$$
+
+$$
+\mdet{x}, \matrixdeterminant{x}, \matrixdeterminant{x}, \matrixel{n}{A}{m}, \matrixelement{n}{A}{m}, \matrixquantity{x}
+$$
+
+$$
+\Im{x}, \imaginary{x}, \innerproduct{x}
+$$
+
+$$
+\ip{x}, \ket{x}, \ketbra{x}, \laplacian{x}, \ln{x}, \log{x}, \logarithm{x}
+$$
+
+$$
+\mel{x}, \mqty{x}, \naturallogarithm{x}, \norm{x}, \op{x}, \order{x}, \qotherwise{x}, \qq{x}, \qqtext{x}, \qsince{x}, \qthen{x}, \qty{x}, \quantity{x}, \qunless{x}, \qusing{x}
+$$
+
+$$
+\rank{x}, \Re{x}, \real{x}, \Res{x}, \Residue{x}, \sbmqty{x}, \sec{x}, \secant{x}, \sech{x}, \sin{x}, \sine{x}, \sinh{x}, \smallmatrixquantity{x}, \smdet{x}, \smqty{x}, \spmqty{x}
+$$
+
+$$
+\sPmqty{x}, \svmqty{x}, \tan{x}, \tangent{x}, \tanh{x}, \tr{x}, \Tr{x}, \trace{x}, \Trace{x}, \va{x}, \var{x}, \variation{x}, \vb{x}, \vdot{x}, \vectorarrow{x}, \vectorbold{x}, \vectorunit{x}, \vmqty{x}, \vnabla{x}, \vqty{x}, \vu{x}
+$$
+
+These cause "misplaced &" errors because the markdown is competing with the MathJax library. TODO.
+```
+\imat{3}, \identitymatrix{3}, \xmat{1}{2}{3}, \xmatrix{x}, \zeromatrix{x}, \zmat{x}
+```
+
 ## Spaces
 
 * Thin space: `$A \ B$` = $A \ B$
